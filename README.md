@@ -17,17 +17,24 @@
 - Los motivos por los que utilizamos como referencia este sitio es su funcionalidad, puesto que es una plataforma con demasiados productos y aun así nos permite por medio de sus elementos y categorías encontrar de manera rápida lo que estamos buscando.
 
 ### Perfumaste
-- 
+- En el menú de opciones principal secciones desplegables de perfumes para hombre y para mujer los cuales despliegan todas las marcas de perfumes.
+- Página principal una sección inicial donde se exponen los perfumes más destacados.
+- Secciones segundarias con enlaces directos a cada categoría de perfumes.
+
 
 ### Varonna perfumería
-- 
+- Agregar en el menú de opciones desplegables la opción aromas en la cual se tenga enlace directo a cada una de estas
+- Datos más importantes de cada producto a tener encuenta
+- Carrito de compras con datos personales autocompletados (se debe estar registrado   previamente).
+
 
 ## Equipo desarrollador
 ### Heider Andrés Arellano Oviedo
 - 26 años de edad, Tecnólogo en Producción industrial, tecnólogo en desarrollo de software, estudiante de administración de empresa y estudiante de desarrollo web full stack en Digital House.
 
 ### Daniel Nicolas Nossa Valderrama
-- 
+-  
 
 ### Esneyder Saavedra Cardenas
--
+- 23 años de edad, Ingeniero en Sistemas,
+tecnólogo en desarrollo de software, Estudiante de desarrollo web full stack en Digital House.
