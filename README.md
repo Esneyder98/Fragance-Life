@@ -33,7 +33,7 @@
 - 26 años de edad, Tecnólogo en Producción industrial, tecnólogo en desarrollo de software, estudiante de administración de empresa y estudiante de desarrollo web full stack en Digital House.
 
 ### Daniel Nicolas Nossa Valderrama
--  
+- 24 años de edad, Técnologo en Mantenimiento Eléctrico Industrial, actualmente estudiante de Desarrollo Web Full Stack en Digital House.
 
 ### Esneyder Saavedra Cardenas
 - 23 años de edad, Ingeniero en Sistemas,
