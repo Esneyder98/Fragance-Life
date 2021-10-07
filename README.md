@@ -16,18 +16,18 @@
 ### Amazon (https://www.amazon.com/)
 - Los motivos por los que utilizamos como referencia este sitio es su funcionalidad, puesto que es una plataforma con demasiados productos y aun así nos permite por medio de sus elementos y categorías encontrar de manera rápida lo que estamos buscando.
 
-### Perfumaste
-- 
+### Perfumaste (https://perfumaste.com/)
+- Usamos esta página para ver la organizacion y demás elementos presentes en una pagina relacionada al tema que escogimos.
 
-### Varonna perfumería
-- 
+### Veronna perfumería (https://veronnaperfumeria.com/)
+- Con este sitio ampliamos nuestras referencias respecto a las marcas, categorias y demás productos que agregaremos en nuestro sitio web. 
 
 ## Equipo desarrollador
 ### Heider Andrés Arellano Oviedo
 - 26 años de edad, Tecnólogo en Producción industrial, tecnólogo en desarrollo de software, estudiante de administración de empresa y estudiante de desarrollo web full stack en Digital House.
 
 ### Daniel Nicolas Nossa Valderrama
-- 
+- 24 años de edad, Técnologo en Mantenimiento Eléctrico Industrial, actualmente estudiante de Desarrollo Web Full Stack en Digital House.
 
 ### Esneyder Saavedra Cardenas
 -
