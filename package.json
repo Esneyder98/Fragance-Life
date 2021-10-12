@@ -1,0 +1,28 @@
+{
+  "name": "proyecto_Perfumeria",
+  "version": "1.0.0",
+  "description": "- El presenta repositorio contiene el proyecto integrador del curso de desarrollo web full stack de Digital House, en el cual trabajaremos en la creación de un sitio web para la comercialización de un producto escogido por el equipo desarrollador.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeyderAndres/grupo_12_fraganceLife.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeyderAndres/grupo_12_fraganceLife/issues"
+  },
+  "homepage": "https://github.com/HeyderAndres/grupo_12_fraganceLife#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
