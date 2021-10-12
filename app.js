@@ -11,4 +11,8 @@ app.get('/',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'./views/index.html'))
 })
 
+app.get('/detalle_producto',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'./views/detalle_producto.html'))
+})
+
 app.listen(port, () => console.log('listen in port 3000'))
