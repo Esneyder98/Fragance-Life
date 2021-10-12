@@ -8,7 +8,7 @@ const publicPath =path.resolve(__dirname,'public');
 app.use(express.static(publicPath));
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./vievs/index.html'))
+    res.sendFile(path.resolve(__dirname,'./views/index.html'))
 })
 
 app.listen(port, () => console.log('listen in port 3000'))
