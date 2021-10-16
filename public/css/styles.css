@@ -3,6 +3,7 @@
 *{
     box-sizing: border-box;
     margin: 0px;
+    padding: 0px;
 }
 
 body{
@@ -10,54 +11,41 @@ body{
 }
 /* header */
 header{
-    padding: 2px 5px 2px 5px;
     background-color: rgba(255, 144,0, 0.8);
 }
 .main-header-top-bar{
-    margin:auto;
-    display:flex;
-    justify-content: space-between;
-}
-header .main-header-top-left{
-    padding:4px;
     display:flex;
     justify-content: space-between;
     align-items: center;
+    padding: 4vw 4vw 2vw 4vw;
 }
-header .main-header-top-left a{
-    /* background-color: #ff9000; */
-    color:#ffffff;
-    display:block;
-    max-width: 50px;
-    text-align: center;
-    padding: 7px 7px;
-    border-radius: 8px;
-    font-size: 18px;
-    margin:10px;
-    
-    
-}
+
  header img{
-     max-width: 65px;
+     width: 50%;
      margin:3px;
  }
  header  ul{
     list-style: none;
  }
  header .main-header-top-bar ul{
-
+     margin-right: 5px;
      display: flex;
-     justify-content: space-between;
+     justify-content:space-around;
      align-items: center;
+     min-width: 30%;
  }
- header .main-header-top-bar ul li{
-    margin: 3px;
-    padding: 0px 2px;
-}
+
+ header .main-header-top-bar li{
+    width: 30px;
+ }
  
- header .main-navbar a,header .right-navbar a{
+ header  .right-navbar a{
     text-decoration: none;
-    color:#ffffff
+    color:#152440;
+    text-align: center;
+    padding:3px;
+    margin:-2vw;
+    font-size: 1.5rem;
  }
 header .main-navbar{
     max-width:100vw;
@@ -78,6 +66,70 @@ header  .main-navbar ul li{
     margin: 2px;
     padding: 0px 3px;
 }
-header .main-navbar{
+
+header .main-navbar,header .main-header-top-right #search,.login-register{
     display:none;
 }
+
+
+@media(min-width:481px){
+    /* header */
+    header .main-header-top-bar{
+        padding:2vw;
+    }
+    
+    header .main-header-top-right{
+        width: 60%;
+    }
+    header .main-header-top-left{
+        width: 40%;
+    }
+    header .login-register{
+        display:flex;
+        justify-content: flex-end;
+        padding: 10px 0px;
+    }
+    header .main-header-top-right .login-register ul{
+        width : 50%;
+        display:flex;
+        justify-content:flex-end;
+        text-decoration: none;
+        align-items: center;
+    }
+   
+    header .login-register ul li {
+        text-align: center;
+        width:45%;
+        
+    }
+    header .login-register ul li .reg{
+        width: 30%;
+    }
+    header .login-register ul li a{
+        text-decoration: none;
+        font-size: 1rem;
+        color: #FFFFFF;
+    }
+    header .main-header-top-right #search{
+        display:flex;
+        width: 60%;
+        
+    }
+   
+    .rightt {
+        display:flex;
+        justify-content:space-evenly;
+    }
+    header .main-header-top-right li {
+        width: auto;
+    }
+}
+
+/* @media(min-width:769px){
+    
+}
+
+
+@media(min-width:1280px){
+    
+} */
