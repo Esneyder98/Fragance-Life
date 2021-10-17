@@ -8,6 +8,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    background-color:#E6E6E6;
 }
 /* header */
 header{
@@ -64,6 +65,57 @@ header .main-navbar,header .main-header-top-right #search,.login-register{
     display:none;
 }
 
+/* :::main  detalle producto:::*/
+main section .imgs-product{
+    background-color: #FFFFFF;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: #FF9000 solid 1px;
+}
+main section .imgs-product .img-top{
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px 0px 5px 0px; 
+}
+main section .imgs-product .img-top img{
+    width: 100%;
+    border-radius: 10px;
+}
+main section .imgs-product .img-botton{
+    width: 95%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main section .imgs-product .img-botton .img-botton_secont{
+    width: 85%;
+    display:flex;
+    justify-content:center;
+}
+
+main section .imgs-product .img-botton .img-botton_secont .img_secont{
+    width: 32%;
+    margin:4px;
+}
+
+main section .imgs-product .img-botton .arrows{
+    width: 7.5%;
+    display: flex;
+    justify-content: center;
+}
+
+main section .imgs-product .img-botton .arrows a i{
+font-size: 3em;
+color:#152440;;
+}
 
 @media(min-width:481px){
     /* header */
@@ -96,7 +148,6 @@ header .main-navbar,header .main-header-top-right #search,.login-register{
     header .login-register ul li {
         text-align: center;
         width:45%;
-        
     }
     header .login-register ul li .reg{
         width: 30%;
