@@ -76,7 +76,8 @@ main section .imgs-product{
     align-items: center;
     margin-top: 10px;
     border-radius: 10px;
-    border: #FF9000 solid 1px;
+    padding-bottom: 10px;
+    border: #E6E6E6 solid 1px;
 }
 main section .imgs-product .img-top{
     width: 96%;
@@ -113,10 +114,67 @@ main section .imgs-product .img-botton .arrows{
 }
 
 main section .imgs-product .img-botton .arrows a i{
-font-size: 3em;
-color:#152440;;
+font-size: 2.5em;
+color:#152440;
+}
+main section article .main-data{
+    width:90%;
+    margin:auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    padding:10px;
+}
+main section article .main-data form{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
 }
 
+main section article .main-data  #name,#price,#buy{
+font-size: 1rem;
+font-weight: 900;
+}
+main section article .main-data  #name,#availability,#price{
+    padding-bottom: 10px;
+}
+main section article .main-data #cant{
+    padding-bottom: 5px;
+}
+main section article .main-data #box-number{
+    text-align: center;
+    width: 26%;
+    height: 18px;
+    margin-bottom: 10px;
+    border: #E6E6E6 solid 1px;
+}
+
+main section article .main-data #buy{
+    padding: 2px;
+    background-color: rgba(21, 36,64,0.8);
+    border:solid 1px #152440; 
+
+
+}
+main section article .main-data #buy,#buy i{
+    padding-right: 11px;
+    padding-left: 8px;
+}
+main section article .description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 18px;
+}
+main section article .description p{
+    width: 95%;
+    text-align: justify;
+    padding: 10px;
+}
 @media(min-width:481px){
     /* header */
     header .main-header-top-bar{
