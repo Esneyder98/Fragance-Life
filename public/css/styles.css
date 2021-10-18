@@ -114,7 +114,7 @@ main section .imgs-product .img-botton .arrows{
 }
 
 main section .imgs-product .img-botton .arrows a i{
-font-size: 2.5em;
+font-size: 1.4rem;
 color:#152440;
 }
 main section article .main-data{
@@ -236,6 +236,18 @@ main section article .description p{
     header .main-header-top-right li {
         width: auto;
     }
+/* ::::main detalle_producto:::::: */
+    main section article{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main section .imgs-product{
+        width:55%
+    }
+    main section article .main-data{
+        width: 35%;
+    }
+
 }
 
  @media(min-width:769px){
@@ -282,7 +294,34 @@ main section article .description p{
         color:#152440;
         font-size:1.3rem;
         font-weight:bold;
-        
+    }
+    /* ::::main detalle_producto:::::: */
+    main section article{
+        align-items: flex-start;
+        position: relative;
+    }
+    
+    main section .imgs-product{
+        width:45%
+    }
+    main section article .main-data{
+        width: 50%;
+        margin:10px;
+    }
+    main section article .description{
+        width: 50%;
+        position: absolute;
+        top: 195px;
+        right: 0px;
+        align-items:flex-start;
+        padding-left: 2px;
+    }
+    main section article .description h3{
+        padding-left: 15px;
+    }
+
+    main section article .description p{
+        padding-left: 15px;
     }
 }
 
