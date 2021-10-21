@@ -266,6 +266,62 @@ main section article .description p{
     text-align: justify;
     padding: 10px;
 }
+
+/* :::::::::::::::main register::::::::::::::::::: */
+main section.register{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+main section.register article{
+    width: 80%;
+    display: flex;
+    justify-content:center;
+}
+main section.register article form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    position: relative;
+}
+main section.register form .form-label_title,.form-label_subtittle{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+main section.register form .form-label_title{
+    font-size: 20px;
+    font-weight: 900;
+}
+main section.register form .form-label_dates{
+    font-weight: bold;
+    padding-top: 10px;
+}
+main section.register form .form-input-dates{
+    background-color:#E6E6E6;
+    border: 1px solid rgba(167, 163, 163, 0.466);
+    padding: 5px;
+    border-radius: 4px;
+}
+main section.register form .form-input-dates::placeholder{
+    color:black;
+}
+
+main section.register form .form-input-button{
+    padding: 5px;
+    color:black;
+    font-weight: bold;
+    background-color:rgba(128, 128, 128,0.8);
+    border: 1px solid gray;
+    width: 40%;
+    margin:20px 0px;
+}
+main section.register form .login{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
 /*home footer*/
 footer{
     display:flex;
@@ -375,7 +431,7 @@ footer{
         width: 30%;
     }
 /* ::::main detalle_producto:::::: */
-    main section article{
+    main section.detail-product article{
         display: flex;
         flex-wrap: wrap;
     }
@@ -385,6 +441,14 @@ footer{
     main section article .main-data{
         width: 35%;
     }
+
+    /* :::::::::::::::main register::::::::::::::::::: */
+
+main section.register article{
+    width: 60%;
+    
+}
+/* :::::::::::footer:::::::::::::::::::: */
     footer{
         flex-direction:row;
         flex-wrap: wrap;
@@ -469,7 +533,7 @@ footer{
     }
 
     /* ::::main detalle_producto:::::: */
-    main section article{
+    main section.detail-product article{
         align-items: flex-start;
         position: relative;
     }
@@ -497,6 +561,12 @@ footer{
         padding-left: 15px;
     }
 
+/* :::::::::::::::main register::::::::::::::::::: */
+
+    main section.register article{
+        width: 50%;
+        
+    }
     /* :::::::footer:::::::: */
     footer{
         position:relative;

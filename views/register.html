@@ -44,40 +44,30 @@
         </nav>
     </header>
     <main>
-        <section class="detail-product">
-            <article >
-                <div class="imgs-product">
-                    <div class="img-top">
-                        <img src="/img/Perfumes/HOMBRES/Orientales/EROS VERSACE/1.jpg" alt="" class="img_first">
-                    </div>
-                    <div class="img-botton">
-                        <div class="arrows">
-                            <a href="#" class="arrow-right"><i class="fas fa-caret-left"></i></a>
-                        </div>
-                        <div class="img-botton_secont">
-                            <img src="/img/Perfumes/HOMBRES/Orientales/EROS VERSACE/2.jpg" alt="" class="img_secont">
-                            <img src="/img/Perfumes/HOMBRES/Orientales/EROS VERSACE/3.jpg" alt="" class="img_secont">
-                            <img src="/img/Perfumes/HOMBRES/Orientales/EROS VERSACE/4.jpg" alt="" class="img_secont">
-                        </div>
-                        <div class="arrows">
-                            <a href="#" class="arrow-right"><i class="fas fa-caret-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                    <div class=main-data>
-                        <h3 id="name">Eros Versace</h3>
-                        <p id="availability">Disponible</p>
-                        <p id="price">$0000.00 COP</p>
-                        <form action="" method="post">
-                            <label id="cant" for="cant">Cantidad</label>
-                            <input id="box-number"type="number" value="number" name="cant"  min="1" required>
-                            <button id="buy"type="submit"><i class="fas fa-shopping-cart"></i>COMPRAR</button>
-                        </form>
-                    </div>
-                    <div class="description">
-                        <h3>Descripcion del producto</h3>
-                        <p>Versace Eros es una Fragancia para un hombre fuerte y apasionado, que es dueño de sí mismo. Eros interpreta lo sublime masculino a través de un aura luminosa con una combinación intensa, vibrante y brillante de hojas de menta fresca, ralladura de limón italiano y manzana verde.</p>
-                    </div>
+        <section class="register">
+            <article>
+                <form action="" method="post" class="form">
+                    <label for="" class="form-label_title">Crea tu cuenta</label>
+                    <label for="" class="form-label_subtittle">Te Damos la bienvenida,¡te invitamos a registrarte!
+                    </label>
+                    <label for="names" class="form-label_dates">Nombres*:</label>
+                    <input type="text" name="names" autocomplete = "given-name" minlength="2" class="form-input-dates" required >
+
+                    <label for="surnames" class="form-label_dates">Apellidos*:</label>
+                    <input type="text" name="surnames" autocomplete = "family-name" minlength="2" class="form-input-dates" required >
+
+                    <label for="surnames" class="form-label_dates">Correo electronico*:</label>
+                    <input type="email" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates" required>
+
+                    <label for="password" class="form-label_dates">Contraseña*:</label>
+                    <input type="password" name="password" id="password" autocomplete="new-password" placeholder="*********" class="form-input-dates" required>
+
+                    <label for="password" class="form-label_dates">Confirmar Contraseña*:</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" autocomplete="new-password" placeholder="*********" class="form-input-dates" required>
+
+                    <input class="form-input-button" type="submit" value="Registrarse">
+                    <input class="form-input-button login" type="button" value="Iniciar Sesion" href="#">
+                </form>
             </article>
         </section>
     </main>
