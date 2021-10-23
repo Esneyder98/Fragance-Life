@@ -322,6 +322,71 @@ main section.register form .login{
     right: 0px;
     bottom: 0px;
 }
+
+/* ::::::::::::::main login::::::::::::::::::::::::::: */
+main section.login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main section.login article {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding:15px;
+}
+
+main section.login article form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+}
+main section.login form .form-label_title{
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+main section.login form .form-label_dates {
+    font-weight: bold;
+    padding-top: 20px;
+}
+main section.login form .form-input-dates {
+    background-color: #E6E6E6;
+    border: 1px solid rgba(167, 163, 163, 0.466);
+    padding: 5px;
+    border-radius: 4px;
+}
+main section.login form .form-input-dates::placeholder{
+    color:black;
+}
+main section.login #form-a{
+    text-align: end;
+    text-decoration: none;
+    color:gray;
+    margin-bottom: 10px;
+}
+main section.login form .form-input-button {
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    background-color: rgba(128, 128, 128,0.8);
+    border: 1px solid gray;
+    width: 40%;
+    margin: 20px 0px;
+}
+.form-input-button:hover{
+    background-color:#152440;
+}
+main section.login form .register{
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}
 /*home footer*/
 footer{
     display:flex;
@@ -448,6 +513,20 @@ main section.register article{
     width: 60%;
     
 }
+main section.register form .form-input-button {
+    max-width:125px;
+}
+/* ::::::::::::main login:::::::::::::::::: */
+main section.login article {
+    width: 60%;
+    margin: 30px 0px;
+    max-width: 370px;
+}
+
+main section.login form .form-input-button {
+    max-width:125px;
+}
+
 /* :::::::::::footer:::::::::::::::::::: */
     footer{
         flex-direction:row;
@@ -567,6 +646,13 @@ main section.register article{
         width: 50%;
         
     }
+/* :::::::::::::main login:::::::::::::::: */
+main section.login article{
+    width: 50%;
+    margin-top: 10%;
+    margin-bottom: 20%;
+    
+}
     /* :::::::footer:::::::: */
     footer{
         position:relative;
@@ -595,10 +681,10 @@ main section.register article{
 }
 
 @media(min-width: 1200px){
-    body{
+    /* body{
         max-width: 1200px;
         margin: auto;
-    }
+    } */
     
     /* footer */
     .footer-right{
