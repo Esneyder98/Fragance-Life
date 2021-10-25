@@ -13,7 +13,7 @@
     <header class="main-header">
         <div class="main-header-top-bar">
             <div class="main-header-top-left">
-                <img src="/img/logoFraganceLife.png" alt="logo-fragance-life" class="logo" >
+              <a class="logo"  href="/"><img src="/img/logoFraganceLife.png" alt="logo-fragance-life"></a>
             </div>
             <div class="main-header-top-right">
                 <div class="login-register">
@@ -35,7 +35,7 @@
         </div>
         <nav class="main-navbar">
             <ul class="navbar">
-                <li><a href="#">Marcas</a></li>
+                <li id="li"><a href="#">Marcas</a></li>
                 <li><a href="#">Familia Aroma</a></li>
                 <li><a href="#">Hombre</a></li>
                 <li><a href="#">Mujeres</a></li>
@@ -46,27 +46,77 @@
     <img class="img-start" src=".\img\fragance-life.jpg" alt="image">
     <main class="full body">
         <h3 id="subtitulos">Promociones</h3>
-        <article class="promociones">
-            <ul type ="None">
-                <h4>¡Súper promo de la Semana!</h4>
-                <img class="product-img" src = "./img/Perfumes\HOMBRES\Amaderado\CREED SILVER MOUNTAIN WATER\2.jpg" alt="imagen">
-                <div class="description">
-                    <div class="description-before">
-                        <li id="time">Antes:</li>
-                        <li id="precio-before">$150000</li>
+        <article class="promo">
+            <article class="promociones">
+                <ul type ="None">
+                    <h3>¡Súper promo de la Semana!</h3>
+                    <img class="product-img" src = "./img/Perfumes\HOMBRES\Amaderado\CREED SILVER MOUNTAIN WATER\2.jpg" alt="imagen">
+                    <div class="description">
+                        <div class="description-before">
+                            <li id="time">Antes:</li>
+                            <li id="precio-before">$150000</li>
+                        </div>
+                        <div class="description-after">
+                            <li id="time">Ahora:</li>
+                            <li id="precio">$95000</li>
+                        </div>
                     </div>
-                    <div class="description-after">
-                        <li id="time">Ahora:</li>
-                        <li id="precio">$95000</li>
+                </ul>
+            </article>
+        <article class="second-sale">
+            <div class="third-sale">
+                <ul type ="None">
+                    <img class="product-img" src = ".\img\Perfumes\HOMBRES\Frescos\LIGHT BLUE\1.jpg" alt="imagen">
+                    <div class="promotion-description">
+                        <p id="discuont-product">Light Blue For Men</p>
+                        <div class="description-before">
+                            <li id="precio-before">$150000</li>
+                        </div>
+                        <p id="discuont-product">¡36% de Descuento!</p>
+                        <div class="description-after">
+                            <li id="precio">$95000</li>
+                        </div>
                     </div>
-                </div>
-            </ul>
+                </ul>
+            </div>
+            <div class="third-sale">
+                <ul type ="None">
+                    <img class="product-img" src = ".\img\Perfumes\MUJERES\Frutal\GUCCI BAMBOO\2.jpg" alt="imagen">
+                    <div class="promotion-description">
+                        <p id="discuont-product">Gucci Bamboo</p>
+                        <div class="description-before">
+                            <li id="precio-before">$150000</li>
+                        </div>
+                        <p id="discuont-product">¡36% de Descuento!</p>
+                        <div class="description-after">
+                            <li id="precio">$95000</li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div class="third-sale">
+                <ul type ="None">
+                    <img class="product-img" src = ".\img\Perfumes\HOMBRES\Orientales\EROS VERSACE\3.jpg" alt="imagen">
+                    <div class="promotion-description">
+                        <p id="discuont-product">Eros Versace</p>
+                        <div class="description-before">
+                            <li id="precio-before">$150000</li>
+                        </div>
+                        <p id="discuont-product">¡36% de Descuento!</p>
+                        <div class="description-after">
+                            <li id="precio">$95000</li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+    </article>
         </article>
+        
         <h3 id="subtitulos">Productos Destacados</h3>
         <article class="producto-destacado">
             <div class="destacado-producto">
                 <img class="product-img" src = ".\img\Perfumes\HOMBRES\Amaderado\INVICTUS\2.jpg" alt ="imagen">
-                <div>
+                <div class="main-product-description">
                     <p id="name-product">Invictus</p>
                     <p id="precio">$150000</p>
                     <a class="compra" href="#"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
@@ -149,22 +199,26 @@
             </div>
         </article>
     </main>
-    <footer class="footer">
-        <div class="footer-contact">
-            <p class="footer-contact-content">Contacto</p>
-            <p class="footer-contact-content">Cel: (+57) 000 000 0000</p>
-            <p class="footer-contact-content">Direccion: Cra 0 # 0-0</p>
-        </div>
-        <div class="footer-social">
-            <p class="footer-social-content">Síguenos</p>
-            <p class="footer-social-content"><span id="social"><i class="fab fa-twitter"></i></span></i><span id="social"><i class="fab fa-instagram"></i></span><span id="social"><i class="fab fa-facebook-f"></i></span></p>
-        </div>
-        <div class="footer-right">
-            <p class="footer-right-content">Copyright <i class="far fa-copyright"></i> 2021</p>
-            <p class="footer-right-content">Heider Andrés Arellano Oviedo</p>
-            <p class="footer-right-content">Daniel Nicolás Nossa Valderrama</p>
-            <p class="footer-right-content">Esneyder Saavedra Cárdenas</p>
-        </div>
+    <footer>
+        <article class="footer">
+            <div class="footer-contact">
+                <p class="footer-contact-content">Contacto</p>
+                <p class="footer-contact-content">Cel: (+57) 000 000 0000</p>
+                <p class="footer-contact-content">Direccion: Cra 0 # 0-0</p>
+            </div>
+            <div class="footer-social">
+                <p class="footer-social-content">Síguenos</p>
+                <p class="footer-social-content"><span><a href="#"><i  id="social" class="fab fa-twitter"></i></a>
+                </i></span></i><span><a href="#"><i id="social" class="fab fa-instagram"></i></a>
+                </i></span><span><a href="#"><i id="social" class="fab fa-facebook-f"></i></a></span></p>
+            </div>
+            <div class="footer-right">
+                <p class="footer-right-content">Copyright <i class="far fa-copyright"></i> 2021</p>
+                <p class="footer-right-content">Heider Andrés Arellano Oviedo</p>
+                <p class="footer-right-content">Daniel Nicolás Nossa Valderrama</p>
+                <p class="footer-right-content">Esneyder Saavedra Cárdenas</p>
+            </div>
+        </article>
     </footer>
 </body>
 </html>
