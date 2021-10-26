@@ -445,6 +445,121 @@ main section.login form .register{
     bottom:0px;
     right:0px;
 }
+
+/*---------------------------main carrito de compras-------------------------*/
+main #carrito{
+    width: 95vw;
+    padding: 15px;
+    margin: auto;
+    min-width: 330px;
+}
+main #carrito h2{
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: solid 2px white;
+}
+main #carrito .encabezado{
+    display: none;
+}
+
+main #carrito article{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-bottom: solid 2px white;
+    position: relative;
+   
+}
+main #carrito article img{
+    width: 130px;
+    height: 130px;
+    align-items: flex-start;
+    border-radius: 10px;
+}
+
+main #carrito article button{
+    height: 25px;
+    position: absolute;
+    top: 100px;
+    left: 178px;
+}
+
+main #carrito article label{
+    flex-direction: column;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+main #carrito article .carritoCantidad{
+    width: 50px;
+    height: 25px;
+    margin: auto;
+}
+
+main #carrito article .nombreProducto{
+    display: flex;
+    width: 130px;
+    padding-top: 15px;
+    padding-left: 20px;
+    text-align: center;
+    justify-content:  center;
+}
+main #carrito article div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+main #carrito article div div{
+    width: 33%;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+main #carrito #total{
+    border-bottom: none;
+}
+main #carrito #total div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; width: 100%;
+}
+main #carrito #total div div{
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+main #carrito #total div div label{
+    padding-right: 10px;
+}
+
+main #carrito .finalizarCompra{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  
+}
+main #carrito .finalizarCompra button{
+    width: 30%;
+    min-width: 85px;
+    max-width: 180px;
+    height: 40px;  
+    margin-right: 5px;
+    border: 1px solid #152440;
+    font-weight: bold;
+    color: #152440;
+}
+
+main #carrito .finalizarCompra #finalizar{
+    background-color: #152440;
+    color: #E6E6E6;
+}
+
+
+
 /*home footer*/
 
 footer{
@@ -749,10 +864,34 @@ main section.login article{
     width: 50%;
     margin-top: 10%;
     margin-bottom: 20%;
-
-    
-    
 }
+ /*---------------------------main carrito de compras-------------------------*/
+ main #carrito article div{
+     width: auto;
+     justify-content: space-around;
+     flex-grow: 1;
+ }
+
+ main #carrito .encabezado{
+     display: flex;
+ }
+ main #carrito .encabezado div h3{
+ text-align: center;
+ justify-content: space-around;
+ width: 33%;
+ }
+
+ main #carrito .encabezado #articulos{
+     display: block;
+     min-width: 260px;
+     text-align: center;
+ }
+
+ main #carrito article div label{
+     display: none;
+ }
+
+ 
     /* :::::::footer:::::::: */
     .footer{
         position:relative;

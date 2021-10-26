@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>Fragance-Life</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <div class="main-header-top-left">
+                <a class="logo" href="/"><img src="/img/logoFraganceLife.png" alt="logo-fragance-life"></a>
+            </div>
+            <div class="main-header-top-right">
+                <div class="login-register">
+                    <ul>
+                        <li><a href="./login">Iniciar sesión</a></li>
+                        <li class="reg"><a href="./register">Registrate</a></li>
+                    </ul>
+                </div>
+                <div class="rightt">
+                    <input type="search" name="search" id="search" placeholder="Busca productos aqui">
+                    <ul class="right-navbar">
+                        <li class="searchs"><a href="#"><i class="fas fa-search"></i></a></li>
+                        <li class="main-nav"><a href="#"><i class="fas fa-th-list"></i></a></li>
+                        <li><a href="./login"><i class="fas fa-user" id="user"></i></a></li>
+                        <li><a href="#"><i class="fas fa-shopping-cart"></i></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav class="main-navbar">
+            <ul class="navbar">
+                <li id="li"><a href="#">Marcas</a></li>
+                <li><a href="#">Familia Aroma</a></li>
+                <li><a href="#">Hombre</a></li>
+                <li><a href="#">Mujeres</a></li>
+                <li id="promo"><a href="#">Promociones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="full body">
+        <section id="carrito">
+            <h2>carrito de compra</h2>
+            <article class="encabezado">
+                <h3 id="articulos">Articulos</h3>
+                <div><h3>Precio unitario</h3>
+                <h3>Cantidad</h3>
+                <h3>total</h3></div>
+            </article>
+            <article>
+                <img src="/img/Perfumes/HOMBRES/Frescos/LIGHT BLUE/2.jpg" alt="LIGHT BLUE">
+                <p class="nombreProducto"><strong>LIGHT BLUE</strong></p>
+                <button class="compra" type="submit">Eliminar</button>
+                <div>
+                <div><label>precio</label><p class="precioCarrito">$000.000</p></div>
+                <div><label>cantidad</label><input class="carritoCantidad" id="box-number"type="number" value="number" name="cant"  min="1" required></div>
+                <div><label>total</label><p>$000.000</p></div>
+                </div>
+            </article>
+            <article>
+                <img src="/img/Perfumes/HOMBRES/Amaderado/CREED SILVER MOUNTAIN WATER/1.jpg" alt="CREED SILVER MOUNTAIN WATER">
+                <p class="nombreProducto"><strong>CREED SILVER MOUNTAIN WATER</strong></p>
+                <button class="compra" type="submit">Eliminar</button>
+                <div>
+                <div><label>precio</label><p class="precioCarrito">$000.000</p></div>
+                <div><label>cantidad</label><input class="carritoCantidad" id="box-number"type="number" value="number" name="cant"  min="1" required></div>
+                <div><label>total</label><p>$000.000</p></div>
+                </div>
+            </article>
+            <article>
+                <img src="/img/Perfumes/MUJERES/Floral/BVLGARI OMNIA AMATISTA/1.jpg" alt="BVLGARI OMNIA AMATISTA">
+                <p class="nombreProducto"><strong>BVLGARI OMNIA AMATISTA</strong></p>
+                <button class="compra" type="submit">Eliminar</button>
+                <div>
+                <div><label>precio</label><p class="precioCarrito">$000.000</p></div>
+                <div><label>cantidad</label><input class="carritoCantidad" id="box-number"type="number" value="number" name="cant"  min="1" required></div>
+                <div><label>total</label><p>$000.000</p></div>
+                </div>
+            </article>
+            <article>
+                <img src="/img/Perfumes/MUJERES/Frutal/GUCCI BAMBOO/2.jpg" alt="GUCCI BAMBOO">
+                <p class="nombreProducto"><strong>GUCCI BAMBOO</strong></p>
+                <button class="compra" type="submit">Eliminar</button>
+                <div>
+                <div><label>precio</label><p class="precioCarrito">$000.000</p></div>
+                <div><label>cantidad</label><input class="carritoCantidad" id="box-number"type="number" value="number" name="cant"  min="1" required></div>
+                <div><label>total</label><p>$000.000</p></div>
+                </div>
+            </article>
+            
+            <article id="total">
+                <div>
+                <div><label>subtotal</label><p>$000.000</p></div>
+                <div><label>impuestos</label><p>$000.000</p></div>
+                <div><label>total</label><p>$000.000</p></div>
+            </div>
+            </article>
+            <div class="finalizarCompra">
+                <button type="submit">Seguir comprando</button>
+                <button type="submit">Actualizar carrito</button>
+                <button id="finalizar" type="submit">Finalizar compra</button>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <article class="footer">
+            <div class="footer-contact">
+                <p class="footer-contact-content">Contacto</p>
+                <p class="footer-contact-content">Cel: (+57) 000 000 0000</p>
+                <p class="footer-contact-content">Direccion: Cra 0 # 0-0</p>
+            </div>
+            <div class="footer-social">
+                <p class="footer-social-content">Síguenos</p>
+                <p class="footer-social-content"><span><a href="#"><i id="social" class="fab fa-twitter"></i></a>
+                        </i></span></i><span><a href="#"><i id="social" class="fab fa-instagram"></i></a>
+                        </i></span><span><a href="#"><i id="social" class="fab fa-facebook-f"></i></a></span></p>
+            </div>
+            <div class="footer-right">
+                <p class="footer-right-content">Copyright <i class="far fa-copyright"></i> 2021</p>
+                <p class="footer-right-content">Heider Andrés Arellano Oviedo</p>
+                <p class="footer-right-content">Daniel Nicolás Nossa Valderrama</p>
+                <p class="footer-right-content">Esneyder Saavedra Cárdenas</p>
+            </div>
+        </article>
+    </footer>
+</body>
+
+</html>
