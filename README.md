@@ -39,5 +39,9 @@
 - 23 años de edad, Ingeniero en Sistemas,
 tecnólogo en desarrollo de software, Estudiante de desarrollo web full stack en Digital House.
 
-## Starfish Retrospective(https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/aa9df7b72)
+## Starfish Retrospective
+-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/aa9df7b72
 Basándonos en la retrospectiva hecha del Sprint 1 hemos organizado este diagrama. 
+
+## Tablero  de trabajo
+- https://drive.google.com/drive/folders/1aCduxdN2E37UQO9EW_0a8nNZ4ybNeZHa?usp=sharing
