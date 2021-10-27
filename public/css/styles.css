@@ -448,7 +448,7 @@ main section.login form .register{
 
 /*---------------------------main carrito de compras-------------------------*/
 main #carrito{
-    width: 95vw;
+
     padding: 15px;
     margin: auto;
     min-width: 330px;
@@ -509,7 +509,7 @@ main #carrito article .nombreProducto{
 main #carrito article div{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+
 }
 main #carrito article div div{
     width: 33%;
@@ -889,6 +889,10 @@ main section.login article{
 
  main #carrito article div label{
      display: none;
+ }
+
+ main #carrito #total div label{
+     display: block;
  }
 
  
