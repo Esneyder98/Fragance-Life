@@ -1,16 +1,25 @@
 const express = require('express');
 const path = require('path');
-const route = require('./router/index.routes.js');
+const port = process.env.PORT || 3000;
+
+const mainRoutes = require("./routes/main.routes");
+const productsRoutes = require("./routes/product.routes");
+const usersRoutes = require("./routes/user.routes");
+
 const app = express();
 
 app.use(express.static(path.resolve(__dirname,'../public')));
-app.use('/',route);
+
+app.set('views',path.resolve(__dirname,'./views'))
 app.set('view engine', 'ejs');
 
 
-const port = process.env.PORT || 3000;
+app.use('/',mainRoutes);
+app.use('/products', productsRoutes)
+app.use('/user',usersRoutes)
+
 // definir que archivos son publicos
 const publicPath =path.resolve(__dirname,'public');
-app.use(express.static(publicPath));
+ app.use(express.static(publicPath));
 
-app.listen(port, () => console.log('listen in port 3000'))
+app.listen(port, () =>console.log(`server is listening on ${port}`));
