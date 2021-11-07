@@ -943,3 +943,71 @@ main section.login article{
         right: 131px;
     }
 }
+
+/*Registrar Nuevo Producto*/
+
+.optionNewProduct {
+    padding: 30px;
+}
+
+#descripcionProducto {
+    width: 40vw;
+    height: 20vh;
+}
+
+#nombreProducto, #precioProducto, #categoriaProducto, #familiaAroma {
+    background-color:#E6E6E6;
+    border: 1px solid rgba(167, 163, 163, 0.466);
+    padding: 5px;
+    border-radius: 4px;
+    width: 300px;
+}
+
+#registrar {
+    width: 30%;
+    min-width: 85px;
+    max-width: 200px;
+    height: 40px;  
+    margin-right: 5px;
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: #152440;
+    color: white;
+    padding: 10px;
+}
+
+.botonRegistrarProducto {
+    padding: 10px;
+    text-align: center;
+}
+
+.left {
+    position: relative;
+    left: -5%;
+}
+
+/*Boton Nuevo Producto en el Index*/
+
+.newProduct {
+    padding: 5px 15px;
+    background-color: rgba(167, 163, 163, 0.466) ;
+    text-decoration: none;
+    border-radius: 10px;
+    border: grey 1px outset;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 300ms;
+    margin: 20px;
+    text-align: center;
+}
+
+.descripcion {
+    position: relative;
+    width: 40%;
+    height: 30%;
+}
+
+.categoria {
+    padding: 20px;
+}

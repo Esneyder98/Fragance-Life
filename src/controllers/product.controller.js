@@ -9,6 +9,9 @@ const controller ={
     CarritoDeCompras:(req, res) =>{
         res.render(path.join(__dirname, "../views/products/CarritoDeCompras.ejs"));
     },
+    crearNuevoProducto:(req, res) => {
+        res.render(path.join(__dirname, "../views/products/crearNuevoProducto.ejs"));
+    }
 
 }
 

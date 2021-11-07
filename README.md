@@ -39,6 +39,14 @@
 - 23 años de edad, Ingeniero en Sistemas,
 tecnólogo en desarrollo de software, Estudiante de desarrollo web full stack en Digital House.
 
+### Cristian Sanjuan
+- Tengo 22 años, soy estudiante de Ingeniería química en X semestre, apasionado por la ciencia e investigación,
+me encanta escuchar música, viajar y conocer personas interesantes.  
+
+### German Arciniegas
+- Tengo 19 años, soy tecnico en programación de software, me encanta mucho las matematicas, la fisica y sobretodo
+la programacion, soy amante de las zonas verdes y actividades al aire libre. 
+
 ## Starfish Retrospective
 -https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/aa9df7b72
 Basándonos en la retrospectiva hecha del Sprint 1 hemos organizado este diagrama. 
