@@ -446,6 +446,11 @@ main section.login form .register{
     right:0px;
 }
 
+/*---------------------------editar producto-------------------------*/
+main .register  article form textarea{
+    height: 100px;
+}
+
 /*---------------------------main carrito de compras-------------------------*/
 main #carrito{
 

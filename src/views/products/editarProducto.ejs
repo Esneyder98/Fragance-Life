@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+    <header class="main-header">
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <section class="register">
+            <article>
+                <form action="/" name="editarProducto" id="editarProducto">
+                    <label for="" class="form-label_title">Editar Producto</label>
+                    <label for="nombreProducto" class="form-label_dates"></label>
+
+                    <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
+                    <input type="text" name="nombreProducto"  class="form-input-dates">
+
+                    <label for="precioProducto" class="form-label_dates">Precio del Producto</label>               
+                    <input type="text" name="precioProducto"  class="form-input-dates">
+                   
+                    <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
+                         <p class="categoria">
+                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Masculina
+                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Femenina
+                        </p>
+
+                    <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
+                        <select name="familiaAroma" id="familiaAroma">
+                            <option value="1">Gucci</option>
+                            <option value="2">Light</option>
+                            <option value="3">Cred Silver</option>
+                            <option value="4">Bvlgari</option>
+                        </select>
+
+                    <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
+                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates">
+                    
+                    <label for="descripcionProducto" class="form-label_dates">Descripcion del Producto  </label>
+                    <textarea name="descripcionProducto" ></textarea>
+
+                    <input class="form-input-button" type="button" value="Editar" href="#">
+                    
+                </form>
+            </article>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

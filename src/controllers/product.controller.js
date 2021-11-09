@@ -11,6 +11,9 @@ const controller ={
     },
     crearNuevoProducto:(req, res) => {
         res.render(path.join(__dirname, "../views/products/crearNuevoProducto.ejs"));
+    },
+    editarProducto:(req, res) => {
+        res.render(path.join(__dirname, "../views/products/editarProducto.ejs"));
     }
 
 }
