@@ -541,13 +541,13 @@ main #carrito #total div div label{
     padding-right: 10px;
 }
 
-main #carrito .finalizarCompra{
+main #carrito .finalizarCompra form{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
   
 }
-main #carrito .finalizarCompra button{
+main #carrito .finalizarCompra form button{
     width: 30%;
     min-width: 85px;
     max-width: 180px;
@@ -558,10 +558,11 @@ main #carrito .finalizarCompra button{
     color: #152440;
 }
 
-main #carrito .finalizarCompra #finalizar{
+main #carrito .finalizarCompra form #finalizar{
     background-color: #152440;
     color: #E6E6E6;
 }
+
 
 
 
@@ -649,7 +650,7 @@ footer{
     }
     ::placeholder {
         padding: 1px;
-        color: yellow;
+        color: white;
         font-size: 0.9rem;
       }
     header .main-header-top-right #search{
