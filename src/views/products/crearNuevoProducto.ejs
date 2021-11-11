@@ -1,82 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creación de Productos</title>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-</head>
+<%- include('../partials/head') %>
+
 <body>
     <header class="main-header">
-        <%- include('../partials/header') %> 
+        <%- include('../partials/header') %>
     </header>
-    <div align="center">
-        <form action="/" name="crearProducto" id="crearProducto">
-            <h1>Crear Producto</h1>
-                <div class="optionNewProduct">
-                    <label for="nombreProducto" class="left">
-                        <p>
-                            <label for="nombreProducto" class="left"><h2>Nombre del Producto</h2></label>
+    <main>
+        <section class="register">
+            <article>
+                <form action="/" name="crearProducto" id="crearProducto">
+                    <label for="" class="form-label_title">Crear Nuevo Producto</label>
+                    <label for="nombreProducto" class="form-label_dates"></label>
+
+                    <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
+                    <input type="text" name="nombreProducto"  class="form-input-dates">
+
+                    <label for="precioProducto" class="form-label_dates">Precio del Producto</label>               
+                    <input type="text" name="precioProducto"  class="form-input-dates">
+                   
+                    <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
+                         <p class="categoria">
+                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Masculina
+                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Femenina
                         </p>
-                        <input type="text" name="nombreProducto" id="nombreProducto">
-                    </label>
-                </div>
-                <div class="optionNewProduct">
-                    <label for="precioProducto" class="left">
-                        <p>
-                            <label for="precioProducto"><h2>Precio del Producto</h2></label>
-                        </p>
-                        <input type="text" name="precioProducto" id="precioProducto">
-                    </label>
-                </div>
-                <div class="optionNewProduct">
-                    <label for="categoriaProducto" class="left">
-                        <p>
-                            <label for="categoriaProducto"><h2>Categoria del Producto</h2></label>
-                        </p>
-                        <p class="categoria">
-                            <input type="radio" name="categoria" id="categoria">Masculina
-                            <input type="radio" name="categoria" id="categoria">Femenina
-                        </p>
-                    </label>
-                </div>
-                <div class="optionNewProduct">
-                    <label for="familiaProducto" class="left">
-                        <p>
-                            <label for="familiaAroma"><h2>Familia Aroma</h2></label>
-                        </p>
+
+                    <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
                         <select name="familiaAroma" id="familiaAroma">
                             <option value="1">Gucci</option>
                             <option value="2">Light</option>
                             <option value="3">Cred Silver</option>
                             <option value="4">Bvlgari</option>
                         </select>
-                    </label>
-                </div>
-                <div class="optionNewProduct">
-                    <label for="imagenProducto" class="left">
-                        <p>
-                            <h2>Imagen del Producto</h2>
-                        </p>
-                        <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg">
-                    </label>
-                </div>
-                <div class="optionNewProduct">
-                    <label for="descripcionProducto" class="left">
-                        <p>
-                            <h2>Descripcion del Producto</h2>
-                        </p>
-                        <textarea name="descripcionProducto" id="descripcionProducto"></textarea>
-                    </label>
-                </div>
-            <p class="botonRegistrarProducto">
-                <input type="submit" name="registrar" id="registrar" value="Registrar">
-            </p>
-        </form>
-    </div>
+
+                    <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
+                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates">
+                    
+                    <label for="descripcionProducto" class="form-label_dates">Descripcion del Producto </label>
+                    <textarea name="descripcionProducto" ></textarea>
+
+                    <input class="form-input-button" type="button" value="Crear" href="#">
+                    
+                </form>
+            </article>
+        </section>
+    </main>
     <%- include('../partials/footer') %>
 </body>
+
 </html>
