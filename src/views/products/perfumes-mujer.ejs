@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <header class="main-header">
+        <%- include('../partials/header') %> 
+    </header>
+    <main class="full body">
+    <h3 id="subtitulos">Perfumes para Mujer</h3>
+
+ <% for (i = 0 ; i <= products.length ; i++) { %>
+     <% if (products[11].gender == "MUJER" ) { %>
+        <%  products.forEach( perfumes => { %>
+            <article class="producto-destacado">
+                <div class="destacado-producto">
+                    <img class="product-img" src = <%= perfumes.image1 %> alt ="Imagen">
+                    <div class="main-product-description">
+                        <p id="name-product"><%=perfumes.name%></p>
+                        <p id="name-product"><%=perfumes.smellFamily%></p>
+                        <p id="precio"><%=perfumes.price%></p>
+                        <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                    </div>
+                </div>
+            </article>    
+        <% }) %>
+     <% }  else { %>
+    <h4>No hay perfumes disponibles</h4>
+      <% } %>
+ <% } %>
+
+    
+     
+</main>
+
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { get } = require('https');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -18,8 +19,11 @@ const controller ={
     },
     editarProducto:(req, res) => {
         res.render(path.join(__dirname, "../views/products/editarProducto.ejs"));
-    }
-
-}
-
+    },
+    womenDetail:(req, res) => {
+        res.render(path.join(__dirname, "../views/products/perfumes-mujer.ejs"), { products:products } );
+          }
+}   
+   
+console.log(products[0].name);
 module.exports = controller;
