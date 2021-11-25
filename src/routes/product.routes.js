@@ -13,4 +13,6 @@ router.get('/crearProducto', controller.crearNuevoProducto);
 
 router.get('/editarProducto', controller.editarProducto);
 
+router.get('/productsMen',controller.getProductsMen);
+
 module.exports = router;
