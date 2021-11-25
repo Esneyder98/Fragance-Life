@@ -11,6 +11,8 @@ router.get('/crearProducto', controller.crearNuevoProducto);
 
 router.get('/editarProducto', controller.editarProducto);
 
-router.get("/perfumesMujer", controller.womenDetail)
+router.get('/productsMen',controller.getProductsMen);
+
+router.get('/productsWomen',controller.getProductsWomen);
 
 module.exports = router;
