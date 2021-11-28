@@ -4,6 +4,7 @@ const path = require('path');
 const multer= require('multer')
 const {body} = require('express-validator')
 const controller = require('../controllers/product.controller');
+<<<<<<< HEAD
 const storage = multer.diskStorage({
 	destination : function(req, file, cb) {
 		cb(null, path.resolve(__dirname, '../../public/img'))
@@ -43,6 +44,12 @@ const validateCreateForm =[
 	body('descripcion').notEmpty().withMessage('Debes agregar una descripcion')
 ]
 //router.get('/detalleproducto', controller.detalle_producto);
+=======
+
+router.get('/listaProductos', controller.getProducts);
+
+router.get('/detalleproducto', controller.detalle_producto);
+>>>>>>> 2401c052c60844209172767e56e2a125a9490047
 
 router.get('/carritoDeCompras', controller.CarritoDeCompras);
 
@@ -57,5 +64,9 @@ router.get('/editarProducto', controller.editarProducto);
 router.get('/productsMen',controller.getProductsMen);
 
 router.get('/productsWomen',controller.getProductsWomen);
+
+router.get('/editarProducto/:idProducto/editar', controller.editarProducto);
+
+router.put('/editarProducto/:idProducto', controller.productoEditado);
 
 module.exports = router;

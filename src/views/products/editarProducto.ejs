@@ -9,15 +9,18 @@
     <main>
         <section class="register">
             <article>
-                <form action="/" name="editarProducto" id="editarProducto">
+                <form action="/products/editarProducto/<%= idProducto%>?_method=PUT" name="editarProducto" id="editarProducto" method="POST">
                     <label for="" class="form-label_title">Editar Producto</label>
                     <label for="nombreProducto" class="form-label_dates"></label>
 
+                    <label for="IdProducto" class="form-label_dates">ID del Producto </label>
+                    <input type="text" name="IdProducto"  class="form-input-dates" value="<%=busqueda.id %>" readonly>
+
                     <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
-                    <input type="text" name="nombreProducto"  class="form-input-dates">
+                    <input type="text" name="nombreProducto"  class="form-input-dates" value="<%=busqueda.name %>">
 
                     <label for="precioProducto" class="form-label_dates">Precio del Producto</label>               
-                    <input type="text" name="precioProducto"  class="form-input-dates">
+                    <input type="text" name="precioProducto"  class="form-input-dates" value="<%=busqueda.price %>">
                    
                     <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
                          <p class="categoria">
@@ -26,7 +29,7 @@
                         </p>
 
                     <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
-                        <select name="familiaAroma" id="familiaAroma">
+                        <select name="familiaAroma" id="familiaAroma" value="<%=busqueda.smellFamily %>">
                             <option value="1">Gucci</option>
                             <option value="2">Light</option>
                             <option value="3">Cred Silver</option>
@@ -41,12 +44,12 @@
                             <option value="DOLCE & GABBANA">DOLCE & GABBANA</option>
                         </select>
                     <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
-                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates">
+                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates" value="<%=busqueda.image1 %>">
                     
                     <label for="descripcionProducto" class="form-label_dates">Descripcion del Producto  </label>
-                    <textarea name="descripcionProducto" ></textarea>
+                    <textarea name="descripcionProducto"><%=busqueda.description %></textarea>
 
-                    <input class="form-input-button" type="button" value="Editar" href="#">
+                    <input class="form-input-button" type="submit" value="Editar" href="#">
                     
                 </form>
             </article>

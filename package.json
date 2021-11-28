@@ -19,6 +19,7 @@
     "url": "https://github.com/HeyderAndres/grupo_12_fraganceLife/issues"
   },
   "homepage": "https://github.com/HeyderAndres/grupo_12_fraganceLife#readme",
+<<<<<<< HEAD
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
@@ -26,7 +27,13 @@
     "method-override": "^3.0.0",
     "multer": "^1.4.3"
   },
+=======
+  "dependencies": {},
+>>>>>>> 2401c052c60844209172767e56e2a125a9490047
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.15"
   }
 }
