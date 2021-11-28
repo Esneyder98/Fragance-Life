@@ -106,7 +106,10 @@ header .main-navbar,header .main-header-top-right #search,.login-register{
     background-color: white;
     transition: all 500ms;
 }
-
+.promociones a,.producto-destacado a,.third-sale a{
+    text-decoration: none;
+    color: black;
+}
 .destacado-producto{
     display: flex;
     flex-wrap: wrap;
@@ -374,6 +377,10 @@ main section.register form .form-input-button{
     border: 1px solid gray;
     width: 40%;
     margin:20px 0px;
+}
+main section.register form .feedback{
+    color: red;
+    font-weight: bold;
 }
 main section.register form .login{
     position: absolute;
@@ -961,12 +968,12 @@ main section.login article{
     height: 20vh;
 }
 
-#nombreProducto, #precioProducto, #categoriaProducto, #familiaAroma {
+#nombreProducto, #precioProducto, #categoriaProducto, #familiaAroma, #gender,#marca {
     background-color:#E6E6E6;
     border: 1px solid rgba(167, 163, 163, 0.466);
     padding: 5px;
     border-radius: 4px;
-    width: 300px;
+    width: 100%;
 }
 
 #registrar {

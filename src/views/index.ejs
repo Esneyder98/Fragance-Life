@@ -10,13 +10,15 @@
         <h3 id="subtitulos">Promociones</h3>
         <article class="promo">
             <article class="promociones">
+                <a href="/products/<%= last.id %>">
                 <ul type ="None">
                     <h3>¡Súper promo de la Semana!</h3>
-                    <img class="product-img" src = "./img/Perfumes\silver-2.jpg" alt="imagen">
+                    <img class="product-img" src = "./img/Perfumes\<%= last.image1 %>" alt="imagen">
+                    <p id="discuont-product"><%= last.name %></p>
                     <div class="description">
                         <div class="description-before">
                             <li id="time">Antes:</li>
-                            <li id="precio-before">$150000</li>
+                            <li id="precio-before">$<%= last.price %> </li>
                         </div>
                         <div class="description-after">
                             <li id="time">Ahora:</li>
@@ -24,53 +26,28 @@
                         </div>
                     </div>
                 </ul>
+            </a>
             </article>
         <article class="second-sale">
+        <% promotion.forEach(product=> { %>
             <div class="third-sale">
-                <ul type ="None">
-                    <img class="product-img" src = ".\img\Perfumes\lbh-1.jpg" alt="imagen">
-                    <div class="promotion-description">
-                        <p id="discuont-product">Light Blue For Men</p>
-                        <div class="description-before">
-                            <li id="precio-before">$150000</li>
+                <a href="/products/<%= product.id %>">
+                    <ul type ="None">
+                        <img class="product-img" src = ".\img\Perfumes\<%= product.image1 %> " alt="imagen">
+                        <div class="promotion-description">
+                            <p id="discuont-product"><%= product.name %> </p>
+                            <div class="description-before">
+                                <li id="precio-before"><%= product.price %></li>
+                            </div>
+                            <p id="discuont-product">¡<%= product.discount %>% de Descuento!</p>
+                            <div class="description-after">
+                                <li id="precio">$95000</li>
+                            </div>
                         </div>
-                        <p id="discuont-product">¡36% de Descuento!</p>
-                        <div class="description-after">
-                            <li id="precio">$95000</li>
-                        </div>
-                    </div>
-                </ul>
+                    </ul>
+                </a>
             </div>
-            <div class="third-sale">
-                <ul type ="None">
-                    <img class="product-img" src = ".\img\Perfumes\bamboo-2.jpg" alt="imagen">
-                    <div class="promotion-description">
-                        <p id="discuont-product">Gucci Bamboo</p>
-                        <div class="description-before">
-                            <li id="precio-before">$150000</li>
-                        </div>
-                        <p id="discuont-product">¡36% de Descuento!</p>
-                        <div class="description-after">
-                            <li id="precio">$95000</li>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-            <div class="third-sale">
-                <ul type ="None">
-                    <img class="product-img" src = ".\img\Perfumes\eros-3.jpg" alt="imagen">
-                    <div class="promotion-description">
-                        <p id="discuont-product">Eros Versace</p>
-                        <div class="description-before">
-                            <li id="precio-before">$150000</li>
-                        </div>
-                        <p id="discuont-product">¡36% de Descuento!</p>
-                        <div class="description-after">
-                            <li id="precio">$95000</li>
-                        </div>
-                    </div>
-                </ul>
-            </div>
+        <%	}); %>
     </article>
         </article>
         
@@ -118,47 +95,20 @@
             </div>
         </article>
         <h3 id="subtitulos">Productos Nuevos</h3>
+        
         <article class="producto-destacado">
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\gg-1.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">Good Girl</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+        <% nuevos.forEach(newProd=> { %>
+            <a href="/products/<%= newProd.id %>">
+                <div class="destacado-producto">
+                    <img class="product-img" src = ".\img\Perfumes\<%= newProd.image1 %>" alt ="imagen">
+                    <div>
+                        <p id="name-product"><%= newProd.name %></p>
+                        <p id="precio">$<%= newProd.price %></p>
+                        <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                    </div>
                 </div>
-            </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\one-4.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">One Million</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\rock-1.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">Rock! By Shakira</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\acqua-1.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">Acqua Di Gio</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\lcred-1.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">La Coste Red</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
+            </a>
+        <%	}); %>
         </article>
     </main>
     <%- include('partials/footer') %>

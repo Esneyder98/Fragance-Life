@@ -9,37 +9,70 @@
     <main>
         <section class="register">
             <article>
-                <form action="/" name="crearProducto" id="crearProducto">
+                <form action="/products/crearProducto" method="POST" name="crearProducto" id="crearProducto" enctype="multipart/form-data">
                     <label for="" class="form-label_title">Crear Nuevo Producto</label>
-                    <label for="nombreProducto" class="form-label_dates"></label>
 
                     <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
-                    <input type="text" name="nombreProducto"  class="form-input-dates">
+                    <input type="text" name="nombreProducto"  class="form-input-dates" value="<%= locals.oldData ? oldData.nombreProducto : null %>">
+                    <!-- si local errors existe & hay algo en la propiedad firs:name -->
+                                <% if (locals.errors && errors.nombreProducto) { %>
+                                    <p class="feedback"><%=errors.nombreProducto.msg %> </p>
+                                <% } %>
 
                     <label for="precioProducto" class="form-label_dates">Precio del Producto</label>               
-                    <input type="text" name="precioProducto"  class="form-input-dates">
+                    <input type="text" name="precioProducto"  class="form-input-dates" value="<%= locals.oldData ? oldData.precioProducto : null %>">
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.precioProducto) { %>
+                        <p class="feedback"><%=errors.precioProducto.msg %> </p>
+                    <% } %>
                    
-                    <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
-                         <p class="categoria">
-                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Masculina
-                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Femenina
-                        </p>
-
-                    <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
-                        <select name="familiaAroma" id="familiaAroma">
-                            <option value="1">Gucci</option>
-                            <option value="2">Light</option>
-                            <option value="3">Cred Silver</option>
-                            <option value="4">Bvlgari</option>
+                    <label for="familiaProducto" class="form-label_dates">Marca</label>         
+                        <select name="brand" id="marca">
+                            <option value="PACO RABANNE" <%= locals.oldData && (oldData.brand == "PACO RABANNE" ? 'selected' : null) %>>PACO RABANNE</option>
+                            <option value="CREED" <%= locals.oldData && (oldData.brand == "CREED" ? 'selected' : null) %>>CREED</option>
+                            <option value="LACOSTE" <%= locals.oldData && (oldData.brand == "LACOSTE" ? 'selected' : null) %>>LACOSTE</option>
+                            <option value="GIORGIO ARMANI" <%= locals.oldData && (oldData.brand == "GIORGIO ARMANI" ? 'selected' : null) %>>GIORGIO ARMANI</option>
+                            <option value="DOLCE & GABBANA" <%= locals.oldData && (oldData.brand == "DOLCE & GABBANA" ? 'selected' : null) %>>DOLCE & GABBANA</option>
                         </select>
-
+                        <!-- si local errors existe & hay algo en la propiedad  -->
+                        <% if (locals.errors && errors.brand) { %>
+                            <p class="feedback"><%=errors.brand.msg %> </p>
+                        <% } %>
+                        <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
+                        <select name="smellFamily" id="familiaAroma">
+                            <option value="Gucci" <%= locals.oldData && (oldData.smellFamily == "Gucci" ? 'selected' : null) %>>Gucci</option>
+                            <option value="Light" <%= locals.oldData && (oldData.smellFamily == "Light" ? 'selected' : null) %>>Light</option>
+                            <option value="Cred Silver" <%= locals.oldData && (oldData.smellFamily == "Cred Silver" ? 'selected' : null) %>>Cred Silver</option>
+                            <option value="Bvlgari" <%= locals.oldData && (oldData.smellFamily == "Bvlgari" ? 'selected' : null) %>>Bvlgari</option>
+                        </select>
+                        <!-- si local errors existe & hay algo en la propiedad  -->
+                        <% if (locals.errors && errors.smellFamily) { %>
+                            <p class="feedback"><%=errors.smellFamily.msg %> </p>
+                        <% } %>
+                    <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
+                         <select name="gender" id="gender">
+                            <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %>>HOMBRE</option>
+                            <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %>>MUJER</option>
+                        </select>
+                    <label for="discount" class="form-label_dates" >Descuento</label>               
+                    <input type="text" name="discount"  class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.discount) { %>
+                        <p class="feedback"><%=errors.discount.msg %> </p>
+                    <% } %>
                     <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
-                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates">
-                    
-                    <label for="descripcionProducto" class="form-label_dates">Descripcion del Producto </label>
-                    <textarea name="descripcionProducto" ></textarea>
-
-                    <input class="form-input-button" type="button" value="Crear" href="#">
+                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg , .gif" class="form-input-dates">
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.imagenProducto) { %>
+                        <p class="feedback"><%=errors.imagenProducto.msg %> </p>
+                    <% } %>
+                    <label for="descripcion" class="form-label_dates">Descripcion del Producto </label>
+                    <textarea name="description" value="<%= locals.oldData ? oldData.description : null %>" ></textarea>
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="feedback"><%=errors.description.msg %> </p>
+                    <% } %>
+                    <input class="form-input-button" type="submit" value="Crear">
                     
                 </form>
             </article>
