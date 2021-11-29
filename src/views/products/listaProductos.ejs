@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <%- include('../partials/head') %>
 <body>
-    <%= productos %>
+  <header class="main-header">
+    <%- include('../partials/header') %>
+  </header>
+  <h1 class="title-list">Listado de Productos</h1>
+    <% for(let i = 0; i < productos.length; i++) { %>
+      <div class="productosLista">
+        <h2 class="subtitle-product">Producto <%= i + 1 %></h2>
+        <div class="producto-imagen-lista">
+          <div>
+            <h3>Nombre </h3>
+            <p><%= productos[i].name; %></p>
+            <h3>Precio</h3>
+            <p><%= productos[i].price; %></p>
+            <h3>Marca</h3>
+            <p><%= productos[i].brand; %></p>
+            <h3>Familia Aroma</h3>
+            <p><%= productos[i].smellFamily; %></p>
+            <h3>Categoria</h3>
+            <p><%= productos[i].gender; %></p>
+            <h3>Descuento</h3>
+            <p><%= productos[i].discount; %> %</p>
+          </div>
+          <div class="div-img-list">
+            <img src="/img/Perfumes/<%=productos[i].image1%>" alt="" class="img-product-list">
+          </div>
+        </div>
+          <h3>Descripcion</h3>
+          <p><%= productos[i].description; %></p>
+      </div>
+    <% }; %>
+    <%- include('../partials/footer') %>
 </body>
 </html>
