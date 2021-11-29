@@ -7,16 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <% if(locals.productos && productos.length) {%>
-        <% productos.forEach(producto => { %>
-          <h4><%= producto.id %></h4>
-        <p class="ps-text-grey">
-          <%= producto.name%> U$S <%=producto.price%>
-        </p>
-        <br />
-       <% }); %>
-      <%} else { %>
-        <p>No hay ningun dato disponible</p>
-      <%}%>
+    <%= productos %>
 </body>
 </html>

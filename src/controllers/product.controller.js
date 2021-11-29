@@ -22,9 +22,8 @@ const newId = () => {
 const controller ={
 
     getProducts: (req, res) => {
-        let idProductoUrl = req.params.idProducto;
-        let busquedaProducto = productosData.find(item => item.id == idProductoUrl);
-        res.render(path.join(__dirname, "../views/products/listaProductos.ejs"), {productos: busquedaProducto});
+        let productos = productosData;
+        res.render(path.join(__dirname, "../views/products/listaProductos.ejs"), {productos: productos});
     },
 
     detalle_producto:(req, res) =>{
