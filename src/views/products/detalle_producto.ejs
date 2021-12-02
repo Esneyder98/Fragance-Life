@@ -10,16 +10,16 @@
             <article >
                 <div class="imgs-product">
                     <div class="img-top">
-                        <img src="/img/Perfumes/<%= product.image1 %> " alt="" class="img_first">
+                        <img src="/img/Perfumes/<%= prod.image1 %> " alt="" class="img_first">
                     </div>
                     <div class="img-botton">
                         <div class="arrows">
                             <a href="#" class="arrow-right"><i class="fas fa-caret-left"></i></a>
                         </div>
                         <div class="img-botton_secont">
-                            <img src="/img/Perfumes/<%= product.image2 %> " alt="" class="img_secont">
-                            <img src="/img/Perfumes/<%= product.image3 %> " alt="" class="img_secont">
-                            <img src="/img/Perfumes/<%= product.image4 %> " alt="" class="img_secont">
+                            <img src="/img/Perfumes/<%= prod.image2 %> " alt="" class="img_secont">
+                            <img src="/img/Perfumes/<%= prod.image3 %> " alt="" class="img_secont">
+                            <img src="/img/Perfumes/<%= prod.image4 %> " alt="" class="img_secont">
                         </div>
                         <div class="arrows">
                             <a href="#" class="arrow-right"><i class="fas fa-caret-right"></i></a>
@@ -27,18 +27,21 @@
                     </div>
                 </div>
                     <div class=main-data>
-                        <h3 id="name"><%= product.name %></h3>
-                        <p id="availability"><%= product.available ? "Disponible" : "Agotado"%></p>
-                        <p id="price">$<%= price.full %>COP</p>
+                        <h3 id="name"><%= prod.name %></h3>
+                        <p id="availability"><%= prod.available ? "Disponible" : "Agotado"%></p>
+                        <% if(prod.promotion==true){ %> 
+                         <li id="precio-before">$ <%= pricefull %> </li>
+                        <% } %> 
+                        <p id="price">$ <%= pricediscount %> COP</p>
                         <form action="/products/carritoDeCompras" method="get">
                             <label id="cant" for="cant">Cantidad</label>
-                            <input id="box-number"type="number" value="number" name="cant"  min="1" required>
+                            <input id="box-number"type="number" value="number" name="cant"  min="1">
                             <button id="buy"type="submit"><i class="fas fa-shopping-cart"></i>COMPRAR</button>
                         </form>
                     </div>
                     <div class="description">
                         <h3>Descripcion del producto</h3>
-                        <p><%= product.description %> </p>
+                        <p><%= prod.description %> </p>
                     </div>
             </article>
         </section>

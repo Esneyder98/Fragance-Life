@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
-
+const port = process.env.PORT || 3000;
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
@@ -26,6 +26,6 @@ app.use('/user',usersRoutes)
 const publicPath =path.resolve(__dirname,'public');
  app.use(express.static(publicPath));
 
- const port = process.env.PORT || 3000;
+
 
 app.listen(port, () =>console.log(`server is listening on ${port}`));

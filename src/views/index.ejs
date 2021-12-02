@@ -10,7 +10,7 @@
         <h3 id="subtitulos">Promociones</h3>
         <article class="promo">
             <article class="promociones">
-                <a href="/products/<%= last.id %>">
+                <a href="/products/detalle/<%= last.id %>">
                 <ul type ="None">
                     <h3>¡Súper promo de la Semana!</h3>
                     <img class="product-img" src = "./img/Perfumes\<%= last.image1 %>" alt="imagen">
@@ -31,7 +31,7 @@
         <article class="second-sale">
         <% promotion.forEach(product=> { %>
             <div class="third-sale">
-                <a href="/products/<%= product.id %>">
+                <a href="/products/detalle/<%= product.id %>">
                     <ul type ="None">
                         <img class="product-img" src = ".\img\Perfumes\<%= product.image1 %> " alt="imagen">
                         <div class="promotion-description">
@@ -98,7 +98,7 @@
         
         <article class="producto-destacado">
         <% nuevos.forEach(newProd=> { %>
-            <a href="/products/<%= newProd.id %>">
+            <a href="/products/detalle/<%= newProd.id %>">
                 <div class="destacado-producto">
                     <img class="product-img" src = ".\img\Perfumes\<%= newProd.image1 %>" alt ="imagen">
                     <div>

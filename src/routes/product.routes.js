@@ -6,7 +6,7 @@ const {body} = require('express-validator')
 const controller = require('../controllers/product.controller');
 const storage = multer.diskStorage({
 	destination : function(req, file, cb) {
-		cb(null, path.resolve(__dirname, '../../public/img'))
+		cb(null, path.resolve(__dirname, '../../public/img/Perfumes'))
 	},
 	filename : function(req, file, cb){
 		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -37,10 +37,11 @@ const validateCreateForm =[
                 throw new Error(`Las extenciones de archivo permitidas son ${acceptedExtensions.join(',')}`)
             }
         }
+    
 
         return true;
     }),
-	body('descripcion').notEmpty().withMessage('Debes agregar una descripcion')
+body('description').notEmpty().withMessage('Debes agregar una descripcion'),
 ]
 //router.get('/detalleproducto', controller.detalle_producto);
 
@@ -53,10 +54,10 @@ router.get('/detalleproducto', controller.detalle_producto);
 router.get('/carritoDeCompras', controller.CarritoDeCompras);
 
 router.get('/crearProducto', controller.crearNuevoProducto);
-router.post('/crearProducto',uploadFile.single('imagenProducto'),validateCreateForm, controller.store);
+router.post('/crearProducto',uploadFile.single('imagenProducto'),validateCreateForm, controller.storee);
 
 /*** GET ONE PRODUCT detail ***/
-router.get('/:id',controller.detail);
+router.get('/detalle/:id',controller.detail);
 
 router.get('/editarProducto', controller.editarProducto);
 

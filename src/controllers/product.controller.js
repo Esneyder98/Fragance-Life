@@ -8,7 +8,7 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const productosData = require('../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+//const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const newId = () => {
 	let ultimo = 0;
@@ -36,16 +36,16 @@ const controller ={
     crearNuevoProducto:(req, res) => {
         res.render(path.join(__dirname, "../views/products/crearNuevoProducto.ejs"));
     },
-    store:(req, res) => {
+    storee:(req, res) => {
         let promo=false;
         const resultValidation = validationResult(req);
-
         if(resultValidation.errors.length >0){
             return res.render('products/crearNuevoProducto',{
                 errors: resultValidation.mapped(),
                 oldData:req.body
             })
         }
+
             if (req.body.discount >= 0){
             promo=true;
         }
@@ -61,25 +61,29 @@ const controller ={
             promotion: promo,
             discount: req.body.discount,
             imagen1: req.file.filename,
-            ddescription: req.body.description,
+            description: req.body.description,
         }
         products.push(newProduct)
+        
         let nuevoProductoGuardar = JSON.stringify(products,null,2);
         fs.writeFileSync(path.resolve(__dirname,'../data/productsDataBase.json'), nuevoProductoGuardar);
+        res.redirect('/')
     },
-    // Detail - Detail from one product
+   // Detail - Detail from one product
 	detail: (req, res) => {
-		let id = req.params.id;
-		let product = products.filter(product => product.id == id)[0];
-		let price = {
-			full : toThousand(product.price),
-			discount: toThousand(Math.round(product.price * (1 - product.discount / 100)))
-		}
-		res.render(path.join(__dirname, "../views/products/detalle_producto.ejs"), {product, price});
-	},
-    editarProducto:(req, res) => {
-        res.render(path.join(__dirname, "../views/products/editarProducto.ejs"));
-    },
+	    let id = req.params.id;
+     	let prod = products.filter(item => item.id == id)[0];
+
+        let pricefull=prod.price;
+        let pricediscount=prod.discount > 0 ? prod.price-(prod.price*prod.discount/100): prod.price;
+		// let pric = {
+		// 	full : toThousand(prod.price),
+		// 	disc: toThousand(prod.discount > 0 ? prod.price-(prod.price*prod.discount/100): prod.price)
+		// }
+	 	res.render(path.join(__dirname, "../views/products/detalle_producto.ejs"), {prod, pricefull,pricediscount});
+        
+     },
+    
     editarProducto:(req, res) => {
 
         let idProductoUrl = req.params.idProducto;

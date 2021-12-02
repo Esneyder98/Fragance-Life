@@ -12,9 +12,6 @@
                 <form action="/products/crearProducto" method="POST" name="crearProducto" id="crearProducto" enctype="multipart/form-data">
                     <label for="" class="form-label_title">Crear Nuevo Producto</label>
 
-                    <label for="IdProducto" class="form-label_dates">Id del Producto </label>
-                    <input type="text" name="IdProducto"  class="form-input-dates">
-
                     <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
                     <input type="text" name="nombreProducto"  class="form-input-dates" value="<%= locals.oldData ? oldData.nombreProducto : null %>">
                     <!-- si local errors existe & hay algo en la propiedad firs:name -->

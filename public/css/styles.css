@@ -286,15 +286,19 @@ main section article .main-data form{
     
 }
 
-main section article .main-data  #name,#price,#buy{
+main section article .main-data  #name,#price,#buy ,#precio-before{
 font-size: 1rem;
 font-weight: 900;
 }
-main section article .main-data  #name,#availability,#price{
+main section article .main-data  #name,#availability,#price,#precio-before{
     padding-bottom: 10px;
 }
 main section article .main-data #cant{
     padding-bottom: 5px;
+}
+#precio-before{
+    list-style:none;
+    text-align: left;
 }
 main section article .main-data #box-number{
     text-align: center;
