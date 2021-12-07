@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+    <header class="main-header">
+        <%- include('../partials/header') %>
+    </header>
+    <main class="full body">
+        <h3 id="subtitulos">AMADERADO</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
+            <% if(productsSmellFamily[i].smellFamily == 'AMADERADO'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsSmellFamily[i].name %></p>
+                    <p id="precio">$<%=productsSmellFamily[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">FRESCO</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
+            <% if(productsSmellFamily[i].smellFamily == 'FRESCO'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsSmellFamily[i].name %></p>
+                    <p id="precio">$<%=productsSmellFamily[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">ORIENTAL</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
+            <% if(productsSmellFamily[i].smellFamily == 'ORIENTAL'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsSmellFamily[i].name %></p>
+                    <p id="precio">$<%=productsSmellFamily[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">FLORAL</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
+            <% if(productsSmellFamily[i].smellFamily == 'FLORAL'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsSmellFamily[i].name %></p>
+                    <p id="precio">$<%=productsSmellFamily[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">FRUTAL</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
+            <% if(productsSmellFamily[i].smellFamily == 'FRUTAL'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsSmellFamily[i].name %></p>
+                    <p id="precio">$<%=productsSmellFamily[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+       
+       
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

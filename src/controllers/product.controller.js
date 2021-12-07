@@ -107,8 +107,14 @@ const controller ={
     },
     getProductsWomen:(req, res) => {
         res.render('../views/products/productsWomen.ejs',{products: productsModel.getProductsWomen()});
-    }
-
+    },
+    getProductsBrand:(req, res) => {
+        res.render('../views/products/productsBrand.ejs',{productsBrand: productsModel.getproducts()});
+    },
+    getProductsSmellFamily:(req, res) => {
+        res.render('../views/products/productsSmellFamily.ejs',{productsSmellFamily: productsModel.getproducts()});
+    },
+    
 }
 
 module.exports = controller;

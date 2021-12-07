@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+    <header class="main-header">
+        <%- include('../partials/header') %>
+    </header>
+    <main class="full body">
+        <h3 id="subtitulos">PACO RABANNE</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsBrand.length; i++) {%>
+            <% if(productsBrand[i].brand == 'PACO RABANNE'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsBrand[i].name %></p>
+                    <p id="precio">$<%=productsBrand[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">CREED</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsBrand.length; i++) {%>
+            <% if(productsBrand[i].brand == 'CREED'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsBrand[i].name %></p>
+                    <p id="precio">$<%=productsBrand[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">LACOSTE </h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsBrand.length; i++) {%>
+            <% if(productsBrand[i].brand == 'LACOSTE'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsBrand[i].name %></p>
+                    <p id="precio">$<%=productsBrand[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">GIORGIO ARMANI</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsBrand.length; i++) {%>
+            <% if(productsBrand[i].brand == 'GIORGIO ARMANI'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsBrand[i].name %></p>
+                    <p id="precio">$<%=productsBrand[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+        <h3 id="subtitulos">DOLCE & GABBANA</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < productsBrand.length; i++) {%>
+            <% if(productsBrand[i].brand == 'DOLCE & GABBANA'){ %> 
+                <div class="destacado-producto">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= productsBrand[i].name %></p>
+                    <p id="precio">$<%=productsBrand[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>              
+                </div>
+            </div>
+            <% }}; %>
+        </article>
+       
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

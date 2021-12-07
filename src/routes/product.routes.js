@@ -65,6 +65,10 @@ router.get('/productsMen',controller.getProductsMen);
 
 router.get('/productsWomen',controller.getProductsWomen);
 
+router.get('/productsBrand',controller.getProductsBrand);
+
+router.get('/productsSmellFamily',controller.getProductsSmellFamily);
+
 router.get('/editarProducto/:idProducto/editar', controller.editarProducto);
 
 router.put('/editarProducto/:idProducto', controller.productoEditado);

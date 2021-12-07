@@ -1,0 +1,261 @@
+[33mcommit 53cb762e4cbd8f47727ee4fa5f875096afd5689f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 2c96d83 fffeb59
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Thu Nov 25 17:07:46 2021 -0500
+
+    vista productos para mujer
+
+[33mcommit 2c96d832119d68d3141c5ec6d00fd4a2df8c2727[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Thu Nov 25 14:27:53 2021 -0500
+
+    archivo vista productos para mujer
+
+[33mcommit fffeb596056c43daa7d85fa8f5f0409e6f4392f5[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Wed Nov 24 23:28:15 2021 -0500
+
+    add: creacion archivo productsMen.js y productsModel.js para filtrar perfumes masculinos
+
+[33mcommit 53eed3e9362b52acc74d5ac79570870cebcc1d34[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Mon Nov 15 10:32:55 2021 -0500
+
+    creacion de archivos JSON
+
+[33mcommit 8984040795c21a3720daf7347d37b594e9ac6e95[m
+Author: Gerrack2021 <gaarciniegas23@misena.edu.co>
+Date:   Thu Nov 11 10:21:33 2021 -0500
+
+    Edicion del archivo retro.md para el sprint 4
+
+[33mcommit 7948a051f912b6602d916ce109c9bad835a0b7c9[m
+Merge: db87c52 aa85892
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Thu Nov 11 08:56:18 2021 -0500
+
+    Merge branch 'master' of https://github.com/HeyderAndres/grupo_12_fraganceLife
+
+[33mcommit db87c5266a567f6fd32376151e21bf3151d59802[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Wed Nov 10 22:44:18 2021 -0500
+
+    modificacion de pagina crear producto
+
+[33mcommit aa858925053af0e00167cef33a1913bf082cd2b5[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Tue Nov 9 18:49:42 2021 -0500
+
+    actualizando tablero de trabajo
+
+[33mcommit 165dd724c4aa795623716d514c52b4418d510f80[m
+Author: CristianOz <mayteoelan@gmail.com>
+Date:   Tue Nov 9 16:28:37 2021 -0500
+
+    Weekly standup
+
+[33mcommit bc47d8de13a9fcb9a421927ba7617a7d14c8ad64[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Mon Nov 8 22:28:30 2021 -0500
+
+    cree enlaces entre paginas
+
+[33mcommit 5ed2dfe04b04505a8cbb9e51340bd0afb2f919e6[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Mon Nov 8 21:56:17 2021 -0500
+
+    agregando pagina editar productos
+
+[33mcommit f77018be63083f9bafb17fa30d2f7ae7257a640c[m
+Author: Gerrack2021 <gaarciniegas23@misena.edu.co>
+Date:   Sun Nov 7 15:32:45 2021 -0500
+
+    Como administrador quiero poder crear nuevos productos para agregarlos a los listados del sitio.
+
+[33mcommit d2517083d486efdd95420a9c261680ee521449fb[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Sat Nov 6 19:50:12 2021 -0500
+
+    Implementacion de Archivos Parciales
+
+[33mcommit 7f49d85183d1e0941cc46694186ce04cd8765c67[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Sat Nov 6 10:30:16 2021 -0500
+
+    Como desarrollar quiero separar las vistas en carpetas para tener una mejor organización
+
+[33mcommit f02a426c0f9c3ed0d9a6bbfeedd7257e9e733721[m
+Author: CristianOz <mayteoelan@gmail.com>
+Date:   Thu Nov 4 22:52:25 2021 -0500
+
+    Implementacion de MVC y ejs
+
+[33mcommit 3cf6937cac8f9c9ee227833cc3e15af10c6b6625[m
+Merge: e1c3edd 724bc23
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Thu Oct 28 18:36:27 2021 -0500
+
+    Merge branch 'master' of https://github.com/HeyderAndres/grupo_12_fraganceLife
+
+[33mcommit e1c3edd8eb7da8edd28663de18fc7ed3bacd6466[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Thu Oct 28 18:35:17 2021 -0500
+
+    Heroku
+
+[33mcommit 724bc2389340371979f449f28a39f049e6ae2928[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Tue Oct 26 19:53:35 2021 -0500
+
+    correccion label de carrito de compra (subtotal-impuesto-total)
+
+[33mcommit 55017948907c2163248ddbc73599bc79942add16[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Mon Oct 25 22:35:44 2021 -0500
+
+    Agregando tablero de trabajo
+
+[33mcommit 367d9618dfdf094f82b2feb57da88cb5ccd0e583[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Mon Oct 25 21:28:48 2021 -0500
+
+    Agregando starfish
+
+[33mcommit b1b9fa13fd6cb455fdab259e66172e7703f4d179[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Mon Oct 25 21:01:32 2021 -0500
+
+    agregue archivo retro.md del sprint 1
+
+[33mcommit 5ccb4de1df8a9c6319377bd5ee00bba709f0b705[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Mon Oct 25 20:52:23 2021 -0500
+
+    agregando pagina de carrito de compra para movil, tablet y computadora.
+
+[33mcommit 4049761746cc763333425161695188dc8d6d716e[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Sun Oct 24 23:41:25 2021 -0500
+
+    Agregando estilos al Home
+
+[33mcommit 231ef61bc3e6f0757bd4108c7576e044bbb677b2[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Sat Oct 23 12:13:16 2021 -0500
+
+    Agregando seccion login,incluyendo diseño responsive
+
+[33mcommit 59eee0dfb4b16086b35a685c109011f4a8a5580b[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Thu Oct 21 08:13:19 2021 -0500
+
+    Agregando seccion register,incluyendo diseño y responsive
+
+[33mcommit b42305d207590862c48ab28104abf383048a14d2[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Thu Oct 21 00:03:46 2021 -0500
+
+    Integrando codigo borrado y aregando footer responsivo
+
+[33mcommit 74a02a11ce8efb777ff840747433fcfba81f88fe[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Mon Oct 18 22:47:39 2021 -0500
+
+    Completando Home
+
+[33mcommit 2a14c85e76e68c986f87f99f73b51782500c54c8[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Sun Oct 17 23:11:59 2021 -0500
+
+    agregando estilos responsive detalle_producto version tablet y desktops
+
+[33mcommit 96012e5887a5e809fa81945145666f3110758218[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Sun Oct 17 21:22:47 2021 -0500
+
+    agregando estilos detalle_producto version movil
+
+[33mcommit 5628baa49fbb9b10e6d7a784658566b72cf67040[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Sun Oct 17 07:58:01 2021 -0500
+
+    agregando estructura html detalle de producto y estilo css de img-product
+
+[33mcommit 22382de1f6191f5cb35587c3c6611cbc988c060a[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Sat Oct 16 17:23:12 2021 -0500
+
+    Agregando header responsivo cualquier dispositivo
+
+[33mcommit f909dc7b1f556ed4df6ad5fa9c569429587316c3[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Sat Oct 16 14:40:45 2021 -0500
+
+    Agregando header responsive para movil y tablet
+
+[33mcommit 69994d99a6a6a33a9ca61e0268626d63130a0289[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Wed Oct 13 23:50:28 2021 -0500
+
+    actualizacion de wireframe con colores y logotipo
+
+[33mcommit fd954a80f1bffe59374ff78e4f55d25ad93abbcf[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Wed Oct 13 21:58:06 2021 -0500
+
+    Agregando Carpeta de Imagenes
+
+[33mcommit ecec1fceaba214b46f10fc3b6d02968ad8d5ac5b[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Tue Oct 12 07:24:51 2021 -0500
+
+    Agregando extructura basica del header con sus styles iniciales
+
+[33mcommit 9fda7fecdaf039539a8c658bd7628d2e1def7e63[m
+Author: NickoNO242 <nico568_97@hotmail.com>
+Date:   Mon Oct 11 19:45:30 2021 -0500
+
+    Agregando Public
+
+[33mcommit 8f2d39563ee2d8de78533cb6428484a0d06e2abb[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Mon Oct 11 19:30:01 2021 -0500
+
+    instalando expres y creando extrutura de archivos básica
+
+[33mcommit 3590a69e86fd2077c444df477f1f8313ab195958[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Thu Oct 7 00:13:11 2021 -0500
+
+    Agregue los wireframe, el logotipo y la paleta de colores
+
+[33mcommit a65418b5cbb2c1ec92b266809c29c36134dd4c7b[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Wed Oct 6 19:23:08 2021 -0500
+
+    agregando enlaces
+
+[33mcommit 988229b7746bab3c25f01359dc80a87007d65cf7[m
+Merge: 8e8f5fa 4cbe165
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Wed Oct 6 19:13:39 2021 -0500
+
+    resolviendo conflicto
+
+[33mcommit 8e8f5fa01530b53f30de67176ce3253cd5e03977[m
+Author: Esneyder Saavedra <esneydersa@hotmail.com>
+Date:   Wed Oct 6 19:07:57 2021 -0500
+
+    Agregando descripcion referentes (perfumaste,Veronna perfumeria) e integrante del equipo de desarrollo
+
+[33mcommit 4cbe16507cca394db807da0e4d65d68eaae08fee[m
+Author: NickoNO242 <90795006+NickoNO242@users.noreply.github.com>
+Date:   Wed Oct 6 19:00:34 2021 -0500
+
+    Update README.md
+
+[33mcommit 9d133921583cc8de3fb6d4d38567a1445a8b1e86[m
+Author: HeyderAndres <haarellano2@misena.edu.co>
+Date:   Wed Oct 6 18:36:12 2021 -0500
+
+    Creacion del documento README.md
