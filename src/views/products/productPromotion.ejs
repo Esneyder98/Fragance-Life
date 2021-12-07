@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+    <header class="main-header">
+        <%- include('../partials/header') %>
+    </header>
+
+    <main class="full body">
+        <h3 id="subtitulos">Promociones</h3>
+        <article class="producto-destacado">
+   <% for (let i = 0; i < promotion.length; i++) {%>
+    <% if (promotion[i].promotion == true) {%> 
+            <div class="destacado-producto">
+             
+                <img class="product-img" src= "..\..\img\perfumes/<%= promotion[i].image2 %>" alt="Imagen">
+                <div class="main-product-description">
+                    <p id="name-product"><%= promotion[i].name %></p>
+                    <p id="precio">$<%=promotion[i].price %></p>
+                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
+                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                   
+                </div>
+            </div>
+            <% }}; %>
+
+
+        </article>
+
+
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

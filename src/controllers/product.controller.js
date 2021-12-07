@@ -127,6 +127,9 @@ const controller ={
     administrar:(req, res) => {
         res.render('../views/products/administrar.ejs',{administrar: productsModel.getproducts()});
     },
+    promotion:(req, res) => {
+        res.render('../views/products/productpromotion.ejs',{promotion: productsModel.getproducts()});
+    },
     
 }
 

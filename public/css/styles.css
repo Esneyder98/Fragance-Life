@@ -620,6 +620,10 @@ main #carrito .finalizarCompra form #finalizar{
 }
 
 /*---------formulario eliminar------------------*/
+#eliminar{
+    display: flex;
+    width: 0;
+}
 #eliminar input{
     width: 40%;
     min-width: 85px;

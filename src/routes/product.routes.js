@@ -77,4 +77,6 @@ router.get('/eliminar/:idProducto', controller.deleteProduct);
 
 router.get('/administrar', controller.administrar);
 
+router.get('/promotion', controller.promotion);
+
 module.exports = router;
