@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+<body>
+  <header class="main-header">
+    <%- include('../partials/header') %>
+  </header>
+ <div id="admin">
+      <h2>Administrador de Productos</h2>
+      <a href="/products/crearProducto ">Crear nuevo producto</a>
+<table class="productosExistentes">
+    <tr>  
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Ver</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  <%   for (let i = 0; i < administrar.length; i++) {%>    
+    <tr>
+      <td class="centrarIcon"><%= administrar[i].id %> </td>
+      <td><%= administrar[i].name %></td>
+      <td class="centrarIcon"><a href="/products/detalle/<%= administrar[i].id %> "><i class="fas fa-eye"></i></a></td>
+      <td class="centrarIcon"><a href="/products/editarProducto/<%= administrar[i].id %>/editar/"><i class="fas fa-pencil-alt"></i></a></td>
+      <td class="centrarIcon"><a href="/products/eliminar/<%= administrar[i].id %>"><i class="fas fa-trash-alt"></i></a></td>
+    </tr>
+   <% }; %>  
+  </table>
+</div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

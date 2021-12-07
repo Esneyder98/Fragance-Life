@@ -97,6 +97,16 @@ const controller ={
         // res.render(path.join(__dirname, "../views/products/editarProducto.ejs"));
     },
 
+    deleteProduct: (req, res) => {
+        let idProducto = req.params.idProducto;
+        const newDb = productosData.filter(item => item.id != idProducto);
+        fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"),
+        JSON.stringify(newDb, null, 4),  { encoding: "utf8" }
+        
+    );
+        res.redirect('/products/administrar');
+    },
+
     productoEditado: (req, res) => {
         console.log(req.body);
         productsModel.updateProduct(req.params.idProducto, req.body);
@@ -113,6 +123,9 @@ const controller ={
     },
     getProductsSmellFamily:(req, res) => {
         res.render('../views/products/productsSmellFamily.ejs',{productsSmellFamily: productsModel.getproducts()});
+    },
+    administrar:(req, res) => {
+        res.render('../views/products/administrar.ejs',{administrar: productsModel.getproducts()});
     },
     
 }

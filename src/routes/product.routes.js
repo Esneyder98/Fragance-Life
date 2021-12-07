@@ -73,4 +73,8 @@ router.get('/editarProducto/:idProducto/editar', controller.editarProducto);
 
 router.put('/editarProducto/:idProducto', controller.productoEditado);
 
+router.get('/eliminar/:idProducto', controller.deleteProduct);
+
+router.get('/administrar', controller.administrar);
+
 module.exports = router;
