@@ -5,5 +5,12 @@
         "lastName" : "Nossa",
         "email" : "nico568_97@hotmail.com",
         "password" : "12345"
+    },
+    {
+    "id": 2,
+    "name": "Pati",
+    "lastName" : "sanchez",
+    "email": "esaavedra70@misena.edu.co",
+    "password": "$2a$10$V05RJ./PB27iYekINJloReuwO0DlLL4LCpiivOGoamaw1B0.0xQqC"
     }
 ]

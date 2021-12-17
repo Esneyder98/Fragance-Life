@@ -8,16 +8,20 @@
     <main>
         <section class="login">
             <article>
-                <form action="" method="post" class="form">
+                <form action="/user/login" method="post" class="form">
                     <label for="" class="form-label_title">Inicio de Sesion Clientes</label>
                     
                     <label for="surnames" class="form-label_dates">Correo electronico*:</label>
                     <input type="email" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates" required>
-
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
                     <label for="password" class="form-label_dates">Contraseña*:</label>
                     <input type="password" name="password" id="password" autocomplete="new-password" placeholder="*********" class="form-input-dates" required>
                     <a id="form-a" href="#">¿Olvidó su contraseña?</a>
-                    <input class="form-input-button login" type="button" value="Iniciar Sesion" href="#">
+                    <input class="form-input-button login" type="submit" value="Iniciar Sesion">
                     <input class="form-input-button register" type="submit" value="Registrarse">
                 </form>
             </article>
