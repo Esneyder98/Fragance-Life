@@ -1,4 +1,6 @@
 const express = require("express");
+const guestMideleware = require('../middlewares/guestMiddlewares');
+const authMiddleware = require('../middlewares/authMiddleware');
 const router = express.Router();
 const path = require('path');
 const multer= require('multer')
@@ -53,13 +55,13 @@ router.get('/detalleproducto', controller.detalle_producto);
 
 router.get('/carritoDeCompras', controller.CarritoDeCompras);
 
-router.get('/crearProducto', controller.crearNuevoProducto);
+router.get('/crearProducto',authMiddleware, controller.crearNuevoProducto);
 router.post('/crearProducto',uploadFile.single('imagenProducto'),validateCreateForm, controller.storee);
 
 /*** GET ONE PRODUCT detail ***/
 router.get('/detalle/:id',controller.detail);
 
-router.get('/editarProducto', controller.editarProducto);
+router.get('/editarProducto',authMiddleware, controller.editarProducto);
 
 router.get('/productsMen',controller.getProductsMen);
 
@@ -69,13 +71,13 @@ router.get('/productsBrand',controller.getProductsBrand);
 
 router.get('/productsSmellFamily',controller.getProductsSmellFamily);
 
-router.get('/editarProducto/:idProducto/editar', controller.editarProducto);
+router.get('/editarProducto/:idProducto/editar',authMiddleware, controller.editarProducto);
 
 router.put('/editarProducto/:idProducto', controller.productoEditado);
 
-router.get('/eliminar/:idProducto', controller.deleteProduct);
+router.get('/eliminar/:idProducto',authMiddleware, controller.deleteProduct);
 
-router.get('/administrar', controller.administrar);
+router.get('/administrar',authMiddleware, controller.administrar);
 
 router.get('/promotion', controller.promotion);
 

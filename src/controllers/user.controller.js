@@ -23,12 +23,12 @@ const controller ={
 				//elimino la clave por seguridad
 				delete userToLogin.password;
 				//conservar la sesion del usuario
-				//req.session.userLogged = userToLogin;
+				req.session.userLogged = userToLogin;
 				// si en el body viene remenber_user
-				// if(req.body.remember_user) {
+				 if(req.body.remember_user) {
 				// 	//seteo una cookie guardando la propiedad email que dure 2 min
-				// 	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-				// }
+				 	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+				 }
 
 				return res.redirect('/');
 			} 
