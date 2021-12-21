@@ -7,6 +7,30 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const User = require(path.join(__dirname,'../model/User'));
 const controller ={
+	afterRegister:(req, res) =>{
+        // res.render(path.join(__dirname, "../views/users/register.ejs"))
+		let errors = validationResult(req);
+		if(errors.isEmpty()) {
+			res.redirect('/');
+		} else {
+			res.render(path.join(__dirname, "../views/users/register.ejs"), {errors: errors.array(), old: req.body});
+		}
+
+		let newUser={
+            id: req.body.document,
+            name : req.body.names,
+            lastName: req.body.surnames,
+            email: req.body.email,
+            password: req.body.password,
+			confirmpassword: req.body.confirmpassword,
+			image: req.file.avatar
+        }
+        users.push(newUser);
+        
+        let nuevoUsuarioGuardar = JSON.stringify(users,null,2);
+        fs.writeFileSync(path.resolve(__dirname,'../data/usersDataBase.json'), nuevoUsuarioGuardar);
+        res.redirect('/')
+	},
 	register:(req, res) =>{
         res.render(path.join(__dirname, "../views/users/register.ejs"))
 	},
