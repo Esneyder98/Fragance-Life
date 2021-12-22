@@ -7,7 +7,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const User = require(path.join(__dirname,'../model/User'));
 const controller ={
-	afterRegister:(req, res) =>{
+afterRegister:(req, res) =>{
         // res.render(path.join(__dirname, "../views/users/register.ejs"))
 		let errors = validationResult(req);
 		if(errors.isEmpty()) {
@@ -21,9 +21,9 @@ const controller ={
             name : req.body.names,
             lastName: req.body.surnames,
             email: req.body.email,
-            password: req.body.password,
+            password: bcryptjs.hashSync(req.body.password, 10),
 			confirmpassword: req.body.confirmpassword,
-			image: req.file.avatar
+			//avatar: 
         }
         users.push(newUser);
         
@@ -73,7 +73,11 @@ const controller ={
 			}
 		});
     },
-    
+    profile: (req, res) => {
+		return res.render(path.join(__dirname, "../views/users/userProfile.ejs"), {
+			user: req.session.userLogged
+		});
+	},
 
 }
 

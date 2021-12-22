@@ -20,13 +20,13 @@
                     <% } %>
 
                     <label for="document" class="form-label_dates">Documento*:</label>
-                    <input type="number" name="document" autocomplete = "" minlength="2" class="form-input-dates"  value="<%= locals.old && old.document ? old.document : ' '%>">
+                    <input type="number" name="document" autocomplete ="" minlength="2" class="form-input-dates"  value="<%= locals.old && old.document ? old.document : ' '%>">
 
                     <label for="names" class="form-label_dates">Nombres*:</label>
-                    <input type="text" name="names" autocomplete = "given-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.names ? old.names : ' '%>">
+                    <input type="text" name="names" autocomplete ="given-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.names ? old.names : ' '%>">
 
                     <label for="surnames" class="form-label_dates">Apellidos*:</label>
-                    <input type="text" name="surnames" autocomplete = "family-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.surnames ? old.surnames : ' '%>">
+                    <input type="text" name="surnames" autocomplete ="family-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.surnames ? old.surnames : ' '%>">
 
                     <label for="surnames" class="form-label_dates">Correo electronico*:</label>
                     <input type="text" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates" value="<%= locals.old && old.email ? old.email : ' '%>">

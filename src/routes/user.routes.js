@@ -38,6 +38,8 @@ router.post('/login', userController.loginProcess);
 router.get('/register',guestMideleware, userController.register);
 router.post('/register', fileUpload.single('avatar'), validaciones, userController.afterRegister);
 
+// Perfil de Usuario
+router.get('/profile/', authMiddleware, userController.profile);
 
 
 module.exports = router;

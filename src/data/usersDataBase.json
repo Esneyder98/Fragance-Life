@@ -11,14 +11,24 @@
     "name": "Pati",
     "lastName": "sanchez",
     "email": "esaavedra70@misena.edu.co",
-    "password": "$2a$10$V05RJ./PB27iYekINJloReuwO0DlLL4LCpiivOGoamaw1B0.0xQqC"
+    "password": "$2a$10$kGPnBV9Aukw/oDmddi7vuOZurVtwCYCoFv7Y/zzYCZkNWjBEXXVWu"
   },
   {
-    "id": "457",
-    "name": " Adam",
-    "lastName": " Kike",
-    "email": "adam@ejemplo.com",
-    "password": "1234",
-    "confirmpassword": "1234"
+    "id": "12345678",
+    "name": " Esneyder",
+    "lastName": " ejemplo",
+    "email": " esaavedra123456@hotmail.com",
+    "password": "$2a$10$TU8IwArWg3JBvQFin/zqH.KhHHl5Jgb44KnBsIDrN/pXa.3etBY96",
+    "confirmpassword": "1234",
+    "avatar": "fkldhjflkdfgjflkdfjgl"
+  },
+  {
+    "id": "12345678",
+    "name": " Esneyder",
+    "lastName": " ejemplo",
+    "email": "esaavedra123456@hotmail.com",
+    "password": "$2a$10$k2GgmkADAZ2yKVhnfLfvsuFsZw9AVYZQaT1P9LMlaPVHSpfbz0bGy",
+    "confirmpassword": "1234",
+    "avatar": "fkldhjflkdfgjflkdfjgl"
   }
 ]
