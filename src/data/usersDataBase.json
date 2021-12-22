@@ -4,14 +4,14 @@
     "name": "Nicolás",
     "lastName": "Nossa",
     "email": "nico568_97@hotmail.com",
-    "password": "12345"
+    "password": "+5i8WnhE8YGyLmka85sGMlla2sSylG8dgF26u/j6F0mhtwP8hRpSQIXeDL9ygs5X"
   },
   {
     "id": 2,
     "name": "Pati",
     "lastName": "sanchez",
     "email": "esaavedra70@misena.edu.co",
-    "password": "$2a$10$V05RJ./PB27iYekINJloReuwO0DlLL4LCpiivOGoamaw1B0.0xQqC"
+    "password": "$2a$10$kGPnBV9Aukw/oDmddi7vuOZurVtwCYCoFv7Y/zzYCZkNWjBEXXVWu"
   },
   {
     "id": "457",
@@ -20,5 +20,21 @@
     "email": "adam@ejemplo.com",
     "password": "1234",
     "confirmpassword": "1234"
+  },
+  {
+    "id": "12345",
+    "name": " Cristian",
+    "lastName": " Sanjuan",
+    "email": " ejemplo@ejemplo.com",
+    "password": "12345",
+    "confirmpassword": "12345"
+  },
+  {
+    "id": "12345",
+    "name": " Cristian",
+    "lastName": " Sanjuan",
+    "email": "ejemplo@ejemplo.com",
+    "password": "12345",
+    "confirmpassword": "12345"
   }
 ]
