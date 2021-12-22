@@ -1,23 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const multer = require('multer');
-const guestMideleware = require('../middlewares/guestMiddlewares');
-const authMiddleware = require('../middlewares/authMiddleware');
+
 
 const { body } = require('express-validator');
 const path = require('path');
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, path.resolve(__dirname, '../../public/img/userImages'));
-    },
-    filename: (req, file, callback) => {
-        console.log(file);
-        let imageName = "imageUser" + Date.now() + path.extname(file.originalname);
-        callback(null, imageName);
-    }
-});
 
-let fileUpload = multer({storage});
+// Middlewares
+const uploadFile = require('../middlewares/multerMiddleware');
+const guestMideleware = require('../middlewares/guestMiddlewares');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 const validaciones = [
     body('document').notEmpty().withMessage('¡Debes ingresar un numero de documento!'),
     body('names').notEmpty().withMessage('¡Debes ingresar al menos un nombre!'),
@@ -31,12 +23,12 @@ const validaciones = [
 const userController = require('../controllers/user.controller');
 
 
+router.get('/register',guestMideleware, userController.register);
+router.post('/register', uploadFile.single('avatar'), validaciones, userController.processRegister);
 
 router.get('/login',guestMideleware, userController.login);
 router.post('/login', userController.loginProcess);
 
-router.get('/register',guestMideleware, userController.register);
-router.post('/register', fileUpload.single('avatar'), validaciones, userController.afterRegister);
 
 // Perfil de Usuario
 router.get('/profile/', authMiddleware, userController.profile);

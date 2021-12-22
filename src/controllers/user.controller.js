@@ -7,32 +7,42 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const User = require(path.join(__dirname,'../model/User'));
 const controller ={
-afterRegister:(req, res) =>{
-        // res.render(path.join(__dirname, "../views/users/register.ejs"))
-		let errors = validationResult(req);
-		if(errors.isEmpty()) {
-			res.redirect('/');
-		} else {
-			res.render(path.join(__dirname, "../views/users/register.ejs"), {errors: errors.array(), old: req.body});
-		}
 
-		let newUser={
-            id: req.body.document,
-            name : req.body.names,
-            lastName: req.body.surnames,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10),
-			confirmpassword: req.body.confirmpassword,
-			//avatar: 
-        }
-        users.push(newUser);
-        
-        let nuevoUsuarioGuardar = JSON.stringify(users,null,2);
-        fs.writeFileSync(path.resolve(__dirname,'../data/usersDataBase.json'), nuevoUsuarioGuardar);
-        res.redirect('/')
-	},
 	register:(req, res) =>{
         res.render(path.join(__dirname, "../views/users/register.ejs"))
+	},
+	processRegister: (req, res) => {
+		const resultValidation = validationResult(req);
+
+		if (resultValidation.errors.length > 0) {
+			return res.render(path.join(__dirname, "../views/users/register.ejs"), {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+//verifico si enxiste un usuario previamente con el mismo correo
+		let userInDB = User.findByField('email', req.body.email);
+
+		if (userInDB) {
+			return res.render(path.join(__dirname, "../views/users/register.ejs"), {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
+		}
+// si no tengo errores
+		let userToCreate = {
+			...req.body,
+			password: bcryptjs.hashSync(req.body.password, 10),
+			avatar: req.file.filename
+		}
+console.log(userToCreate)
+		let userCreated = User.create(userToCreate);
+
+		return res.redirect('/user/login');
 	},
 	login:(req, res) =>{
         res.render(path.join(__dirname, "../views/users/login.ejs"));
