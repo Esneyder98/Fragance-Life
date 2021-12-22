@@ -9,6 +9,7 @@ const path = require('path');
 const uploadFile = require('../middlewares/multerMiddleware');
 const guestMideleware = require('../middlewares/guestMiddlewares');
 const authMiddleware = require('../middlewares/authMiddleware');
+// const adminMiddleware = require('../middlewares/adminMiddleware');
 
 const validaciones = [
     body('document').notEmpty().withMessage('¡Debes ingresar un numero de documento!'),
