@@ -30,6 +30,14 @@
         </div>
           <h3>Descripcion</h3>
           <p><%= productos[i].description; %></p>
+          <div class="button-options">
+            <form action="/products/editarProducto/<%= productos[i].id %>/editar">
+              <input type="submit" action="/" value="Editar Producto">
+            </form>
+            <form action="/">
+              <input type="submit" value="Eliminar Producto">
+            </form>
+          </div>
       </div>
     <% }; %>
     <%- include('../partials/footer') %>

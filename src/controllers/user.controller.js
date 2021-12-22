@@ -66,7 +66,12 @@ console.log(userToCreate)
 
 				return res.redirect('profile');
 			} 
-			return res.render(path.join(__dirname, "../views/users/login.ejs"), {
+
+			if(req.body.category == "Administrador") {
+				return res.render('/listaProductos');
+			}
+			
+ 			return res.render(path.join(__dirname, "../views/users/login.ejs"), {
 				errors: {
 					email: {
 						msg: 'Las credenciales son inválidas'

@@ -71,7 +71,9 @@ router.get('/productsBrand',controller.getProductsBrand);
 
 router.get('/productsSmellFamily',controller.getProductsSmellFamily);
 
-router.get('/editarProducto/:idProducto/editar',authMiddleware, controller.editarProducto);
+// router.get('/editarProducto/:idProducto/editar',authMiddleware, controller.editarProducto);
+
+router.get('/editarProducto/:idProducto/editar', controller.editarProducto);
 
 router.put('/editarProducto/:idProducto', controller.productoEditado);
 
