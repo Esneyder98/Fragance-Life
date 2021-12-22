@@ -64,7 +64,7 @@ console.log(userToCreate)
 				 	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 				 }
 
-				return res.redirect('/');
+				return res.redirect('profile');
 			} 
 			return res.render(path.join(__dirname, "../views/users/login.ejs"), {
 				errors: {
@@ -88,7 +88,13 @@ console.log(userToCreate)
 			user: req.session.userLogged
 		});
 	},
-
+	logout: (req, res) => {
+		//elimino la cookie para poderme desloguear
+		res.clearCookie('userEmail');
+	// borro lo que este en sesion
+		req.session.destroy();
+		return res.redirect('/');
+	}
 }
 
 module.exports = controller;

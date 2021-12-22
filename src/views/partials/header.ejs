@@ -1,21 +1,36 @@
 
 <div class="main-header-top-bar">
+    
     <div class="main-header-top-left">
       <a class="logo"  href="/"><img src="/img/logoFraganceLife.png" alt="logo-fragance-life"></a>
     </div>
     <div class="main-header-top-right">
+        <% if (locals.isLogged) { %>
+            <div class="login-register">
+                <img src="/img/users/<%= locals.userLogged.avatar %>">
+                <a class="dropdown-item" href="/user/profile">Hi <%= locals.userLogged.name %></a>
+							 
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+                     <a class="dropdown-item" href="/user/logout">Logout</a>
+                </ul>
+            </div>
+        <% } else { %>
         <div class="login-register">
             <ul>
                 <li><a href="/user/login">Iniciar sesión</a></li>
                 <li class="reg"><a href="/user/register">Registrate</a></li>
             </ul>
         </div>
+        <% } %>
         <div class="rightt">
             <input type="search" name="search" id="search" placeholder="Busca productos aqui">
             <ul class="right-navbar">
                 <li class="searchs"><a href="#"><i class="fas fa-search"></i></a></li>
                 <li class="main-nav"><a href="#"><i class="fas fa-th-list"></i></a></li>
+                <% if (!locals.isLogged) { %>
                 <li><a href="/user/login"><i class="fas fa-user" id="user"></i></a></li>
+                <% } %>
                 <li><a href="/products/carritoDeCompras"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>

@@ -6,17 +6,11 @@
   "email": "nico568_97@hotmail.com",
   "password": "12345"
  },
- {
-  "id": 2,
-  "name": "Pati",
-  "lastName": "sanchez",
-  "email": "esaavedra70@misena.edu.co",
-  "password": "$2a$10$kGPnBV9Aukw/oDmddi7vuOZurVtwCYCoFv7Y/zzYCZkNWjBEXXVWu"
- },
+
  {
   "id": 3,
   "document": "123",
-  "names": " Esneyder",
+  "name": " Esneyder",
   "surnames": "Saavedra",
   "email": "esneydersa@hotmail.com",
   "password": "$2a$10$XMtA7usqCq2/v9vOdGiaK.SUn5GkZ.FX/mZxWdWRQyMsD6C2h083S",

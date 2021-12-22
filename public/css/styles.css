@@ -702,14 +702,17 @@ footer{
         justify-content: flex-end;
         padding: 10px 0px;
     }
-    header .main-header-top-right .login-register ul{
+    header .main-header-top-right .login-register ul,a{
         width : 50%;
         display:flex;
         justify-content:flex-end;
         text-decoration: none;
         align-items: center;
     }
-   
+    header .login-register img{
+        width:40px;
+        border-radius: 50%;
+    }
     header .login-register ul li {
         text-align: center;
         width:45%;
