@@ -52,7 +52,7 @@ la programacion, soy amante de las zonas verdes y actividades al aire libre.
 Basándonos en la retrospectiva hecha del Sprint 1 hemos organizado este diagrama. 
 
 ## Tablero  de trabajo
-- https://drive.google.com/drive/folders/1aCduxdN2E37UQO9EW_0a8nNZ4ybNeZHa?usp=sharing
+-- https://drive.google.com/drive/folders/1aCduxdN2E37UQO9EW_0a8nNZ4ybNeZHa?usp=sharing
 
 
 ## Heroku
