@@ -42,5 +42,16 @@
   "confirmpassword": "abc",
   "category": "Administrador",
   "avatar": "imageUser1640274724922_img.jpg"
+ },
+ {
+  "id": 6,
+  "document": "1234",
+  "names": " prueba",
+  "surnames": " ejemplo",
+  "email": "pipe931378@gmail.com",
+  "password": "$2a$10$30ThhKTl5YDj3puOIOYNLOttUvv3KTHtDKa9/TpErcZTCmcqy2KSS",
+  "confirmpassword": "1234",
+  "category": "Administrador",
+  "avatar": "imageUser1640278447177_img.jpg"
  }
 ]

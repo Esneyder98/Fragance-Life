@@ -461,7 +461,18 @@ main section.login form .register{
 main .register  article form textarea{
     height: 100px;
 }
+/*---------------------------profile-------------------------*/
+div.profile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
 
+
+div.profile img {
+    max-width: 80%
+}
 /*---------------------------main carrito de compras-------------------------*/
 main #carrito{
 
@@ -709,10 +720,7 @@ footer{
         text-decoration: none;
         align-items: center;
     }
-    header .login-register img{
-        width:40px;
-        border-radius: 50%;
-    }
+    
     header .login-register ul li {
         text-align: center;
         width:45%;
@@ -724,6 +732,24 @@ footer{
         text-decoration: none;
         font-size: 1rem;
         color: #FFFFFF;
+    }
+    header .sesion{
+        display:flex;
+        justify-content: flex-end;
+        padding: 10px 0px;
+        align-items: center;
+    }
+    header .sesion img{
+        width:40px;
+        height:33px;
+        border-radius: 50%;
+    }
+    header .sesion  a{
+        text-decoration: none;
+        color: #152440;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 400ms;
     }
     ::placeholder {
         padding: 1px;
@@ -792,13 +818,16 @@ main section.login form .form-input-button {
     max-width:125px;
 }
 /*main profile*/
-#per{
+/* div.profile{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
-div.profile .row {
+
+
+div.profile img {
     max-width: 80%
-}
+} */
 /* :::::::::::footer:::::::::::::::::::: */
     .footer{
         flex-direction:row;

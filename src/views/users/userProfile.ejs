@@ -7,18 +7,18 @@
 		</header>
 	
 	<!-- Container -->
-	<div class="profile" id="per"">
-			<div class="row">
+	<div class="profile">
+			
 				<h2>Hi <%= user.name%> <%= user.surnames  %> </h2>
 				<img src="/img/users/<%= user.avatar %> ">
 				
-				<div class="alert alert-success"><%= user.email %> </div>
+				<h4 class="alert alert-success ">Email: <%= user.email %> <h4/>
+				<h4 class="alert alert-success ">Categoria: <%= user.category %> <h4/>
 				<!--Botones de rol admin-->
 				<form action="/products/administrar">
 					<input type="submit" value="Administrar Productos">
 				</form>
 				<!-- //Container -->
-			</div>
 	</div>
 
 	
