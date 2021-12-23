@@ -1122,3 +1122,21 @@ main section.login article{
 .title-list, .subtitle-product {
     text-align: center;
 }
+
+
+/*Botones de Editar y Eliminar en vista de lista productos*/
+
+.button-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-input-button-edit-delete {
+    padding: 5px;
+    color:black;
+    font-weight: bold;
+    background-color:rgba(128, 128, 128,0.8);
+    border: 1px solid gray;
+    /* width: 20%; */
+    margin:20px 0px;
+}

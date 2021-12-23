@@ -32,10 +32,10 @@
           <p><%= productos[i].description; %></p>
           <div class="button-options">
             <form action="/products/editarProducto/<%= productos[i].id %>/editar">
-              <input type="submit" action="/" value="Editar Producto">
+              <input type="submit" action="/" value="Editar Producto" class="form-input-button-edit-delete">
             </form>
             <form action="/">
-              <input type="submit" value="Eliminar Producto">
+              <input type="submit" value="Eliminar Producto" class="form-input-button-edit-delete">
             </form>
           </div>
       </div>

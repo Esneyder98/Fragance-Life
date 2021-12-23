@@ -1,15 +1,20 @@
 [
     {
-        "IdProducto": "1",
-        "nombreProducto": "CREED SILVER MOUNTAIN WATER",
-        "precioProducto": "150000",
-        "discount": "10",
-        "familiaAroma": "1",
-        "marca": "PACO RABANNE",
-        "imagenProducto": "",
-        "descripcionProducto": "Silver Mountain Water de Creed es una fragancia de la familia olfativa Aromática para Hombres y Mujeres. Silver Mountain Water se lanzó en 1995. La Nariz detrás de esta fragrancia es Olivier Creed Sixth Generation. Las Notas de Salida son bergamota y mandarina; las Notas de Corazón son té verde y grosellas negras; las Notas de Fondo son gálbano, almizcle, sándalo y petit grain",
-        "id": "1"
-    },
+        "id": 1,
+        "name": "CREED SILVER MOUNTAIN WATER",
+        "available": true,
+        "price": 150000,
+        "brand": "CREED",
+        "smellFamily": "AMADERADO",
+        "gender": "HOMBRE",
+        "promotion": true,
+        "discount": 36,
+        "image1": "silver-1.jpg",
+        "image2": "silver-2.jpg",
+        "image3": "silver-3.jpg",
+        "image4": "silver-4.jpg",
+        "description": "Silver Mountain Water de Creed es una fragancia de la familia olfativa Aromática para Hombres y Mujeres. Silver Mountain Water se lanzó en 1995. La Nariz detrás de esta fragrancia es Olivier Creed Sixth Generation. Las Notas de Salida son bergamota y mandarina; las Notas de Corazón son té verde y grosellas negras; las Notas de Fondo son gálbano, almizcle, sándalo y petit grain"
+      },
     {
         "id": 2,
         "name": "CREED ORIGINAL VETIVER",

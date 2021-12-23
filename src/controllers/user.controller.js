@@ -69,8 +69,10 @@ console.log(userToCreate)
 
 			if(req.body.category == "Administrador") {
 				return res.render('/listaProductos');
+			} else {
+				res.send("Eres administrador");
 			}
-			
+
  			return res.render(path.join(__dirname, "../views/users/login.ejs"), {
 				errors: {
 					email: {
