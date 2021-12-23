@@ -1,16 +1,15 @@
 [
  {
-    "id": 2,
-    "document": "123",
-    "name": " Esneyder",
-    "surnames": "Saavedra",
-    "email": "esaavedra70@misena.edu.co",
-    "password": "$2a$10$XMtA7usqCq2/v9vOdGiaK.SUn5GkZ.FX/mZxWdWRQyMsD6C2h083S",
-    "confirmpassword": "1234",
-    "category": "Comprador",
-    "avatar": "imageUser1640173216401_img.png"
+  "id": 2,
+  "document": "123",
+  "name": " Esneyder",
+  "surnames": "Saavedra",
+  "email": "esaavedra70@misena.edu.co",
+  "password": "$2a$10$XMtA7usqCq2/v9vOdGiaK.SUn5GkZ.FX/mZxWdWRQyMsD6C2h083S",
+  "confirmpassword": "1234",
+  "category": "Comprador",
+  "avatar": "imageUser1640173216401_img.png"
  },
-
  {
   "id": 3,
   "document": "123",
@@ -21,5 +20,16 @@
   "confirmpassword": "1234",
   "category": "Administrador",
   "avatar": "imageUser1640173216401_img.png"
+ },
+ {
+  "id": 4,
+  "document": "5555",
+  "names": "German",
+  "surnames": "Arciniegas",
+  "email": "b@c.com",
+  "password": "$2a$10$S0zx3WKX8Wzpe6oNl1H6cuynolG5gr0r3GfGsXtQQhlF5sEKTr8S6",
+  "confirmpassword": "ancdef",
+  "category": "Administrador",
+  "avatar": "imageUser1640274156564_img.jpg"
  }
 ]
