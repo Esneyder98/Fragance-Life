@@ -7,22 +7,21 @@
 		</header>
 	
 	<!-- Container -->
-	<div class="container" style="margin-top: 40px;">
-		<div class="row">
-			<div class="col-md-3">
+	<div class="profile" id="per"">
+			<div class="row">
 				<h2>Hi <%= user.name%> <%= user.surnames  %> </h2>
 				<img src="/img/users/<%= user.avatar %> ">
 				
 				<div class="alert alert-success"><%= user.email %> </div>
+				<!--Botones de rol admin-->
+				<form action="/products/administrar">
+					<input type="submit" value="Administrar Productos">
+				</form>
+				<!-- //Container -->
 			</div>
-		</div>
 	</div>
 
-	<!--Botones de rol admin-->
-	<form action="/products/listaProductos">
-		<input type="submit" value="Ir a Productos">
-	</form>
-	<!-- //Container -->
+	
 	
 	<%- include('../partials/footer'); %>
 </body>

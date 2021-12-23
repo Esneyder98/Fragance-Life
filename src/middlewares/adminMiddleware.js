@@ -2,11 +2,9 @@ const path = require('path');
 
 function adminMiddleware(req, res, next) {
 
-    if(req.body.category == "Administrador") {
-        res.redirect('/products/listaProductos');
-    } 
-
+    if(req.session.userLogged){
+      
+    }
     next();
 }
-
 module.exports = adminMiddleware;

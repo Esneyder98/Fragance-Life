@@ -1,6 +1,7 @@
 const express = require("express");
 const guestMideleware = require('../middlewares/guestMiddlewares');
 const authMiddleware = require('../middlewares/authMiddleware');
+const buyerMiddleware = require('../middlewares/buyerMiddleware');
 const router = express.Router();
 const path = require('path');
 const multer= require('multer')
@@ -48,20 +49,20 @@ body('description').notEmpty().withMessage('Debes agregar una descripcion'),
 //router.get('/detalleproducto', controller.detalle_producto);
 
 
-router.get('/listaProductos', controller.getProducts);
+router.get('/listaProductos', buyerMiddleware,controller.getProducts);
 
 router.get('/detalleproducto', controller.detalle_producto);
 
 
 router.get('/carritoDeCompras', controller.CarritoDeCompras);
 
-router.get('/crearProducto',authMiddleware, controller.crearNuevoProducto);
+router.get('/crearProducto',buyerMiddleware,authMiddleware, controller.crearNuevoProducto);
 router.post('/crearProducto',uploadFile.single('imagenProducto'),validateCreateForm, controller.storee);
 
 /*** GET ONE PRODUCT detail ***/
 router.get('/detalle/:id',controller.detail);
 
-router.get('/editarProducto',authMiddleware, controller.editarProducto);
+router.get('/editarProducto',buyerMiddleware,authMiddleware, controller.editarProducto);
 
 router.get('/productsMen',controller.getProductsMen);
 
@@ -79,7 +80,7 @@ router.put('/editarProducto/:idProducto', controller.productoEditado);
 
 router.get('/eliminar/:idProducto',authMiddleware, controller.deleteProduct);
 
-router.get('/administrar',authMiddleware, controller.administrar);
+router.get('/administrar',buyerMiddleware,authMiddleware, controller.administrar);
 
 router.get('/promotion', controller.promotion);
 

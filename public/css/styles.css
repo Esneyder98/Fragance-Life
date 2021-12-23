@@ -791,7 +791,14 @@ main section.login article {
 main section.login form .form-input-button {
     max-width:125px;
 }
-
+/*main profile*/
+#per{
+    display: flex;
+    justify-content: center;
+}
+div.profile .row {
+    max-width: 80%
+}
 /* :::::::::::footer:::::::::::::::::::: */
     .footer{
         flex-direction:row;
