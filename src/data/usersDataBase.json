@@ -31,5 +31,16 @@
   "confirmpassword": "ancdef",
   "category": "Administrador",
   "avatar": "imageUser1640274156564_img.jpg"
+ },
+ {
+  "id": 5,
+  "document": "1224",
+  "names": "Cristian",
+  "surnames": "Sanjuan",
+  "email": "cs@ejemplo.com",
+  "password": "$2a$10$SaepjKXzS7ZDzyWWsya6n.b3baTof6Xy3V16D1uGbOu41WedR5hY6",
+  "confirmpassword": "abc",
+  "category": "Administrador",
+  "avatar": "imageUser1640274724922_img.jpg"
  }
 ]
