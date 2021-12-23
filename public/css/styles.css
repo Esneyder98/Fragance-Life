@@ -466,12 +466,13 @@ div.profile{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     
 }
 
 
 div.profile img {
-    max-width: 80%
+    max-width: 50%
 }
 /*---------------------------main carrito de compras-------------------------*/
 main #carrito{
