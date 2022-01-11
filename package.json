@@ -19,7 +19,10 @@
     "url": "https://github.com/HeyderAndres/grupo_12_fraganceLife/issues"
   },
   "homepage": "https://github.com/HeyderAndres/grupo_12_fraganceLife#readme",
-  "dependencies": {},
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.5"
+  },
   "devDependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
