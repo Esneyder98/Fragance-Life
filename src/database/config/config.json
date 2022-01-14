@@ -1,5 +1,6 @@
 {
   "development": {
+    "username":"root",
     "password": "1234",
     "database": "fragance_life",
     "host": "127.0.0.1",

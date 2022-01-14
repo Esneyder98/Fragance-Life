@@ -18,6 +18,13 @@ module.exports = (sequelize, dataTypes) => {
     };
   
     const Category = sequelize.define(nameModel, columns, options);
+    Category.associate = (models)=>{
+      //una categoria pertenece a muchos productos
+    Category.hasMany(models.User,{
+      as: "category",
+      foreignKey: "category_id"
+    })
+  }
     return Category;
   };
   
