@@ -315,18 +315,5 @@
     "discount": "20",
     "imagen1": "imagenProducto-1638417690279.jpg",
     "description": "hjklñ"
-  },
-  {
-    "id": 22,
-    "name": "Perfume Prueba",
-    "available": true,
-    "price": "125000",
-    "brand": "PACO RABANNE",
-    "smellFamily": "Light",
-    "gender": "HOMBRE",
-    "promotion": true,
-    "discount": "0",
-    "imagen1": "imagenProducto-1640273610490.jpg",
-    "description": "Este es un producto de prueba"
   }
 ]

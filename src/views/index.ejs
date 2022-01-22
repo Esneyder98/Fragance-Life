@@ -13,7 +13,7 @@
                 <a href="/products/detalle/<%= last.id %>">
                 <ul type ="None">
                     <h3>¡Súper promo de la Semana!</h3>
-                    <img class="product-img" src = "./img/Perfumes\<%= last.image1 %>" alt="imagen">
+                    <img class="product-img" src = "./img/Perfumes\<%= last.imagen1 %>" alt="imagen">
                     <p id="discuont-product"><%= last.name %></p>
                     <div class="description">
                         <div class="description-before">
@@ -50,57 +50,31 @@
         <%	}); %>
     </article>
         </article>
-        
+
+        <!---->
         <h3 id="subtitulos">Productos Destacados</h3>
         <article class="producto-destacado">
+            <% promotion.forEach(product=> { %>
             <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\invictus-2.jpg" alt ="imagen">
-                <div class="main-product-description">
-                    <p id="name-product">Invictus</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\chanel-3.jpg" alt ="imagen">
+                <img class="product-img" src = ".\img\Perfumes\<%= product.imagen1%>" alt ="imagen">
                 <div>
-                    <p id="name-product">Chanel N°5</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                    <p id="name-product"><%= product.name%></p>
+                    <p id="precio"><%= product.price%></p>
+                    <a class="compra" href="/products/detalle/<%= product.id%>"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
                 </div>
             </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\vetiver-2.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">Creed Vetiver</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\lbm-4.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">Light Blue</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\coco-1.jpg" alt ="imagen">
-                <div>
-                    <p id="name-product">Coco Chanel</p>
-                    <p id="precio">$150000</p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
+        <% }) %>
         </article>
+
+        <!---->
+        
         <h3 id="subtitulos">Productos Nuevos</h3>
         
         <article class="producto-destacado">
         <% nuevos.forEach(newProd=> { %>
             <a href="/products/detalle/<%= newProd.id %>">
                 <div class="destacado-producto">
-                    <img class="product-img" src = ".\img\Perfumes\<%= newProd.image1 %>" alt ="imagen">
+                    <img class="product-img" src = ".\img\Perfumes\<%= newProd.imagen1 %>" alt ="imagen">
                     <div>
                         <p id="name-product"><%= newProd.name %></p>
                         <p id="precio">$<%= newProd.price %></p>
