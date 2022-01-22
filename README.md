@@ -54,7 +54,6 @@ Basándonos en la retrospectiva hecha del Sprint 1 hemos organizado este diagram
 ## Tablero  de trabajo
 -- https://drive.google.com/drive/folders/1aCduxdN2E37UQO9EW_0a8nNZ4ybNeZHa?usp=sharing
 
-
 ## Heroku
 -Fragance Life:
  https://fragance-life.herokuapp.com/
