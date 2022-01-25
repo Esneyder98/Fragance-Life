@@ -1,17 +1,17 @@
 Weekly standup 
-Durante la realización del sprint 3, se convocaron tres reuniones semanales las cuales tenían como objetivo llevar un seguimiento a las tareas asignadas,  a continuación, se presenta un resumen de las tareas y los retos que tuvimos al realizarlas.
+Durante la realización del sprint 6, se convocaron dos reuniones semanales las cuales tenían como objetivo llevar un seguimiento a las tareas asignadas,  a continuación, se presenta un resumen de las tareas y los retos que tuvimos al realizarlas.
 Resumen
 1.	Tareas que se completaron sin dificultades:
 
 -	Implementar una Weekly standup para tener un resumen del estado de las tareas.
--	Actualizar el archivo retro.md con las conclusiones del segundo sprint.
+-	Actualizar el archivo retro.md con las conclusiones del quinto sprint.
 -	Actualizar tablero de trabajo para mejorar la organización.
--	Crear nuevos productos para agregar al listado del sitio.
--	Como administrador poder modificar, Actualizar y corregir información de mis productos.
+-	Realizar el script de creación de estructura de base de datos.
+-   Creación de Script de datos de base de datos.
 
 2.	Tareas que tuvieron obstáculos, pero lograron estar terminadas a tiempo: 
 
--	Implementar modulo EJS en todas las vistas actuales.
-Retos: Al momento de implementar el modelo MVC y renombrar los archivos HTML a EJS las rutas del css no estaban siendo leídas por la respectiva vista, con la ayuda del profesor Matías logramos encontrar el error. 
--	Organizar las vistas en carpetas para permitir mayor organización del código y separar las vistas comunes en cada uno de los sitios en archivos parciales.
-Retos: Al implementar las carpetas algunas vistas como la del login y registro no estaban funcionando, el compañero con la tarea asignada solicito ayuda y entre todos se logro encontrar la solución.
+-	Implementar CRUD de usuarios.
+Retos: Al momento de implementar el modelo del CRUD en el controlador surgieron distintos inconvnientes respecto a como llamar los datos provenientes de las promesas para asi implementar correctamente el modelo con el controlador. 
+-	Organizar las vistas de Usuarios
+Retos: Surgieron conflictos para traer los usuarios logueados con sus datos.

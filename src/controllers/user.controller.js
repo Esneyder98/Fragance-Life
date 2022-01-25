@@ -112,8 +112,7 @@ const controller ={
 	edit: async (req, res) => {
 	
 		let userLogged = await prueba.findByPk(req.params.id)
-		console.log("numer" + req.params.id);
-		console.log(userLogged);
+		
 		return res.render(path.join(__dirname, "../views/users/editProfile.ejs"),{user: userLogged})
 	},
 	processEdit : (req, res) => {
@@ -127,7 +126,7 @@ const controller ={
 		}
 
 		let userEdited = User.update(userToEdit, req.params.id);
-		console.log(userEdited);
+		
 		return res.render(path.join(__dirname, "../views/users/login.ejs"), { user : req.body});
 	}
 }

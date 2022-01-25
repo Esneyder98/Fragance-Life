@@ -1,5 +1,5 @@
 # FRAGANCE-LIFE
-- El presenta repositorio contiene el proyecto integrador del curso de desarrollo web full stack de Digital House, en el cual trabajaremos en la creación de un sitio web para la comercialización de un producto escogido por el equipo desarrollador.
+- El presente repositorio contiene el proyecto integrador del curso de desarrollo web full stack de Digital House, en el cual trabajaremos en la creación de un sitio web para la comercialización de un producto escogido por el equipo desarrollador.
 
 ## Productos y público Objetivo
 - Nuestro sitio web es diseñado para la comercialización perfumes y nos enfocaremos en un público objetivo bastante general (damas y caballeros), sin embargo, contaremos en la web con categorías por género, aroma y marcas de perfumes para segmentar mejor nuestro nicho de mercado, permitir a los clientes mayor facilidad de encontrar los productos y lograr un excelente posicionamiento de nuestros productos en el mercado. Adicionalmente, trabajaremos en diseños responsive que facilite la interacción de los clientes con el aplicativo y puedan realizar sus comprar desde distintos dispositivos.
@@ -48,8 +48,17 @@ me encanta escuchar música, viajar y conocer personas interesantes.
 la programacion, soy amante de las zonas verdes y actividades al aire libre. 
 
 ## Starfish Retrospective
+RETRO SPRINT 1
+-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/af6002858
+RETRO SPRINT 2
 -https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/aa9df7b72
-Basándonos en la retrospectiva hecha del Sprint 1 hemos organizado este diagrama. 
+RETRO SPRINT 3
+-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/a332f1c2f
+RETRO SPRINT 4
+-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/ad97b2c75
+RETRO SPRINT 5
+-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/adc697b02
+
 
 ## Tablero  de trabajo
 -- https://drive.google.com/drive/folders/1aCduxdN2E37UQO9EW_0a8nNZ4ybNeZHa?usp=sharing

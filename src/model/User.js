@@ -11,8 +11,6 @@ const User = {
 	findAll: function(){
 			db.users.findAll()
 			.then(function(resultado){
-				
-				
 				return resultado;
 			}).catch(function(error){
 				console.log(error);
@@ -21,8 +19,7 @@ const User = {
 //buscar usuario por id
 	findByPk: function(userId){
 		db.users.findByPk(userId)
-		.then(function(resultado){
-			console.log(resultado);	
+		.then(function(resultado){	
 			return resultado;
 		}).catch(function(error){
 			console.log(error);
@@ -60,7 +57,6 @@ const User = {
 		 const allUsers = await this.getUsers();
 		 const userFound = await allUsers.find((user) => 
 		 user.email === email);
-		 console.log(userFound);
 		 return userFound;
 	 } catch (err){
 		 console.log(err)
