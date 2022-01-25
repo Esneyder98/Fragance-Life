@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <header class="main-header">
+        <%- include('../partials/header.ejs') %> 
+    </header>
+    <main>
+        <section class="register">
+            <article>
+                <% if (locals.isLogged) { %>
+                <form method="POST" action="/user/profile/edit/<%= locals.userLogged.id %>"  class="form" enctype="multipart/form-data">
+                    <label for="" class="form-label_title">Edita tu cuenta</label>
+                    <label for="" class="form-label_subtittle">Edita tu Perfil, es Fácil!!!
+                    </label>
+
+                    <% if(locals && locals.errors) { %>
+                        <% for(let error in errors) { %>
+                            <p><%= errors[error].msg %></p>
+                        <% } %>
+                    <% } %>
+
+                    <label for="document" class="form-label_dates">Documento*:</label>
+                    <input type="number" name="document" autocomplete ="" minlength="2" class="form-input-dates"  >
+
+                    <label for="names" class="form-label_dates">Nombre*:</label>
+                    <input type="text" name="names" autocomplete ="given-name" minlength="2" class="form-input-dates" >
+
+                    <label for="surnames" class="form-label_dates">Apellidos*:</label>
+                    <input type="text" name="surnames" autocomplete ="family-name" minlength="2" class="form-input-dates" >
+
+                    <label for="email" class="form-label_dates">Correo electronico*:</label>
+                    <input type="text" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates">
+
+                    <label for="password" class="form-label_dates">Contraseña*:</label>
+                    <input type="password" name="password" id="password" autocomplete="new-password" placeholder="*********" class="form-input-dates" >
+
+                    <label for="password" class="form-label_dates">Confirmar Contraseña*:</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" autocomplete="new-password" placeholder="*********" class="form-input-dates" >
+
+                    <label for="avatar" class="form-label_dates">Avatar*:</label>
+                    <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .jpeg, .gif"  >
+
+                    <input class="form-input-button" type="submit" value="Editar">
+                    
+                </form>
+                <% } %>
+            </article>
+        </section>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

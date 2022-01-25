@@ -39,8 +39,8 @@
 
                     <label for="names" class="form-label_dates">Categoria*:</label>
                     <select name="category" id="category">
-                        <option value="Administrador" <%= locals.old && (old.category == "Administrador" ? 'selected' : null) %>>Administrador</option>
-                        <option value="Comprador" <%= locals.old && (old.category == "Comprador" ? 'selected' : null) %>>Comprador</option>
+                        <option value= 1 <%= locals.old && (old.category == 1 ? 'selected' : null) %>>Administrador</option>
+                        <option value= 2 <%= locals.old && (old.category == 2 ? 'selected' : null) %>>Comprador</option>
                     </select>
 
                     <label for="avatar" class="form-label_dates">Avatar*:</label>

@@ -7,7 +7,7 @@
     <div class="main-header-top-right">
         <% if (locals.isLogged) { %>
             <div class="sesion">
-                <img src="/img/users/<%= locals.userLogged.avatar %>">
+                <img src="/img/users/<%= locals.userLogged.avatar %> ">
                 <a class="dropdown-item" href="/user/profile">Hi <%= locals.userLogged.name %></a>
 							 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -48,9 +48,11 @@
 </nav>
 <nav class="main-navbar">
     <ul class="navbar">
-        <% if (locals.isLogged && locals.userLogged.category == "Administrador") { %>
+        <% if (locals.isLogged && locals.userLogged.category_id == 1) { %>
+            
             <li><a href="/products/administrar">Administrar</a></li>
             <li><a href="/products/crearProducto">Crear Producto</a></li>
-            <% } %>
+            
+            <% } %>     
     </ul>
 </nav>

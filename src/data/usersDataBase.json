@@ -53,5 +53,38 @@
   "confirmpassword": "1234",
   "category": "Administrador",
   "avatar": "imageUser1640278447177_img.jpg"
+ },
+ {
+  "id": 7,
+  "document": "123456789",
+  "names": "pepo",
+  "surnames": "perez",
+  "email": "hjj@jahaja.com",
+  "password": "$2a$10$fbNN4O1F3ZHbDZekEUgbSOorqxtSWkFriyoA2vHVkGIwXYNVeHWaq",
+  "confirmpassword": "12345",
+  "category": "Comprador",
+  "avatar": "imageUser1642715080676_img.jpg"
+ },
+ {
+  "id": 8,
+  "document": "1057602847",
+  "names": "Nicolás",
+  "surnames": "Nossa",
+  "email": "nico568_97@hotmail.com",
+  "password": "$2a$10$2lM0WwLJIfNmmqrCpBQpoeJVT4/9.dYIn.1IDxiY2UH6BgN7RFMl6",
+  "confirmpassword": "12345",
+  "category": "Administrador",
+  "avatar": "imageUser1642718637662_img.jpg"
+ },
+ {
+  "id": 9,
+  "document": "1234567",
+  "names": "Nicolás",
+  "surnames": "Nossa",
+  "email": "nico568_97@hotmail.com",
+  "password": "$2a$10$2//2FxuYYMJdGl2Tz3cP1ugv.Ihl3qWvEPk9MzuUHuHYOOuLG7S3.",
+  "confirmpassword": "12345",
+  "category": "Administrador",
+  "avatar": "imageUser1642718947524_img.jpg"
  }
 ]

@@ -5,13 +5,16 @@ const {validationResult} = require('express-validator');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+const db = require("../database/models");
+
 const User = require(path.join(__dirname,'../model/User'));
+const prueba = require("../model/User.js")
 const controller ={
 
 	register:(req, res) =>{
         res.render(path.join(__dirname, "../views/users/register.ejs"))
 	},
-	processRegister: (req, res) => {
+	processRegister: async (req, res) => {
 		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
@@ -21,35 +24,39 @@ const controller ={
 			});
 		}
 //verifico si enxiste un usuario previamente con el mismo correo
-		let userInDB = User.findByField('email', req.body.email);
-
+		
+		let userInDB = await User.findByEmail(req.body.email)
+		
 		if (userInDB) {
 			return res.render(path.join(__dirname, "../views/users/register.ejs"), {
 				errors: {
 					email: {
 						msg: 'Este email ya está registrado'
 					}
-				},
-				oldData: req.body
+				}	
 			});
+		}else{
+			let userToCreate = {
+				document : req.body.document,
+				name : req.body.names,
+				surname : req.body.surnames,
+				email : req.body.email,
+				password: bcryptjs.hashSync(req.body.password, 10),
+				category_id : req.body.category,
+				avatar: req.file.filename
+			}
+	
+			let userCreated = User.create(userToCreate);
+			return res.render(path.join(__dirname, "../views/users/login.ejs"))
 		}
-// si no tengo errores
-		let userToCreate = {
-			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: req.file.filename
-		}
-console.log(userToCreate)
-		let userCreated = User.create(userToCreate);
-
-		return res.redirect('/user/login');
+		
 	},
 	login:(req, res) =>{
         res.render(path.join(__dirname, "../views/users/login.ejs"));
     },
-    loginProcess: (req, res) => {
+    loginProcess: async (req, res) => {
 		//verifico si existe ese usuario
-		let userToLogin = User.findByField('email', req.body.email);
+		let userToLogin = await User.findByEmail(req.body.email);
         if(userToLogin) {
 			//si existe  valido la contraseña
 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -63,14 +70,14 @@ console.log(userToCreate)
 				// 	//seteo una cookie guardando la propiedad email que dure 2 min
 				 	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 				 }
-
-				return res.redirect('profile');
+			
+			return res.redirect("profile")
 			} 
 
-			if(req.body.category == "Administrador") {
+			if(req.body.category == "administrador") {
 				return res.render('/listaProductos');
 			} else {
-				res.send("Eres administrador");
+				 res.render("profile");
 			}
 
  			return res.render(path.join(__dirname, "../views/users/login.ejs"), {
@@ -92,7 +99,7 @@ console.log(userToCreate)
     },
     profile: (req, res) => {
 		return res.render(path.join(__dirname, "../views/users/userProfile.ejs"), {
-			user: req.session.userLogged
+			user: req.session.userLogged	
 		});
 	},
 	logout: (req, res) => {
@@ -101,6 +108,27 @@ console.log(userToCreate)
 	// borro lo que este en sesion
 		req.session.destroy();
 		return res.redirect('/');
+	},
+	edit: async (req, res) => {
+	
+		let userLogged = await prueba.findByPk(req.params.id)
+		console.log("numer" + req.params.id);
+		console.log(userLogged);
+		return res.render(path.join(__dirname, "../views/users/editProfile.ejs"),{user: userLogged})
+	},
+	processEdit : (req, res) => {
+		let userToEdit = {
+			document : req.body.document,
+			name : req.body.names,
+			surname : req.body.surnames,
+			email : req.body.email,
+			password: bcryptjs.hashSync(req.body.password, 10),
+			avatar: req.file.filename
+		}
+
+		let userEdited = User.update(userToEdit, req.params.id);
+		console.log(userEdited);
+		return res.render(path.join(__dirname, "../views/users/login.ejs"), { user : req.body});
 	}
 }
 

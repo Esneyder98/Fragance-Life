@@ -1,11 +1,10 @@
 {
   "development": {
     "username":"root",
-    "password": "1234",
+    "password": "1522104667Dnnv",
     "database": "fragance_life",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port":"3307"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

@@ -10,8 +10,8 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.use(session({
 	secret: "Shhh, It's a secret",
-	resave: false,
-	saveUninitialized: false,
+	resave: true,
+	saveUninitialized: true,
 }));
 app.use(cookies());
 

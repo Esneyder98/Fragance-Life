@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     avatar: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING(200),
       allowNull: false
     }
   }, {

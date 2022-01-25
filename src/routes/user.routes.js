@@ -32,11 +32,14 @@ router.post('/register', uploadFile.single('avatar'), validaciones, userControll
 router.get('/login',guestMideleware, userController.login);
 router.post('/login', userController.loginProcess);
 
-
 // Perfil de Usuario
-router.get('/profile', authMiddleware, userController.profile);
+router.get('/profile',authMiddleware, userController.profile);
 
-// Logout
+//Logout
 router.get('/logout/', userController.logout);
+
+//Edicion de Usuarios
+router.get('/profile/edit/:id',  userController.edit)
+router.post('/profile/edit/:id',uploadFile.single('avatar'), userController.processEdit)
 
 module.exports = router;

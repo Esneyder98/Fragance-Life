@@ -9,14 +9,18 @@
 	<!-- Container -->
 	<div class="profile">
 			
-				<h2>Hi <%= user.name%> <%= user.surnames  %> </h2>
-				<img src="/img/users/<%= user.avatar %> ">
-				
+				<h2>Hi <%= user.name%> <%= user.surname  %> </h2>
+				<img src="/img/users/<%=user.avatar%>">
 				<h4 class="alert alert-success ">Email: <%= user.email %> <h4/>
-				<h4 class="alert alert-success ">Categoria: <%= user.category %> <h4/>
+				
 				<!--Botones de rol admin-->
+				<% if (user.category_id == 1) { %>
 				<form action="/products/administrar">
 					<input type="submit" value="Administrar Productos">
+				</form>
+			<% } %>
+				<form action="/user/profile/edit/<%=user.id%>">
+					<input type="submit" value="Edita tu Perfil!">
 				</form>
 				<!-- //Container -->
 	</div>
