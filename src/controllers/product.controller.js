@@ -1,106 +1,148 @@
-const fs = require('fs');
-const { get } = require('https');
 const path = require('path');
-const {validationResult}= require('express-validator')
-const {productsModel}=require('../data/productsModel')
+const { validationResult } = require('express-validator')
+const { productsModel } = require('../model/productsModel');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const productosData = require('../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); 
 
-//const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const controller = {
 
-const controller ={
-
-    getProducts: (req, res) => {
-        let productos = productosData;
-        res.render(path.join(__dirname, "../views/products/listaProductos.ejs"), {productos: productos});
+    getProducts: (req, res, next) => {
+        productsModel.getproducts()
+            .then(products => {
+                res.render(path.join(__dirname, "../views/products/listaProductos.ejs"), { productos: products });
+            })
+            .catch((err) => next(err));
     },
 
-    CarritoDeCompras:(req, res) =>{
+    // Detail - Detail from one product
+    detail: (req, res, next) => {
+        let { id } = req.params;
+        productsModel.detail(id)
+            .then(prod => {
+                let pricefull = prod.price;
+                let pricediscount = prod.percentage > 0 ? prod.price - (prod.price * prod.percentage / 100) : prod.price;
+                res.render(path.join(__dirname, "../views/products/detalle_producto.ejs"), { prod, pricefull, pricediscount })
+            })
+            .catch((err) => next(err));
+    },
+
+    CarritoDeCompras: (req, res) => {
         res.render(path.join(__dirname, "../views/products/CarritoDeCompras.ejs"));
     },
-    crearNuevoProducto:(req, res) => {
-        res.render(path.join(__dirname, "../views/products/crearNuevoProducto.ejs"));
+
+    crearNuevoProducto: (req, res, next) => {
+        productsModel.crearNuevoProducto()
+            .then((function ([brand, smellFamilys]) {
+                res.render(path.join(__dirname, "../views/products/crearNuevoProducto.ejs"), { brand, smellFamilys })
+            }))
+            .catch((err) => next(err));
     },
-    storee:(req, res) => {
+
+    storee: (req, res, next) => {
+
         const resultValidation = validationResult(req);
-        if(resultValidation.errors.length >0){
-            return res.render('products/crearNuevoProducto',{
+        if (resultValidation.errors.length > 0) {
+            return res.render('products/crearNuevoProducto', {
                 errors: resultValidation.mapped(),
-                oldData:req.body
+                oldData: req.body
             })
         }
-        let request = req;
-        let productos = productsModel.getproducts();
-        productsModel.processRegister(req);
-        // let prod = products.filter(item => item.id == req.params.id)[0];
-        // console.log(prod);
-            res.render(path.resolve(__dirname, '../views/products/listaProductos.ejs'), {productos});
 
-    },
-   // Detail - Detail from one product
-	detail: (req, res) => {
-	    let id = req.params.id;
-     	let prod = products.filter(item => item.id == id)[0];
-
-        let pricefull=prod.price;
-        let pricediscount=prod.discount > 0 ? prod.price-(prod.price*prod.discount/100): prod.price;
-		// let pric = {
-		// 	full : toThousand(prod.price),
-		// 	disc: toThousand(prod.discount > 0 ? prod.price-(prod.price*prod.discount/100): prod.price)
-		// }
-	 	res.render(path.join(__dirname, "../views/products/detalle_producto.ejs"), {prod, pricefull,pricediscount});
-        
-     },
-    
-    editarProducto:(req, res) => {
-
-        let idProductoUrl = req.params.idProducto;
-        let busquedaProducto = productosData.find(item => item.id == idProductoUrl);
-    
-            if(busquedaProducto) {
-                res.render("products/editarProducto", { busqueda: busquedaProducto, idProducto: idProductoUrl});
-            } else {
-                res.render("products/productoInexistente");
-            }
-        // res.render(path.join(__dirname, "../views/products/editarProducto.ejs"));
+        productsModel.storee(req.body,req.file)
+            .then((producto) => {
+                res.redirect('/products/listaProductos')
+            })
+            .catch((err) => next(err));
     },
 
     deleteProduct: (req, res) => {
-        let idProducto = req.params.idProducto;
-        const newDb = productosData.filter(item => item.id != idProducto);
-        fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"),
-        JSON.stringify(newDb, null, 4),  { encoding: "utf8" }
-        
-    );
-        res.redirect('/products/administrar');
+        const { idProducto } = req.params;
+        productsModel.deleteProduct(idProducto)
+            .then((producto) => {
+                res.redirect('/products/listaProductos')
+            })
+    },
+
+    editarProducto: (req, res, next) => {
+        let { idProducto } = req.params;
+        productsModel.editarProducto(idProducto)
+            .then(function ([brand, smellFamilys, productoBuscado]) {
+                console.log(productoBuscado)
+                res.render(path.join(__dirname, "../views/products/editarProducto.ejs"), { brand, smellFamilys, productoBuscado })
+            })
+            .catch((err) => next(err));
     },
 
     productoEditado: (req, res) => {
-        console.log(req.body);
-        productsModel.updateProduct(req.params.idProducto, req.body);
-        res.redirect('/products/listaProductos');
+        let id = req.params.idProducto;
+        productsModel.updateProduct(id, req.body)
+            .then((producto) => {
+                res.redirect('/products/listaProductos')
+            })
+            .catch((err) => next(err));
+
     },
-    getProductsMen:(req, res) => {
-        res.render('../views/products/productsMen.ejs',{products: productsModel.getProductsMen()});
+
+    getProductsMen: (req, res, next) => {
+        productsModel.getProductsGender("HOMBRE")
+            .then(products => {
+                res.render('../views/products/productsMen.ejs', { products });
+            })
+            .catch((err) => next(err));
     },
-    getProductsWomen:(req, res) => {
-        res.render('../views/products/productsWomen.ejs',{products: productsModel.getProductsWomen()});
+
+    getProductsWomen: (req, res) => {
+        productsModel.getProductsGender("MUJER")
+            .then(products => {
+                res.render('../views/products/productsWomen.ejs', { products });
+            })
+            .catch((err) => next(err));
+
     },
-    getProductsBrand:(req, res) => {
-        res.render('../views/products/productsBrand.ejs',{productsBrand: productsModel.getproducts()});
+
+    getProductsBrand: (req, res) => {
+        productsModel.getproducts()
+            .then(products => {
+                res.render('../views/products/productsBrand.ejs', { productsBrand: products });
+            })
+            .catch((err) => next(err));
+
     },
-    getProductsSmellFamily:(req, res) => {
-        res.render('../views/products/productsSmellFamily.ejs',{productsSmellFamily: productsModel.getproducts()});
+
+    getProductsSmellFamily: (req, res) => {
+        productsModel.getproducts()
+            .then(products => {
+                res.render('../views/products/productsSmellFamily.ejs', { productsSmellFamily: products });
+            })
+            .catch((err) => next(err));
+
     },
-    administrar:(req, res) => {
-        res.render('../views/products/administrar.ejs',{administrar: productsModel.getproducts()});
+
+    administrar: (req, res) => {
+        productsModel.getproducts()
+            .then(products => {
+                res.render('../views/products/administrar.ejs', { administrar: products })
+            })
+            .catch((err) => next(err));
     },
-    promotion:(req, res) => {
-        res.render('../views/products/productpromotion.ejs',{promotion: productsModel.getproducts()});
+
+    promotion: (req, res) => {
+        productsModel.getproducts()
+            .then(products => {
+                res.render('../views/products/productpromotion.ejs', { promotion: products });
+            })
+            .catch((err) => next(err));
     },
-    
+
+    searchProductname: (req, res, next) =>{
+        let buscar = req.body.search
+        productsModel.searchProductname(buscar)
+            .then(productos => {
+                res.render('../views/products/busqueda.ejs', { productos });
+            })
+            .catch((err) => next(err));
+    }
+
 }
 
 module.exports = controller;

@@ -22,18 +22,18 @@
                 <li class="reg"><a href="/user/register">Registrate</a></li>
             </ul>
         </div>
-        <% } %>
+        <% } %><form action="/products/busqueda" method="POST">
         <div class="rightt">
             <input type="search" name="search" id="search" placeholder="Busca productos aqui">
             <ul class="right-navbar">
-                <li class="searchs"><a href="#"><i class="fas fa-search"></i></a></li>
+                <li class="searchs"><button type="submit"><i class="fas fa-search"></i></button></li>
                 <li class="main-nav"><a href="#"><i class="fas fa-th-list"></i></a></li>
                 <% if (!locals.isLogged) { %>
                 <li><a href="/user/login"><i class="fas fa-user" id="user"></i></a></li>
                 <% } %>
                 <li><a href="/products/carritoDeCompras"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
-        </div>
+        </div></form>
     </div>
 </div>
 <nav class="main-navbar">

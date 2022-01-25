@@ -11,10 +11,10 @@
         <h3 id="subtitulos">Promociones</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < promotion.length; i++) {%>
-    <% if (promotion[i].promotion == true) {%> 
+    <% if (promotion[i].promotion == 1) {%> 
             <div class="destacado-producto">
              
-                <img class="product-img" src= "..\..\img\perfumes/<%= promotion[i].image2 %>" alt="Imagen">
+                <img class="product-img" src= "..\..\img\perfumes/<%=promotion[i].images_products[0].name%>" alt="Imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= promotion[i].name %></p>
                     <p id="precio">$<%=promotion[i].price %></p>

@@ -10,9 +10,9 @@
         <h3 id="subtitulos">AMADERADO</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
-            <% if(productsSmellFamily[i].smellFamily == 'AMADERADO'){ %> 
+            <% if(productsSmellFamily[i].smellFamily.name == 'AMADERADO'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsSmellFamily[i].name %></p>
                     <p id="precio">$<%=productsSmellFamily[i].price %></p>
@@ -25,9 +25,9 @@
         <h3 id="subtitulos">FRESCO</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
-            <% if(productsSmellFamily[i].smellFamily == 'FRESCO'){ %> 
+            <% if(productsSmellFamily[i].smellFamily.name == 'FRESCO'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsSmellFamily[i].name %></p>
                     <p id="precio">$<%=productsSmellFamily[i].price %></p>
@@ -40,9 +40,9 @@
         <h3 id="subtitulos">ORIENTAL</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
-            <% if(productsSmellFamily[i].smellFamily == 'ORIENTAL'){ %> 
+            <% if(productsSmellFamily[i].smellFamily.name == 'ORIENTAL'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsSmellFamily[i].name %></p>
                     <p id="precio">$<%=productsSmellFamily[i].price %></p>
@@ -55,9 +55,9 @@
         <h3 id="subtitulos">FLORAL</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
-            <% if(productsSmellFamily[i].smellFamily == 'FLORAL'){ %> 
+            <% if(productsSmellFamily[i].smellFamily.name == 'FLORAL'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsSmellFamily[i].name %></p>
                     <p id="precio">$<%=productsSmellFamily[i].price %></p>
@@ -70,9 +70,9 @@
         <h3 id="subtitulos">FRUTAL</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsSmellFamily.length; i++) {%>
-            <% if(productsSmellFamily[i].smellFamily == 'FRUTAL'){ %> 
+            <% if(productsSmellFamily[i].smellFamily.name == 'FRUTAL'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%= productsSmellFamily[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsSmellFamily[i].name %></p>
                     <p id="precio">$<%=productsSmellFamily[i].price %></p>

@@ -25,7 +25,7 @@
             <p><%= productos[i].discount.percentage; %> %</p>
           </div>
           <div class="div-img-list">
-            <img src="/img/Perfumes/<%=productos[i].images_products[0].name%>" alt="" class="img-product-list">
+            <img src="/img/Perfumes/<%=productos[i].images_products[1].name%>" alt="" class="img-product-list">
           </div>
         </div>
           <h3>Descripcion</h3>
@@ -34,7 +34,7 @@
             <form action="/products/editarProducto/<%= productos[i].id %>/editar">
               <input type="submit" action="/" value="Editar Producto" class="form-input-button-edit-delete">
             </form>
-            <form action="/products/eliminar/<%= productos[i].id %>" method="get">
+            <form action="/">
               <input type="submit" value="Eliminar Producto" class="form-input-button-edit-delete">
             </form>
           </div>

@@ -28,38 +28,46 @@
                    
                     <label for="familiaProducto" class="form-label_dates">Marca</label>         
                         <select name="brand" id="marca">
-                            <option value="PACO RABANNE" <%= locals.oldData && (oldData.brand == "PACO RABANNE" ? 'selected' : null) %>>PACO RABANNE</option>
-                            <option value="CREED" <%= locals.oldData && (oldData.brand == "CREED" ? 'selected' : null) %>>CREED</option>
-                            <option value="LACOSTE" <%= locals.oldData && (oldData.brand == "LACOSTE" ? 'selected' : null) %>>LACOSTE</option>
-                            <option value="GIORGIO ARMANI" <%= locals.oldData && (oldData.brand == "GIORGIO ARMANI" ? 'selected' : null) %>>GIORGIO ARMANI</option>
-                            <option value="DOLCE & GABBANA" <%= locals.oldData && (oldData.brand == "DOLCE & GABBANA" ? 'selected' : null) %>>DOLCE & GABBANA</option>
+                            <% for (let i = 0; i <brand.length; i++){ %> 
+                                <option value="<%=brand[i].id%>" <%= locals.oldData && (oldData.brand == brand[i].id ? 'selected' : null) %>>
+                                <%=brand[i].name%>
+                                </option>
+                             <% } %>
                         </select>
+
                         <!-- si local errors existe & hay algo en la propiedad  -->
                         <% if (locals.errors && errors.brand) { %>
                             <p class="feedback"><%=errors.brand.msg %> </p>
                         <% } %>
+
                         <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
                         <select name="smellFamily" id="familiaAroma">
-                            <option value="Gucci" <%= locals.oldData && (oldData.smellFamily == "Gucci" ? 'selected' : null) %>>Gucci</option>
-                            <option value="Light" <%= locals.oldData && (oldData.smellFamily == "Light" ? 'selected' : null) %>>Light</option>
-                            <option value="Cred Silver" <%= locals.oldData && (oldData.smellFamily == "Cred Silver" ? 'selected' : null) %>>Cred Silver</option>
-                            <option value="Bvlgari" <%= locals.oldData && (oldData.smellFamily == "Bvlgari" ? 'selected' : null) %>>Bvlgari</option>
+                            <% for (let i = 0; i <smellFamilys.length; i++){ %> 
+                                <option value="<%=smellFamilys[i].id%>" <%= locals.oldData && (oldData.brand == smellFamilys[i].id ? 'selected' : null) %>>
+                                <%=smellFamilys[i].name%>
+                                </option>
+                                <% } %>   
                         </select>
+
                         <!-- si local errors existe & hay algo en la propiedad  -->
                         <% if (locals.errors && errors.smellFamily) { %>
                             <p class="feedback"><%=errors.smellFamily.msg %> </p>
                         <% } %>
+
                     <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
                          <select name="gender" id="gender">
                             <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %>>HOMBRE</option>
                             <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %>>MUJER</option>
                         </select>
                     <label for="discount" class="form-label_dates" >Descuento</label>               
-                    <input type="text" name="discount"  class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                    <input type="number" name="discount"  class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
                     <!-- si local errors existe & hay algo en la propiedad  -->
                     <% if (locals.errors && errors.discount) { %>
                         <p class="feedback"><%=errors.discount.msg %> </p>
                     <% } %>
+                    <label for="available" class="form-label_dates" >Cantidad disponible</label>               
+                    <input type="number" name="available"  class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+
                     <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
                     <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg , .gif" class="form-input-dates">
                     <!-- si local errors existe & hay algo en la propiedad  -->
@@ -73,7 +81,7 @@
                         <p class="feedback"><%=errors.description.msg %> </p>
                     <% } %>
                     <input class="form-input-button" type="submit" value="Crear">
-                    
+                    <input type="hidden" name="promo" value="1">
                 </form>
             </article>
         </section>

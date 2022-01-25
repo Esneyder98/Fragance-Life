@@ -9,53 +9,67 @@
     <main>
         <section class="register">
             <article>
-                <form action="/products/editarProducto/<%= idProducto%>?_method=PUT" name="editarProducto" id="editarProducto" method="POST">
+                <form action="/products/editarProducto/<%= productoBuscado.id%>?_method=PUT" name="editarProducto" id="editarProducto" method="POST">
                     <label for="" class="form-label_title">Editar Producto</label>
                     <label for="nombreProducto" class="form-label_dates"></label>
 
                     <label for="IdProducto" class="form-label_dates">ID del Producto </label>
-                    <input type="text" name="IdProducto"  class="form-input-dates" value="<%=busqueda.id %>" readonly>
+                    <input type="text" name="IdProducto"  class="form-input-dates" value="<%=productoBuscado.id %>" readonly>
 
                     <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
-                    <input type="text" name="nombreProducto"  class="form-input-dates" value="<%=busqueda.name %>">
+                    <input type="text" name="nombreProducto"  class="form-input-dates" value="<%=productoBuscado.name %>">
 
                     <label for="precioProducto" class="form-label_dates">Precio del Producto</label>               
-                    <input type="text" name="precioProducto"  class="form-input-dates" value="<%=busqueda.price %>">
+                    <input type="text" name="precioProducto"  class="form-input-dates" value="<%=productoBuscado.price %>">
                    
                     <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
                          <p class="categoria">
-                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Masculina
-                            <input type="radio" name="categoria" id="categoria" class="form-input-dates">Femenina
+                            <input type="radio" value="HOMBRE" name="categoria" id="categoria" class="form-input-dates" 
+                            <%if(productoBuscado.gender =="HOMBRE"){ %> checked <% } %> >Masculina
+                            <input type="radio" value="MUJER" name="categoria" id="categoria" class="form-input-dates"
+                            <%if(productoBuscado.gender =="MUJER"){ %> checked <% } %>>Femenina
                         </p>
 
-                        <label for="discount" class="form-label_dates">Precio del Producto</label>               
-                        <input type="text" name="discount"  class="form-input-dates" value="<%=busqueda.discount %>">
+                        <label for="discount" class="form-label_dates">Descuento</label>               
+                        <input type="text" name="discount"  class="form-input-dates" value="<%=productoBuscado.discount_id %>">
 
                     <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
-                        <select name="familiaAroma" id="familiaAroma" value="<%=busqueda.smellFamily %>">
-                            <option value="1">Gucci</option>
-                            <option value="2">Light</option>
-                            <option value="3">Cred Silver</option>
-                            <option value="4">Bvlgari</option>
+                        <select name="familiaAroma" id="familiaAroma" >
+                            <% for (let i = 0; i <smellFamilys.length; i++){ %> 
+                                <% if(smellFamilys[i].id == productoBuscado.smellFamily_id){%>
+                                <option value="<%=smellFamilys[i].id%>" selected>
+                                <%=smellFamilys[i].name%>
+                                </option>
+                                <% }else{ %> 
+                                    <option value="<%=smellFamilys[i].id%>">
+                                        <%=smellFamilys[i].name%>
+                                    </option>  
+                                <% }} %> 
                         </select>
                     <label for="familiaProducto" class="form-label_dates">Marca</label>         
-                        <select name="marca" id="familiaAroma">
-                            <option value="PACO RABANNE">PACO RABANNE</option>
-                            <option value="CREED">CREED</option>
-                            <option value="LACOSTE">LACOSTE</option>
-                            <option value="GIORGIO ARMANI">GIORGIO ARMANI</option>
-                            <option value="DOLCE & GABBANA">DOLCE & GABBANA</option>
-                        </select>
+                    <select name="marca" id="marca">
+                        <% for (let i = 0; i <brand.length; i++){ %> 
+                            <% if(brand[i].id == productoBuscado.brand_id){%>
+                            <option value="<%=brand[i].id%>" selected>
+                            <%=brand[i].name%>
+                            </option>
+                            <% }else{ %> 
+                                <option value="<%=brand[i].id%>">
+                                    <%=brand[i].name%>
+                                </option>  
+                            <% }} %> 
+                    </select>
+
                     <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
-                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates" value="<%=busqueda.image1 %>">
+                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates" value="<%=productoBuscado.images_products[1].name%>">
                     
                     <label for="descripcionProducto" class="form-label_dates">Descripcion del Producto  </label>
-                    <textarea name="descripcionProducto"><%=busqueda.description %></textarea>
+                    <textarea name="descripcionProducto"><%=productoBuscado.description %></textarea>
 
                     <input class="form-input-button" type="submit" value="Editar" href="#">
                     
                 </form>
-                <form id="eliminar" action="/products/eliminar/<%= idProducto%>" name="eliminarProducto" method="get">
+                <form id="eliminar" action="/products/eliminar/<%= productoBuscado.id%>" name="eliminarProducto" method="get">
                     <input type="submit" value="Eliminar" >
                 </form>
             </article>

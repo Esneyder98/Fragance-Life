@@ -10,9 +10,9 @@
         <h3 id="subtitulos">PACO RABANNE</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsBrand.length; i++) {%>
-            <% if(productsBrand[i].brand == 'PACO RABANNE'){ %> 
+            <% if(productsBrand[i].brand.name == 'PACO RABANNE'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%=productsBrand[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsBrand[i].name %></p>
                     <p id="precio">$<%=productsBrand[i].price %></p>
@@ -25,9 +25,9 @@
         <h3 id="subtitulos">CREED</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsBrand.length; i++) {%>
-            <% if(productsBrand[i].brand == 'CREED'){ %> 
+            <% if(productsBrand[i].brand.name == 'CREED'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%=productsBrand[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsBrand[i].name %></p>
                     <p id="precio">$<%=productsBrand[i].price %></p>
@@ -40,9 +40,9 @@
         <h3 id="subtitulos">LACOSTE </h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsBrand.length; i++) {%>
-            <% if(productsBrand[i].brand == 'LACOSTE'){ %> 
+            <% if(productsBrand[i].brand.name == 'LACOSTE'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%=productsBrand[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsBrand[i].name %></p>
                     <p id="precio">$<%=productsBrand[i].price %></p>
@@ -55,9 +55,9 @@
         <h3 id="subtitulos">GIORGIO ARMANI</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsBrand.length; i++) {%>
-            <% if(productsBrand[i].brand == 'GIORGIO ARMANI'){ %> 
+            <% if(productsBrand[i].brand.name == 'GIORGIO ARMANI'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%=productsBrand[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsBrand[i].name %></p>
                     <p id="precio">$<%=productsBrand[i].price %></p>
@@ -70,9 +70,9 @@
         <h3 id="subtitulos">DOLCE & GABBANA</h3>
         <article class="producto-destacado">
    <% for (let i = 0; i < productsBrand.length; i++) {%>
-            <% if(productsBrand[i].brand == 'DOLCE & GABBANA'){ %> 
+            <% if(productsBrand[i].brand.name == 'DOLCE & GABBANA'){ %> 
                 <div class="destacado-producto">
-                    <img class="product-img" src="..\..\img\perfumes/<%= productsBrand[i].image2 %>" alt="imagen">
+                    <img class="product-img" src="..\..\img\perfumes/<%=productsBrand[i].images_products[0].name%>" alt="imagen">
                 <div class="main-product-description">
                     <p id="name-product"><%= productsBrand[i].name %></p>
                     <p id="precio">$<%=productsBrand[i].price %></p>

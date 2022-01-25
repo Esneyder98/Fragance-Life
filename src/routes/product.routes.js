@@ -82,4 +82,6 @@ router.get('/administrar',buyerMiddleware,authMiddleware, controller.administrar
 
 router.get('/promotion', controller.promotion);
 
+router.post('/busqueda', controller.searchProductname);
+
 module.exports = router;
