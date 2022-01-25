@@ -10,15 +10,6 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 //const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const newId = () => {
-	let ultimo = 0;
-	products.forEach(product => {
-		if (product.id > ultimo){
-			ultimo = product.id;
-		}
-	});
-	return ultimo + 1
-}
 const controller ={
 
     getProducts: (req, res) => {
@@ -26,10 +17,6 @@ const controller ={
         res.render(path.join(__dirname, "../views/products/listaProductos.ejs"), {productos: productos});
     },
 
-    detalle_producto:(req, res) =>{
-        res.render(path.join(__dirname, "../views/products/detalle_producto.ejs"));
-
-    },
     CarritoDeCompras:(req, res) =>{
         res.render(path.join(__dirname, "../views/products/CarritoDeCompras.ejs"));
     },
@@ -37,7 +24,6 @@ const controller ={
         res.render(path.join(__dirname, "../views/products/crearNuevoProducto.ejs"));
     },
     storee:(req, res) => {
-        let promo=false;
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length >0){
             return res.render('products/crearNuevoProducto',{
@@ -45,29 +31,13 @@ const controller ={
                 oldData:req.body
             })
         }
+        let request = req;
+        let productos = productsModel.getproducts();
+        productsModel.processRegister(req);
+        // let prod = products.filter(item => item.id == req.params.id)[0];
+        // console.log(prod);
+            res.render(path.resolve(__dirname, '../views/products/listaProductos.ejs'), {productos});
 
-            if (req.body.discount >= 0){
-            promo=true;
-        }
-        
-        let newProduct={
-            id: newId(),
-            name : req.body.nombreProducto,
-            available: true,
-            price: req.body.precioProducto,
-            brand: req.body.brand,
-            smellFamily:req.body.smellFamily,
-            gender:req.body.gender,
-            promotion: promo,
-            discount: req.body.discount,
-            imagen1: req.file.filename,
-            description: req.body.description,
-        }
-        products.push(newProduct)
-        
-        let nuevoProductoGuardar = JSON.stringify(products,null,2);
-        fs.writeFileSync(path.resolve(__dirname,'../data/productsDataBase.json'), nuevoProductoGuardar);
-        res.redirect('/')
     },
    // Detail - Detail from one product
 	detail: (req, res) => {

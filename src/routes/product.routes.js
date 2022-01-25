@@ -51,8 +51,6 @@ body('description').notEmpty().withMessage('Debes agregar una descripcion'),
 
 router.get('/listaProductos', buyerMiddleware,controller.getProducts);
 
-router.get('/detalleproducto', controller.detalle_producto);
-
 
 router.get('/carritoDeCompras', controller.CarritoDeCompras);
 
