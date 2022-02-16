@@ -1,5 +1,5 @@
 window.addEventListener('load',()=> {
-    let form = document.querySelector('.form')
+    let form = document.querySelector('#formRegister')
     let documento = document.querySelector('#document') 
     let documentoError = document.querySelector('#documentError') 
     let nombre = document.querySelector('#nombre')  
@@ -84,6 +84,7 @@ window.addEventListener('load',()=> {
         }
         errorCorreo ? errores["email"] = "La dirección de email es incorrecta.":''
         matchesEmail ? errores ["confirmpassword"]= "Las contraseñas no coinciden":''
+        
            isempty(documento,"documento","Se debe ingresar un documento")
            minLength(nombre,"nombre",2)
            minLength(apellido,"apellido",2)
@@ -104,11 +105,6 @@ window.addEventListener('load',()=> {
             setValidationError(confirmpasswordError,confirmpassword,"confirmpassword")
             setValidationError(categoryError,category,"category")
             setValidationError(avatarError,avatar,"avatar")
-            // setValidationError(genderError,gender,"gender")
-            // setValidationError(cant_avaibleError,cant_avaible,"cant_avaible")
-            // setValidationError(imagenError,imagenProducto,"imagenProducto")
-            // setValidationError(descripcionError,descripcion,"descripcion")
-    
     
         } else{
             form.submit()

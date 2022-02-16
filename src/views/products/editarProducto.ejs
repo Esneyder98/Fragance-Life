@@ -13,10 +13,6 @@
                     <label for="" class="form-label_title">Editar Producto</label>
                     <label for="nombreProducto" class="form-label_dates"></label>
 
-                    <label for="IdProducto" class="form-label_dates">ID del Producto </label>
-                    <input type="text" name="IdProducto"  class="form-input-dates" value="<%=productoBuscado.id %>" readonly>
-                    
-
                     <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
                     <input type="text" name="nombreProducto" id="nombreProducto" class="form-input-dates" value="<%=productoBuscado.name %>">
                     <div class="text-danger" id="nameError"></div>
@@ -76,7 +72,7 @@
                     <textarea name="descripcionProducto" id="descripcion"><%=productoBuscado.description %></textarea>
                     <div class="text-danger" id="descripcionError"></div>
 
-                    <input class="form-input-button" type="submit" value="Editar" href="#">
+                    <input class="form-input-button" id="buttonEditar" type="submit" value="Editar" href="#">
                     
                 </form>
                 <form id="eliminar" action="/products/eliminar/<%= productoBuscado.id%>" name="eliminarProducto" method="get">

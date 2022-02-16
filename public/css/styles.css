@@ -1232,10 +1232,10 @@ main section.login article{
 
 /* validacion de errores */
 
-main section.register form .feedback{
+main section.register form .feedback,main section.login form .feedback{
     color: red;
     font-weight: bold;
 }
-main section.register form .errorBox{
+main section.register form .errorBox,main section.login form .errorBox{
     border : 1px solid red
 }
