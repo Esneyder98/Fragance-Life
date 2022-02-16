@@ -15,43 +15,53 @@
 
                     <% if(locals && locals.errors) { %>
                         <% for(let error in errors) { %>
-                            <p><%= errors[error].msg %></p>
+                            <p class="feedback"><%= errors[error].msg %></p>
                         <% } %>
                     <% } %>
 
                     <label for="document" class="form-label_dates">Documento*:</label>
-                    <input type="number" name="document" autocomplete ="" minlength="2" class="form-input-dates"  value="<%= locals.old && old.document ? old.document : ''%>">
+                    <input type="number" name="document" id="document" autocomplete ="" minlength="2" class="form-input-dates"  value="<%= locals.old && old.document ? old.document : ''%>" required>
+                    <div class="text-danger" id="documentError"></div>
 
                     <label for="names" class="form-label_dates">Nombre*:</label>
-                    <input type="text" name="names" autocomplete ="given-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.names ? old.names : ''%>">
+                    <input type="text" name="names" id="nombre" autocomplete ="given-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.names ? old.names : ''%>" required>
+                    <div class="text-danger" id="nombreError"></div>
 
                     <label for="surnames" class="form-label_dates">Apellidos*:</label>
-                    <input type="text" name="surnames" autocomplete ="family-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.surnames ? old.surnames : ''%>">
+                    <input type="text" name="surnames" id="apellido"autocomplete ="family-name" minlength="2" class="form-input-dates"  value="<%= locals.old && old.surnames ? old.surnames : ''%>">
+                    <div class="text-danger" id="apellidoError"></div>
 
                     <label for="email" class="form-label_dates">Correo electronico*:</label>
-                    <input type="text" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates" value="<%= locals.old && old.email ? old.email : ''%>">
-
+                    <input type="email" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates" value="<%= locals.old && old.email ? old.email : ''%>">
+                    <div class="text-danger" id="emailError"></div>
+                    
                     <label for="password" class="form-label_dates">Contraseña*:</label>
                     <input type="password" name="password" id="password" autocomplete="new-password" placeholder="*********" class="form-input-dates" value="<%= locals.old && old.password ? old.password : ''%>">
+                    <div class="text-danger" id="passwordError"></div>
 
                     <label for="password" class="form-label_dates">Confirmar Contraseña*:</label>
                     <input type="password" name="confirmpassword" id="confirmpassword" autocomplete="new-password" placeholder="*********" class="form-input-dates" value="<%= locals.old && old.confirmpassword ? old.confirmpassword : ''%>">
+                    <div class="text-danger" id="confirmpasswordError"></div>
 
                     <label for="names" class="form-label_dates">Categoria*:</label>
                     <select name="category" id="category">
+                        <option value= 0>Seleccionar...</option>
                         <option value= 1 <%= locals.old && (old.category == 1 ? 'selected' : null) %>>Administrador</option>
                         <option value= 2 <%= locals.old && (old.category == 2 ? 'selected' : null) %>>Comprador</option>
                     </select>
+                    <div class="text-danger" id="categoryError"></div>
 
                     <label for="avatar" class="form-label_dates">Avatar*:</label>
                     <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .jpeg, .gif"  >
+                    <div class="text-danger" id="avatarError"></div>
 
-                    <input class="form-input-button" type="submit" value="Registrarse">
+                    <input class="form-input-button" type="submit" value="Registrarse" id="register">
                     <input class="form-input-button login" type="button" value="Iniciar Sesion" href="#">
                 </form>
             </article>
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
+    <script type="text/javascript" src="/js/register.js"></script>
 </body>
 </html>
