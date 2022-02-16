@@ -24,14 +24,15 @@
         </div>
         <% } %><form action="/products/busqueda" method="POST">
         <div class="rightt">
-            <input type="search" name="search" id="search" placeholder="Busca productos aqui">
+            <input type="search" name="search" id="search" placeholder="Search products here :)">
             <ul class="right-navbar">
-                <li class="searchs"><button type="submit"><i class="fas fa-search"></i></button></li>
+                <li class="searchs"><button type="submit"><ion-icon name="send-outline"></ion-icon></button></li>
+            
                 <li class="main-nav"><a href="#"><i class="fas fa-th-list"></i></a></li>
                 <% if (!locals.isLogged) { %>
-                <li><a href="/user/login"><i class="fas fa-user" id="user"></i></a></li>
+                <li><a href="/user/login"><ion-icon name="person-outline"></ion-icon></a></li>
                 <% } %>
-                <li><a href="/products/carritoDeCompras"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="/products/carritoDeCompras"><ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
         </div></form>
     </div>
