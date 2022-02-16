@@ -1,14 +1,8 @@
-const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-const db = require("../database/models");
-
 const User = require(path.join(__dirname,'../model/User'));
-const prueba = require("../model/User.js")
+
 const controller ={
 
 	register:(req, res) =>{

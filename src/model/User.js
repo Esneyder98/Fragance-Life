@@ -116,22 +116,5 @@ const User = {
 }
 
 module.exports = User;
-/*User.create({document : 1234567,
-	name : "pepo",
-	surname : "perez",
-	email : "pepo@gam.com",
-	password : 1234,
-	category_id : 1,
-	avatar : "ffaddd.png"})*/
-	/*User.update({document : 1234567,
-		name : "pepo11",
-		surname : "perez11",
-		email : "pepo@gam.com",
-		password : 1234,
-		category_id : 1,
-		avatar : "ffaddd.png"}, 5)*/
-//User.findByField("nico56@hotmail.com")
-//User.findByPk(39)
-//User.findAll()
-//User.verify("nico568_97@hotmail.com")
-//User.findByEmail("daniel@hotmail.com")
+User.findAll()
+

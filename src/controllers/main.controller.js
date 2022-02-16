@@ -1,28 +1,21 @@
-const fs = require('fs');
-const path = require("path");
+const path = require('path')
+const { products } = require('../model/main');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const lastOfert = () => {
-	let ultimo = 0;
-    let lastO={};
-	products.forEach(product => {
-		if ((product.id > ultimo) && product.promotion==true) {
-			lastO = product;
-		}
-	});
-	return lastO
-}
 
 const controller ={
 
-    index: (req, res) =>{
-        let last=lastOfert();
-        let promotion = products.filter(product => (product.promotion==true) && product.id != last.id)
-        let nuevos=products.slice(products.length-5);
-        res.render(path.join(__dirname, "../views/index.ejs"),{last,promotion,nuevos});
-    },
+    index: (req, res, next) => {
+        let aleatory = products.getAleatoryProducts()
+        let promotion = products.getPromotionProducts(1)
+        let last = products.getLastProducts()
+        let best = products.getBestPromotion(1)
+         Promise.all([aleatory, promotion, last, best])
+         .then(function([aleatory, promotion, last, best]) {
+            return res.render('../views/index.ejs', { products : aleatory, promotion : promotion, last : last, best : best });
+        })
+         .catch((err) => next(err))
+         
+    }
 }
 
 

@@ -7,84 +7,88 @@
     </header>
     <img class="img-start" src=".\img\fragance-life.jpg" alt="image">
     <main class="full body">
-        <h3 id="subtitulos">Promociones</h3>
         <article class="promo">
             <article class="promociones">
-                <a href="/products/detalle/<%= last.id %>">
-                <ul type ="None">
-                    <h3>¡Súper promo de la Semana!</h3>
-                    <img class="product-img" src = "./img/Perfumes\<%= last.imagen1 %>" alt="imagen">
-                    <p id="discuont-product"><%= last.name %></p>
-                    <div class="description">
-                        <div class="description-before">
-                            <li id="time">Antes:</li>
-                            <li id="precio-before">$<%= last.price %> </li>
-                        </div>
+                <h3 id="subtitulos">¡Súper Promo de la Semana!</h3>
+            <% for (let i = 0; i < best.length; i++) {%>
+                
+                    <a href="/products/detalle/<%=best[i].id %>">
+                        <img class="product-img" src="..\..\img\perfumes/<%= best[i].images_products[2].name%>" alt="imagen">
+                    </a>
+                    <div class="main-product-description">
+                        <p id="name-product"><%= best[i].name %></p>
+                        <p id="discuont-product">ANTES</p>
+                        <p id="precio-before">$<%=best[i].price %></p>
+                        <p id="discuont-product">¡<%= best[i].discount.percentage %>% de Descuento!</p>
                         <div class="description-after">
-                            <li id="time">Ahora:</li>
-                            <li id="precio">$95000</li>
+                            <p id="discuont-product">AHORA</p>
+                            <P id="precio">$<%=best[i].price - (best[i].price * (best[i].discount.percentage / 100)) %></P>
                         </div>
-                    </div>
-                </ul>
-            </a>
+                        <a class="compra" href="/products/detalle/<%=best[i].id %>"><span id="img-buy-car"><i
+                         class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                            
+                    </div>      
+                     <% }; %>
+                 
             </article>
-        <article class="second-sale">
-        <% promotion.forEach(product=> { %>
-            <div class="third-sale">
-                <a href="/products/detalle/<%= product.id %>">
-                    <ul type ="None">
-                        <img class="product-img" src = ".\img\Perfumes\<%= product.image1 %> " alt="imagen">
-                        <div class="promotion-description">
-                            <p id="discuont-product"><%= product.name %> </p>
-                            <div class="description-before">
-                                <li id="precio-before"><%= product.price %></li>
-                            </div>
-                            <p id="discuont-product">¡<%= product.discount %>% de Descuento!</p>
-                            <div class="description-after">
-                                <li id="precio">$95000</li>
-                            </div>
+            <% for (let i = 0; i < promotion.length; i++) {%>
+                <div class="destacado--producto">
+                    <a href="/products/detalle/<%=promotion[i].id %>">
+                        <img class="product-img" src="..\..\img\perfumes/<%= promotion[i].images_products[1].name%>" alt="imagen">
+                    </a>
+                    <div class="main-product-description">
+                        <p id="name-product"><%= promotion[i].name %></p>
+                        <p id="discuont-product">ANTES</p>
+                        <p id="precio-before">$<%=promotion[i].price %></p>
+                        <p id="discuont-product">¡<%= promotion[i].discount.percentage %>% de Descuento!</p>
+                        <div class="description-after">
+                            <p id="discuont-product">AHORA</p>
+                            <P id="precio">$<%=promotion[i].price - (promotion[i].price * (promotion[i].discount.percentage / 100)) %></P>
                         </div>
-                    </ul>
-                </a>
-            </div>
-        <%	}); %>
-    </article>
-        </article>
-
-        <!---->
+                        <a class="compra" href="/products/detalle/<%=promotion[i].id %>"><span id="img-buy-car"><i
+                         class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                            
+                    </div>      
+                 </div>
+                     <% }; %>
+</article>
+        <!--a partir de aqui esta bien-->
         <h3 id="subtitulos">Productos Destacados</h3>
         <article class="producto-destacado">
-            <% promotion.forEach(product=> { %>
-            <div class="destacado-producto">
-                <img class="product-img" src = ".\img\Perfumes\<%= product.imagen1%>" alt ="imagen">
-                <div>
-                    <p id="name-product"><%= product.name%></p>
-                    <p id="precio"><%= product.price%></p>
-                    <a class="compra" href="/products/detalle/<%= product.id%>"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                </div>
-            </div>
-        <% }) %>
-        </article>
-
-        <!---->
-        
-        <h3 id="subtitulos">Productos Nuevos</h3>
-        
-        <article class="producto-destacado">
-        <% nuevos.forEach(newProd=> { %>
-            <a href="/products/detalle/<%= newProd.id %>">
+            <% for (let i = 0; i < products.length; i++) {%>
                 <div class="destacado-producto">
-                    <img class="product-img" src = ".\img\Perfumes\<%= newProd.imagen1 %>" alt ="imagen">
-                    <div>
-                        <p id="name-product"><%= newProd.name %></p>
-                        <p id="precio">$<%= newProd.price %></p>
-                        <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                    </div>
-                </div>
-            </a>
-        <%	}); %>
-        </article>
+                    <a href="/products/detalle/<%=products[i].id %>">
+                        <img class="product-img" src="..\..\img\perfumes/<%= products[i].images_products[2].name%>" alt="imagen">
+                    </a>
+                    <div class="main-product-description">
+                        <p id="name-product"><%= products[i].name %></p>
+                        <p id="precio">$<%=products[i].price %></p>
+                        <a class="compra" href="/products/detalle/<%=products[i].id %>"><span id="img-buy-car"><i
+                         class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                            
+                    </div>      
+                 </div>
+                     <% }; %>
+                 </article>
+     <h3 id="subtitulos">Ultimos Productos</h3>
+        <article class="producto-destacado">
+            <% for (let i = 0; i < last.length; i++) {%>
+                <div class="destacado-producto">
+                    <a href="/products/detalle/<%=last[i].id %>">
+                        <img class="product-img" src="..\..\img\perfumes/<%= last[i].images_products[2].name%>" alt="imagen">
+                    </a>
+                    <div class="main-product-description">
+                        <p id="name-product"><%= last[i].name %></p>
+                        <p id="precio">$<%=last[i].price %></p>
+                        <a class="compra" href="/products/detalle/<%=last[i].id %>"><span id="img-buy-car"><i
+                         class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                            
+                    </div>      
+                 </div>
+                     <% }; %>
+                 </article>
     </main>
+    
     <%- include('partials/footer') %>
 </body>
 </html>
