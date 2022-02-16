@@ -124,6 +124,21 @@ header .main-navbar,header .main-header-top-right #search,.login-register{
     background-color: white;
     transition: all 800ms;
 }
+.destacado--producto{
+    display: none;
+    flex-wrap: wrap;
+    width: 45%;
+    text-align: center;
+    justify-content: center;
+    border: white solid 10px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding-bottom: 7px;
+    background-color: white;
+    transition: all 800ms;
+}
+
 .third-sale:hover{
     opacity: 0.7;
     width: 32%;
@@ -131,21 +146,29 @@ header .main-navbar,header .main-header-top-right #search,.login-register{
     border: gray solid 10px;
 }
 .promociones:hover{
-    opacity: 0.7;
-    color: black;
     width: 63;
     font-size: 20px;
-    border: gray solid 10px;
+    border: rgb(70, 100, 180) solid 10px;
+    border-radius: 10% / 50%;
+    background-color: rgb(70, 100, 180);
+    color: white;
+    padding-bottom: 10px;
 }
 .destacado-producto:hover{
     opacity: 0.9;
     color: black;
-    border: gray solid 10px;
+    border: rgb(70, 100, 180) solid 10px;
+}
+.destacado--producto:hover{
+    opacity: 0.9;
+    color: black;
+    border: rgb(70, 100, 180) solid 10px;
 }
 #discuont-product{
     display: flex;
     font-size: 13px;
     justify-content: center;
+    text-align: center;
    
 }
 #subtitulos{
@@ -191,6 +214,7 @@ header .main-navbar,header .main-header-top-right #search,.login-register{
     margin: 10px
    
 }
+
 #name-product{
     display: flex;
     font-size: 15px;
@@ -298,7 +322,7 @@ main section article .main-data #cant{
 }
 #precio-before{
     list-style:none;
-    text-align: left;
+    text-align: center;
 }
 main section article .main-data #box-number{
     text-align: center;
@@ -781,6 +805,11 @@ footer{
         flex-wrap: wrap;
         width: 30%;
     }
+    .destacado--producto{
+        display: none;
+        flex-wrap: wrap;
+        width: 30%;
+    }
     .promociones:hover{
         width: 65%;
     }
@@ -876,6 +905,7 @@ div.profile img {
         max-width:1200px;
         margin: auto;
         padding:0px 10px; 
+        
     }
     header .main-navbar .navbar{
         width:100%;
@@ -904,8 +934,15 @@ div.profile img {
         transition: all 400ms;
     }
     header .main-navbar ul li a:hover{
-        font-size: 1.5rem;
+        
         color: white;
+        border : 2px solid rgb(70, 100, 180);
+        background-color: rgb(70, 100, 180) ;
+        border-radius: 15px;
+        padding: 5px;
+        width: 90%;
+        text-align: center;
+     
     }
     /*Home Main*/
     .img-start{
@@ -917,11 +954,28 @@ div.profile img {
         flex-wrap: wrap;
         width: 18%;
     }
-    .destacado-producto:hover{
-        width: 20%;
-        font-size: 30px;
+    .destacado--producto{
+        display: flex;
+        flex-wrap: wrap;
+        width: 18%;
     }
-
+    
+    .destacado-producto:hover{
+        width: 22%;
+        border-radius: 10% / 50%;
+        background-color: rgb(70, 100, 180);
+        color: white;
+        padding-bottom: 10px;
+        
+    }
+    .destacado--producto:hover{
+        width: 22%;
+        border-radius: 10% / 50%;
+        background-color: rgb(70, 100, 180);
+        color: white;
+        padding-bottom: 10px;
+        
+    }
     .promociones{
         margin: 2px;
         width: 30%;

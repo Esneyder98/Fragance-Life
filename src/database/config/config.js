@@ -1,7 +1,5 @@
 require("dotenv").config()
 const env = process.env
-
-
 module.exports = {
 	development: {
 		username: env.USER,
@@ -25,4 +23,5 @@ module.exports = {
 		host: env.DATABASE_HOST,
 		dialect: 'mysql',
 	},
-};
+	}
+

@@ -12,17 +12,24 @@
         <article class="producto-destacado">
    <% for (let i = 0; i < promotion.length; i++) {%>
     <% if (promotion[i].promotion == 1) {%> 
-            <div class="destacado-producto">
-             
-                <img class="product-img" src= "..\..\img\perfumes/<%=promotion[i].images_products[0].name%>" alt="Imagen">
-                <div class="main-product-description">
-                    <p id="name-product"><%= promotion[i].name %></p>
-                    <p id="precio">$<%=promotion[i].price %></p>
-                    <a class="compra" href="/products/detalleproducto"><span id="img-buy-car"><i
-                                class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
-                   
-                </div>
-            </div>
+        <div class="destacado-producto">
+            <a href="/products/detalle/<%=promotion[i].id %>">
+                <img class="product-img" src="..\..\img\perfumes/<%= promotion[i].images_products[2].name%>" alt="imagen">
+            </a>
+             <div class="main-product-description">
+                 <p id="name-product"><%= promotion[i].name %></p>
+                 <p id="discuont-product">ANTES</p>
+                 <p id="precio-before">$<%=promotion[i].price %></p>
+                 <p id="discuont-product">¡<%= promotion[i].discount.percentage %>% de Descuento!</p>
+                 <div class="description-after">
+                     <p id="discuont-product">AHORA</p>
+                     <P id="precio">$<%=promotion[i].price - (promotion[i].price * (promotion[i].discount.percentage / 100)) %></P>
+                 </div>
+                 <a class="compra" href="/products/detalle/<%=promotion[i].id %>"><span id="img-buy-car"><i
+                  class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                     
+             </div>      
+          </div>
             <% }}; %>
 
 
