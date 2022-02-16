@@ -432,10 +432,7 @@ main section.register form .form-input-button{
     width: 40%;
     margin:20px 0px;
 }
-main section.register form .feedback{
-    color: red;
-    font-weight: bold;
-}
+
 main section.register form .login{
     position: absolute;
     right: 0px;
@@ -1165,7 +1162,7 @@ main section.login article{
     height: 20vh;
 }
 
-#nombreProducto, #precioProducto, #categoriaProducto, #familiaAroma, #gender,#marca {
+.form-input-dates, .form-select{
     background-color:#E6E6E6;
     border: 1px solid rgba(167, 163, 163, 0.466);
     padding: 5px;
@@ -1266,4 +1263,15 @@ main section.login article{
     border: 1px solid gray;
     /* width: 20%; */
     margin:20px 0px;
+}
+
+
+/* validacion de errores */
+
+main section.register form .feedback{
+    color: red;
+    font-weight: bold;
+}
+main section.register form .errorBox{
+    border : 1px solid red
 }

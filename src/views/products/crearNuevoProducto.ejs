@@ -13,80 +13,105 @@
                     <label for="" class="form-label_title">Crear Nuevo Producto</label>
 
                     <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
-                    <input type="text" name="nombreProducto"  class="form-input-dates" value="<%= locals.oldData ? oldData.nombreProducto : null %>">
+                    <input type="text" name="nombreProducto" id="nombreProducto"  class="form-input-dates" value="<%= locals.oldData ? oldData.nombreProducto : null %>" min=5 required>
                     <!-- si local errors existe & hay algo en la propiedad firs:name -->
                                 <% if (locals.errors && errors.nombreProducto) { %>
                                     <p class="feedback"><%=errors.nombreProducto.msg %> </p>
                                 <% } %>
+                    <div class="text-danger" id="nameError"></div>
+
 
                     <label for="precioProducto" class="form-label_dates">Precio del Producto</label>               
-                    <input type="text" name="precioProducto"  class="form-input-dates" value="<%= locals.oldData ? oldData.precioProducto : null %>">
+                    <input type="number" name="precioProducto" id="precioProducto" class="form-input-dates" value="<%= locals.oldData ? oldData.precioProducto : null %>">
                     <!-- si local errors existe & hay algo en la propiedad  -->
                     <% if (locals.errors && errors.precioProducto) { %>
                         <p class="feedback"><%=errors.precioProducto.msg %> </p>
                     <% } %>
-                   
-                    <label for="familiaProducto" class="form-label_dates">Marca</label>         
-                        <select name="brand" id="marca">
-                            <% for (let i = 0; i <brand.length; i++){ %> 
-                                <option value="<%=brand[i].id%>" <%= locals.oldData && (oldData.brand == brand[i].id ? 'selected' : null) %>>
-                                <%=brand[i].name%>
-                                </option>
-                             <% } %>
-                        </select>
+                   <div class="text-danger" id="precioError"></div>
 
-                        <!-- si local errors existe & hay algo en la propiedad  -->
-                        <% if (locals.errors && errors.brand) { %>
-                            <p class="feedback"><%=errors.brand.msg %> </p>
-                        <% } %>
 
-                        <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
-                        <select name="smellFamily" id="familiaAroma">
+                    <label for="brand" class="form-label_dates">Marca</label>         
+                    <select name="brand" id="marca" class="form-select">
+                        <option value="0">Seleccionar...</option>
+                        <% for (let i = 0; i <brand.length; i++){ %> 
+                            <option value="<%=brand[i].id%>" <%= locals.oldData && (oldData.brand == brand[i].id ? 'selected' : null) %>>
+                            <%=brand[i].name%>
+                            </option>
+                         <% } %>
+                    </select>
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.brand) { %>
+                        <p class="feedback"><%=errors.brand.msg %> </p>
+                    <% } %>
+                    <div class="text-danger" id="marcaError"></div>   
+
+
+                    <label for="smellFamily" class="form-label_dates">Familia Aroma</label>         
+                        <select name="smellFamily" id="familiaAroma" class="form-select">
+                            <option value="0">Seleccionar...</option>
                             <% for (let i = 0; i <smellFamilys.length; i++){ %> 
                                 <option value="<%=smellFamilys[i].id%>" <%= locals.oldData && (oldData.brand == smellFamilys[i].id ? 'selected' : null) %>>
                                 <%=smellFamilys[i].name%>
                                 </option>
                                 <% } %>   
                         </select>
-
                         <!-- si local errors existe & hay algo en la propiedad  -->
                         <% if (locals.errors && errors.smellFamily) { %>
                             <p class="feedback"><%=errors.smellFamily.msg %> </p>
                         <% } %>
+                        <div class="text-danger" id="familiaAromaError"></div>
+    
 
                     <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
-                         <select name="gender" id="gender">
+                         <select name="gender" id="gender" class="form-select">
+                            <option value="0">Seleccionar...</option>
                             <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %>>HOMBRE</option>
                             <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %>>MUJER</option>
                         </select>
+                        <!-- falta la validacion del backend de  genero -->
+                        <div class="text-danger" id="genderError"></div>
+
+
                     <label for="discount" class="form-label_dates" >Descuento</label>               
-                    <input type="number" name="discount"  class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                    <input type="number" name="discount"  id = "discount" class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
                     <!-- si local errors existe & hay algo en la propiedad  -->
                     <% if (locals.errors && errors.discount) { %>
                         <p class="feedback"><%=errors.discount.msg %> </p>
                     <% } %>
+                    <div class="text-danger" id="discountError"></div>
+
+
                     <label for="available" class="form-label_dates" >Cantidad disponible</label>               
-                    <input type="number" name="available"  class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                    <input type="number" name="available" id="cant_avaible" class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                    <div class="text-danger" id="cant_avaibleError"></div>
+
 
                     <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
-                    <input type="file" name="imagenProducto" accept=".jpg, .png, .jpeg , .gif" class="form-input-dates">
+                    <input type="file" name="imagenProducto" id="imagenProducto" accept=".jpg, .png, .jpeg , .gif" class="form-input-dates">
                     <!-- si local errors existe & hay algo en la propiedad  -->
                     <% if (locals.errors && errors.imagenProducto) { %>
                         <p class="feedback"><%=errors.imagenProducto.msg %> </p>
                     <% } %>
+                    <div class="text-danger" id="imagenError"></div>
+
+
                     <label for="descripcion" class="form-label_dates">Descripcion del Producto </label>
-                    <textarea name="description" value="<%= locals.oldData ? oldData.description : null %>" ></textarea>
+                    <textarea name="description" id="descripcion" value="<%= locals.oldData ? oldData.description : null %>" ></textarea>
                     <!-- si local errors existe & hay algo en la propiedad  -->
                     <% if (locals.errors && errors.description) { %>
                         <p class="feedback"><%=errors.description.msg %> </p>
                     <% } %>
-                    <input class="form-input-button" type="submit" value="Crear">
+                    <div class="text-danger" id="descripcionError"></div>
+
+
+                    <input class="form-input-button" id="button" type="submit" value="Crear">
                     <input type="hidden" name="promo" value="1">
                 </form>
             </article>
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script type="text/javascript" src="/js/registerProduct.js"></script>
 </body>
 
 </html>

@@ -50,7 +50,7 @@ const controller = {
 
         productsModel.storee(req.body,req.file)
             .then((producto) => {
-                res.redirect('/products/listaProductos')
+                res.redirect('/')
             })
             .catch((err) => next(err));
     },
