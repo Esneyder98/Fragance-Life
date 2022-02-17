@@ -7,6 +7,8 @@ const path = require('path');
 const multer= require('multer')
 const {body} = require('express-validator')
 const controller = require('../controllers/product.controller');
+const validateCreateForm = require('../middlewares/validateCreateForm')
+const validateEditForm = require('../middlewares/validateEditForm')
 const storage = multer.diskStorage({
 	destination : function(req, file, cb) {
 		cb(null, path.resolve(__dirname, '../../public/img/Perfumes'))
@@ -18,34 +20,7 @@ const storage = multer.diskStorage({
 );
 const uploadFile = multer({ storage });
 
-//validaciones campos
-const validateCreateForm =[
-    body('nombreProducto').notEmpty().withMessage('Debes completar el campo nombre'),
-    body('precioProducto').notEmpty().withMessage('Debes completar el campo apellido').bail()
-	.isInt().withMessage('Debes ingresar un numero'),
-    body('brand').notEmpty().withMessage('Debes seleccionar una marca'),
-	body('smellFamily').notEmpty().withMessage('Debes seleccionar una Familia Aroma'),
-	body('gender').notEmpty().withMessage('Debes seleccionar un genero'),
-	body('discount').notEmpty().withMessage('Debes ingresar un descuento de 0 a 100').bail()
-	.isInt().withMessage('Debes ingresar un numero'),
-	body('imagenProducto').custom((value,{req}) =>{
-        let file = req.file
-        let acceptedExtensions = ['.jpg', '.png', '.gif','.jpeg'];
-        
-        if(!file){
-            throw new Error('Tienes que subir una imagen')
-        }else{
-            let fileExtension = path.extname(file.originalname)
-            if (!acceptedExtensions.includes(fileExtension)){
-                throw new Error(`Las extenciones de archivo permitidas son ${acceptedExtensions.join(',')}`)
-            }
-        }
-    
 
-        return true;
-    }),
-body('description').notEmpty().withMessage('Debes agregar una descripcion'),
-]
 //router.get('/detalleproducto', controller.detalle_producto);
 
 
@@ -74,7 +49,7 @@ router.get('/productsSmellFamily',controller.getProductsSmellFamily);
 
 router.get('/editarProducto/:idProducto/editar', buyerMiddleware,authMiddleware, controller.editarProducto);
 
-router.put('/editarProducto/:idProducto', controller.productoEditado);
+router.put('/editarProducto/:idProducto', validateEditForm,controller.productoEditado);
 
 router.get('/eliminar/:idProducto',authMiddleware, controller.deleteProduct);
 
