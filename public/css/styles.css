@@ -1080,8 +1080,13 @@ div.profile img {
     }
     #time, #precio, #precio-before{
         font-size: 17px;
+        align-self: flex-start;
+        padding-left: 0px;
     }
     /* ::::main detalle_producto:::::: */
+    main section.detail-product{
+        padding: 10px;
+    }
     main section.detail-product article{
         align-items: flex-start;
         position: relative;
@@ -1350,10 +1355,10 @@ main section.register form .errorBox,main section.login form .errorBox{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 270px;
     background-position: center;
-    margin: 10px 10px 10px 10px;
+    /*  margin: 10px 10px 10px 10px; */
 }
   
   .slider .current-slider {
