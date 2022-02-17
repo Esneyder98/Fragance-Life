@@ -6,7 +6,7 @@
     <header class="main-header">
         <%- include('../partials/header') %>
     </header>
-    <main>
+    <main class="main-form">
         <section class="register">
             <article>
                 <form action="/products/editarProducto/<%= productoBuscado.id%>?_method=PUT" name="editarProducto" id="editarProducto" method="POST">
@@ -37,6 +37,7 @@
                     <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
                         <select name="smellFamily" id="familiaAroma" class="form-select">
                             <% for (let i = 0; i <smellFamilys.length; i++){ %> 
+                                <option value="0">Seleccionar...</option>
                                 <% if(smellFamilys[i].id == productoBuscado.smellFamily_id){%>
                                 <option value="<%=smellFamilys[i].id%>" selected>
                                 <%=smellFamilys[i].name%>
@@ -51,6 +52,7 @@
 
                     <label for="brand" class="form-label_dates">Marca</label>         
                     <select name="brand" id="marca" class="form-select">
+                        <option value="0">Seleccionar...</option>
                         <% for (let i = 0; i <brand.length; i++){ %> 
                             <% if(brand[i].id == productoBuscado.brand_id){%>
                             <option value="<%=brand[i].id%>" selected>

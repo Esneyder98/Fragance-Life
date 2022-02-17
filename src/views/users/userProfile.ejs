@@ -8,9 +8,12 @@
 	
 	<!-- Container -->
 	<div class="profile">
-			
-				<h2>Hi <%= user.name%> <%= user.surname  %> </h2>
+				<div class="container-image">
 				<img src="/img/users/<%=user.avatar%>">
+			 	</div>
+	
+	<div>
+		<h2>Hi <%= user.name%> <%= user.surname  %> </h2>
 				<h4 class="alert alert-success ">Email: <%= user.email %> <h4/>
 				
 				<!--Botones de rol admin-->
@@ -24,8 +27,7 @@
 				</form>
 				<!-- //Container -->
 	</div>
-
-	
+</div>
 	
 	<%- include('../partials/footer'); %>
 </body>

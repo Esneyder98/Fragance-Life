@@ -8,13 +8,19 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color:#E6E6E6;
+    /* background-color:#E6E6E6; */
+    background: linear-gradient(70deg, #152440, white);
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content:center;
 }
 /* header */
 header {
     background-color:transparent;
     background-position: center center;
     background-image: url('/img/madera.jpg');
+    width: 100%;
 }
 
 
@@ -440,6 +446,11 @@ main section.register form .login{
 }
 
 /* ::::::::::::::main login::::::::::::::::::::::::::: */
+main.main-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 main section.login {
     width: 100%;
     display: flex;
@@ -492,7 +503,7 @@ main section.login form .form-input-button {
     font-weight: bold;
     background-color: rgba(128, 128, 128,0.8);
     border: 1px solid gray;
-    width: 40%;
+    width: 45%;
     margin: 20px 0px;
 }
 .form-input-button:hover{
@@ -511,15 +522,24 @@ main .register  article form textarea{
 /*---------------------------profile-------------------------*/
 div.profile{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-evenly;
+    flex-direction: row;
     align-items: center;
-    
+    padding: 10px 0px;
+   
+}
+div.profile .container-image{
+    border: 3px solid gray;
+    border-radius: 50%;
+    width: 210px;
+    height: 210px;
 }
 
 
 div.profile img {
-    max-width: 50%
+    width: 204px;
+    height: 204px;
+    border-radius: 50%;
 }
 /*---------------------------main carrito de compras-------------------------*/
 main #carrito{
@@ -647,10 +667,13 @@ main #carrito .finalizarCompra form #finalizar{
     
 
 }
-
+#admin{
+    width: 100%;
+    padding: 10px 0px;
+}
 .productosExistentes {
     background-color: #FFFFFF;
-    width: 100%;
+    width: 95%;
     margin:auto;
 }
 .productosExistentes tr th {
@@ -702,7 +725,9 @@ main #carrito .finalizarCompra form #finalizar{
 /*home footer*/
 
 footer{
-    background-color: #152440; 
+    background-color: #152440;
+    align-self: flex-end;
+    width: 100%;
 }
 .footer{
     display:flex;
@@ -865,14 +890,14 @@ footer{
 
 main section.register article{
     width: 60%;
-    
+    max-width: 370px;
 }
 main section.register form .form-input-button {
     max-width:125px;
 }
 /* ::::::::::::main login:::::::::::::::::: */
 main section.login article {
-    width: 60%;
+    width: 100%;
     margin: 30px 0px;
     max-width: 370px;
 }
@@ -1062,13 +1087,17 @@ div.profile img {
 
 /* :::::::::::::::main register::::::::::::::::::: */
 
-    main section.register article{
-        width: 50%;
-        
-    }
+main section.register {
+    width: 90%;
+    
+}
 /* :::::::::::::main login:::::::::::::::: */
+main.main-form{
+    width: 90%;
+    
+}
+
 main section.login article{
-    width: 50%;
     margin-top: 10%;
     margin-bottom: 20%;
 }
