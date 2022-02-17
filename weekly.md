@@ -1,17 +1,16 @@
 Weekly standup 
-Durante la realización del sprint 6, se convocaron dos reuniones semanales las cuales tenían como objetivo llevar un seguimiento a las tareas asignadas,  a continuación, se presenta un resumen de las tareas y los retos que tuvimos al realizarlas.
+Durante la realización del sprint 87 , se convocaron dos reuniones semanales las cuales tenían como objetivo llevar un seguimiento a las tareas asignadas,  a continuación, se presenta un resumen de las tareas y los retos que tuvimos al realizarlas.
 Resumen
 1.	Tareas que se completaron sin dificultades:
 
 -	Implementar una Weekly standup para tener un resumen del estado de las tareas.
--	Actualizar el archivo retro.md con las conclusiones del quinto sprint.
+-	Actualizar el archivo retro.md con las conclusiones del  sprint.
 -	Actualizar tablero de trabajo para mejorar la organización.
--	Realizar el script de creación de estructura de base de datos.
--   Creación de Script de datos de base de datos.
+-	Realizar la distribucion de actividades para el Sprint  
 
 2.	Tareas que tuvieron obstáculos, pero lograron estar terminadas a tiempo: 
 
--	Implementar CRUD de usuarios.
-Retos: Al momento de implementar el modelo del CRUD en el controlador surgieron distintos inconvnientes respecto a como llamar los datos provenientes de las promesas para asi implementar correctamente el modelo con el controlador. 
+-	Implementar Verificaciones.
+Retos: Al momento de implementar distintas verificaciones en el Frontend y en el Backend surgieron distintos errores con el codigo que teniamos implementado
 -	Organizar las vistas de Usuarios
-Retos: Surgieron conflictos para traer los usuarios logueados con sus datos.
+Retos: Haciendo una correccion de la interfaz de usuario presentada en el anterior Sprint, se hicieron distintas correcciones que llegaban a sobreescribir estilos en otras vistas, tarea que fue resuelta de manera satisfactoria.
