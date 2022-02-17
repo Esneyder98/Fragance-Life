@@ -14,14 +14,8 @@ body{
 header {
     background-color:transparent;
     background-position: center center;
-    background-image: url('/img/madera.jpg');
+    background-image: url('/img/madera1.jpg');
 }
-
-
-
-
-
-
 
 .main-header-top-bar{
     display:flex;
@@ -1275,3 +1269,66 @@ main section.register form .feedback{
 main section.register form .errorBox{
     border : 1px solid red
 }
+
+
+/*Nuevo carrusel slider*/
+
+.img-slider1 {
+    background-image: url('/img/sliper1.jpg');
+  }
+  .img-slider2 {
+    background-image: url('/img/sliper2.jpg');
+  }
+  .img-slider3 {
+    background-image: url('/img/fragance-life.jpg');
+  }
+
+
+  .slider {
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 270px;
+    background-position: center;
+}
+  
+  .slider .current-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .slider .current-slider .text-slider {
+    color: #ffffff;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+  }
+  .slider .current-slider .slider-tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    margin-top: 8em;
+  }
+  .slider .current-slider .slider-tabs .tab {
+    height: 3px;
+    width: 60px;
+    background-color: #737373;
+    border-radius: 6px;
+  }
+  .slider .current-slider .slider-tabs .current-tab {
+    background-color: #fff;
+  }
+  .slider .btn-slider {
+    border: none;
+    background-color: rgba(0,0,0,.4);
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
