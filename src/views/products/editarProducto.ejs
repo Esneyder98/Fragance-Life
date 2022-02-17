@@ -21,38 +21,8 @@
                     <input type="text" name="precioProducto"  id="precioProducto" class="form-input-dates" value="<%=productoBuscado.price %>">
                     <div class="text-danger" id="precioError"></div>
 
-                    <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
-                         <p class="categoria">
-                            <input type="radio" value="HOMBRE" name="categoria" id="categoria" class="form-input-dates" 
-                            <%if(productoBuscado.gender =="HOMBRE"){ %> checked <% } %> >Masculina
-                            <input type="radio" value="MUJER" name="categoria" id="categoria" class="form-input-dates"
-                            <%if(productoBuscado.gender =="MUJER"){ %> checked <% } %>>Femenina
-                        </p>
-                        
-
-                        <label for="discount" class="form-label_dates">Descuento</label>               
-                        <input type="text" name="discount" id ="discount" class="form-input-dates" value="<%=productoBuscado.discount_id %>">
-                        <div class="text-danger" id="discountError"></div>
-
-                    <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
-                        <select name="smellFamily" id="familiaAroma" class="form-select">
-                            <% for (let i = 0; i <smellFamilys.length; i++){ %> 
-                                <option value="0">Seleccionar...</option>
-                                <% if(smellFamilys[i].id == productoBuscado.smellFamily_id){%>
-                                <option value="<%=smellFamilys[i].id%>" selected>
-                                <%=smellFamilys[i].name%>
-                                </option>
-                                <% }else{ %> 
-                                    <option value="<%=smellFamilys[i].id%>">
-                                        <%=smellFamilys[i].name%>
-                                    </option>  
-                                <% }} %> 
-                        </select>
-                        <div class="text-danger" id="familiaAromaError"></div>
-
                     <label for="brand" class="form-label_dates">Marca</label>         
                     <select name="brand" id="marca" class="form-select">
-                        <option value="0">Seleccionar...</option>
                         <% for (let i = 0; i <brand.length; i++){ %> 
                             <% if(brand[i].id == productoBuscado.brand_id){%>
                             <option value="<%=brand[i].id%>" selected>
@@ -65,6 +35,39 @@
                             <% }} %> 
                     </select>
                     <div class="text-danger" id="marcaError"></div> 
+
+                    <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
+                        <select name="smellFamily" id="familiaAroma" class="form-select">
+                            <% for (let i = 0; i <smellFamilys.length; i++){ %> 
+                                <% if(smellFamilys[i].id == productoBuscado.smellFamily_id){%>
+                                <option value="<%=smellFamilys[i].id%>" selected>
+                                <%=smellFamilys[i].name%>
+                                </option>
+                                <% }else{ %> 
+                                    <option value="<%=smellFamilys[i].id%>">
+                                        <%=smellFamilys[i].name%>
+                                    </option>  
+                                <% }} %> 
+                        </select>
+                        <div class="text-danger" id="familiaAromaError"></div>
+
+                        <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
+                        <select name="gender" id="gender" class="form-select">
+                           <option value="0">Seleccionar...</option>
+                           <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %>>HOMBRE</option>
+                           <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %>>MUJER</option>
+                       </select>
+                       <!-- falta la validacion del backend de  genero -->
+                       <div class="text-danger" id="genderError"></div>
+                        
+
+                        <label for="discount" class="form-label_dates">Descuento</label>               
+                        <input type="text" name="discount" id ="discount" class="form-input-dates" value="<%=productoBuscado.discount_id %>">
+                        <div class="text-danger" id="discountError"></div>
+
+                        <label for="available" class="form-label_dates" >Cantidad disponible</label>               
+                        <input type="number" name="available" id="cant_avaible" class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                        <div class="text-danger" id="cant_avaibleError"></div>
 
                     <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
                     <input type="file" name="imagenProducto" id="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates" value="<%=productoBuscado.images_products[0].name%>">
@@ -84,7 +87,7 @@
         </section>
     </main>
     <%- include('../partials/footer') %>
-    <script type="text/javascript" src="/js/editProduct.js"></script>
+    <!-- <script type="text/javascript" src="/js/editProduct.js"></script> -->
 </body>
 
 </html>
