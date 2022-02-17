@@ -58,6 +58,8 @@ RETRO SPRINT 4
 -https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/ad97b2c75
 RETRO SPRINT 5
 -https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/adc697b02
+RETRO SPRINT 6
+-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/a11c139eb
 
 
 ## Tablero  de trabajo
