@@ -73,7 +73,7 @@ const controller = {
             .catch((err) => next(err));
     },
 
-    productoEditado: (req, res) => {
+    productoEditado: (req, res, next) => {
         let id = req.params.idProducto;
         productsModel.updateProduct(id, req.body)
             .then((producto) => {
