@@ -6,40 +6,22 @@
     <%- include('../partials/header') %>
   </header>
   <h1 class="title-list">Listado de Productos</h1>
-    <% for(let i = 0; i < productos.length; i++) { %>
-      <div class="productosLista">
-        <h2 class="subtitle-product">Producto <%= i + 1 %></h2>
-        <div class="producto-imagen-lista">
-          <div>
-            <h3>Nombre </h3>
-            <p><%= productos[i].name; %></p>
-            <h3>Precio</h3>
-            <p><%= productos[i].price; %></p>
-            <h3>Marca</h3>
-            <p><%= productos[i].brand.name; %></p>
-            <h3>Familia Aroma</h3>
-            <p><%= productos[i].smellFamily.name; %></p>
-            <h3>Categoria</h3>
-            <p><%= productos[i].gender; %></p>
-            <h3>Descuento</h3>
-            <p><%= productos[i].discount.percentage; %> %</p>
-          </div>
-          <div class="div-img-list">
-            <img src="/img/Perfumes/<%=productos[i].images_products[0].name%>" alt="" class="img-product-list">
-          </div>
-        </div>
-          <h3>Descripcion</h3>
-          <p><%= productos[i].description; %></p>
-          <div class="button-options">
-            <form action="/products/editarProducto/<%= productos[i].id %>/editar">
-              <input type="submit" action="/" value="Editar Producto" class="form-input-button-edit-delete">
-            </form>
-            <form action="/products/eliminar/<%= productos[i].id %>" method="get">
-              <input type="submit" value="Eliminar Producto" class="form-input-button-edit-delete">
-            </form>
-          </div>
-      </div>
-    <% }; %>
+  <article class="producto-destacado">
+    <% for (let i = 0; i < productos.length; i++) {%>
+        <div class="destacado-producto">
+            <a href="/products/detalle/<%=productos[i].id %>">
+                <img class="product-img" src="..\..\img\perfumes/<%= productos[i].images_products[0].name%>" alt="imagen">
+            </a>
+            <div class="main-product-description">
+                <p id="name-product"><%= productos[i].name %></p>
+                <p id="precio">$<%=productos[i].price %></p>
+                <a class="compra" href="/products/detalle/<%=productos[i].id %>"><span id="img-buy-car"><i
+                 class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
+                    
+            </div>      
+         </div>
+             <% }; %>
+         </article>
     <%- include('../partials/footer') %>
 </body>
 </html>
