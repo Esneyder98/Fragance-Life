@@ -32,10 +32,10 @@
 
                     <label for="brand" class="form-label_dates">Marca</label>         
                     <select name="brand" id="marca" class="form-select">
-                        <option value="0">Seleccionar...</option>
+                        <option value="">Seleccionar...</option>
                         <% if(locals && locals.brand) {%>
                             <% for (let i = 0; i <brand.length; i++){ %> 
-                                <option value="<%=brand[i].name%>" <%= locals.oldData && (oldData.brand == brand[i].name ? 'selected' : null) %>>
+                                <option value="<%=brand[i].id%>" <%= locals.oldData && (oldData.brand == brand[i].name ? 'selected' : null) %>>
                                 <%=brand[i].name%>
                                 </option>
                              <% } %>
@@ -50,7 +50,7 @@
 
                     <label for="smellFamily" class="form-label_dates">Familia Aroma</label>         
                         <select name="smellFamily" id="familiaAroma" class="form-select">
-                            <option value="0">Seleccionar...</option>
+                            <option value="">Seleccionar...</option>
                             <% if(locals && locals.smellFamilys) {%>
                                 <% for (let i = 0; i <smellFamilys.length; i++){ %> 
                                     <option value="<%=smellFamilys[i].id%>" <%= locals.oldData && (oldData.brand == smellFamilys[i].id ? 'selected' : null) %>>
@@ -68,11 +68,13 @@
 
                     <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
                          <select name="gender" id="gender" class="form-select">
-                            <option value="0">Seleccionar...</option>
+                            <option value="">Seleccionar...</option>
                             <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %>>HOMBRE</option>
                             <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %>>MUJER</option>
                         </select>
-                        <!-- falta la validacion del backend de  genero -->
+                        <% if (locals.errors && errors.gender) { %>
+                            <p class="feedback"><%=errors.gender.msg %> </p>
+                        <% } %>
                         <div class="text-danger" id="genderError"></div>
 
 
@@ -87,6 +89,9 @@
 
                     <label for="available" class="form-label_dates" >Cantidad disponible</label>               
                     <input type="number" name="available" id="cant_avaible" class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                    <% if (locals.errors && errors.available) { %>
+                        <p class="feedback"><%=errors.available.msg %> </p>
+                    <% } %>
                     <div class="text-danger" id="cant_avaibleError"></div>
 
 
@@ -115,7 +120,7 @@
         </section>
     </main>
     <%- include('../partials/footer') %>
-    <!-- <script type="text/javascript" src="/js/registerProduct.js"></script> -->
+    <script type="text/javascript" src="/js/registerProduct.js"></script>
 </body>
 
 </html>

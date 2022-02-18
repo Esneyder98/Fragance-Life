@@ -45,7 +45,10 @@ const productsModel = {
                    return db.images_products.create({
                      name:filename, product_id:nuevoProducto.id})     
                 })
-                .catch((err) => { throw new Error('error de conexion') })
+                .catch((err) => { 
+                    
+                    throw new Error('error de conexion') 
+                })
                              
     },
 
@@ -90,7 +93,9 @@ const productsModel = {
         }
         })
         .then((producto) => producto)
-        .catch((err) => { throw new Error('error de conexion')})
+        .catch((err) => { 
+            console.log(err);
+            throw new Error('error de conexion')})
     },
 
     getProductsGender: function (gender){

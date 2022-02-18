@@ -3,7 +3,7 @@ const path = require('path');
 const validateEditForm =[
     body('nombreProducto')
         .notEmpty()
-        .withMessage('Debes completar el campo nombre')
+        .withMessage('Debes completar el campo nombre').bail()
         .isLength({min: 5}).withMessage('El nombre debe tener minomo 5 caracteres'),
     body('precioProducto')
         .notEmpty()
@@ -38,15 +38,13 @@ const validateEditForm =[
                 throw new Error(`Las extenciones de archivo permitidas son ${acceptedExtensions.join(',')}`)
             }
         }
-    
-
         return true;
     }),
-body('description')
-    .notEmpty()
-    .withMessage('Debes agregar una descripcion de al menos 20 caracteres')
-    .isLength({min:20}).bail()
-    .withMessage('Debes ingresar una descripcion valida'),
+    body('description')
+        .notEmpty()
+        .withMessage('Debes agregar una descripcion de al menos 20 caracteres')
+        .isLength({min:20}).bail()
+        .withMessage('Debes ingresar una descripcion valida'),
 ]
 
 module.exports = validateEditForm;

@@ -39,20 +39,26 @@ const controller = {
     },
 
     storee: (req, res, next) => {
-
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-            return res.render('products/crearNuevoProducto', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            })
-        }
-
-        productsModel.storee(req.body,req.file)
+            productsModel.crearNuevoProducto()
+            .then((function ([brand, smellFamilys]) {
+                return res.render('products/crearNuevoProducto', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    brand, smellFamilys
+                })
+            }))
+            .catch((err) => next(err));
+        }else{
+            productsModel.storee(req.body,req.file)
             .then((producto) => {
                 res.redirect('/')
             })
             .catch((err) => next(err));
+        }
+
+        
     },
 
     deleteProduct: (req, res) => {
@@ -67,19 +73,31 @@ const controller = {
         let { idProducto } = req.params;
         productsModel.editarProducto(idProducto)
             .then(function ([brand, smellFamilys, productoBuscado]) {
-                console.log(productoBuscado)
                 res.render(path.join(__dirname, "../views/products/editarProducto.ejs"), { brand, smellFamilys, productoBuscado })
             })
             .catch((err) => next(err));
     },
 
     productoEditado: (req, res, next) => {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.errors)
+            let { idProducto } = req.params;
+            productsModel.editarProducto(idProducto)
+            .then(function ([brand, smellFamilys, productoBuscado]) {
+                res.render(path.join(__dirname, "../views/products/editarProducto.ejs"), 
+                { errors: resultValidation.mapped(),brand, smellFamilys, productoBuscado })
+            })
+            .catch((err) => next(err));
+        }else{
         let id = req.params.idProducto;
         productsModel.updateProduct(id, req.body)
             .then((producto) => {
                 res.redirect('/products/listaProductos')
             })
             .catch((err) => next(err));
+        }
+        
 
     },
 

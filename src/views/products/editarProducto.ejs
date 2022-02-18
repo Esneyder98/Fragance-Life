@@ -15,14 +15,23 @@
 
                     <label for="nombreProducto" class="form-label_dates">Nombre del Producto </label>
                     <input type="text" name="nombreProducto" id="nombreProducto" class="form-input-dates" value="<%=productoBuscado.name %>">
+                    <!-- si local errors existe & hay algo en la propiedad firs:name -->
+                    <% if (locals.errors && errors.nombreProducto) { %>
+                        <p class="feedback"><%=errors.nombreProducto.msg %> </p>
+                    <% } %>
                     <div class="text-danger" id="nameError"></div>
 
                     <label for="precioProducto" class="form-label_dates">Precio del Producto</label>               
                     <input type="text" name="precioProducto"  id="precioProducto" class="form-input-dates" value="<%=productoBuscado.price %>">
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.precioProducto) { %>
+                        <p class="feedback"><%=errors.precioProducto.msg %> </p>
+                    <% } %>
                     <div class="text-danger" id="precioError"></div>
 
                     <label for="brand" class="form-label_dates">Marca</label>         
                     <select name="brand" id="marca" class="form-select">
+                        <option value="">Seleccionar...</option>
                         <% for (let i = 0; i <brand.length; i++){ %> 
                             <% if(brand[i].id == productoBuscado.brand_id){%>
                             <option value="<%=brand[i].id%>" selected>
@@ -34,10 +43,15 @@
                                 </option>  
                             <% }} %> 
                     </select>
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.brand) { %>
+                        <p class="feedback"><%=errors.brand.msg %> </p>
+                    <% } %>
                     <div class="text-danger" id="marcaError"></div> 
 
                     <label for="familiaProducto" class="form-label_dates">Familia Aroma</label>         
                         <select name="smellFamily" id="familiaAroma" class="form-select">
+                            <option value="">Seleccionar...</option>
                             <% for (let i = 0; i <smellFamilys.length; i++){ %> 
                                 <% if(smellFamilys[i].id == productoBuscado.smellFamily_id){%>
                                 <option value="<%=smellFamilys[i].id%>" selected>
@@ -49,32 +63,52 @@
                                     </option>  
                                 <% }} %> 
                         </select>
+                        <!-- si local errors existe & hay algo en la propiedad  -->
+                        <% if (locals.errors && errors.smellFamily) { %>
+                            <p class="feedback"><%=errors.smellFamily.msg %> </p>
+                        <% } %>
                         <div class="text-danger" id="familiaAromaError"></div>
 
                         <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
                         <select name="gender" id="gender" class="form-select">
-                           <option value="0">Seleccionar...</option>
+                           <option value="">Seleccionar...</option>
                            <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %>>HOMBRE</option>
                            <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %>>MUJER</option>
                        </select>
-                       <!-- falta la validacion del backend de  genero -->
+                       <% if (locals.errors && errors.gender) { %>
+                        <p class="feedback"><%=errors.gender.msg %> </p>
+                        <% } %>
                        <div class="text-danger" id="genderError"></div>
                         
 
                         <label for="discount" class="form-label_dates">Descuento</label>               
                         <input type="text" name="discount" id ="discount" class="form-input-dates" value="<%=productoBuscado.discount_id %>">
+                        <!-- si local errors existe & hay algo en la propiedad  -->
+                        <% if (locals.errors && errors.discount) { %>
+                            <p class="feedback"><%=errors.discount.msg %> </p>
+                        <% } %>
                         <div class="text-danger" id="discountError"></div>
 
                         <label for="available" class="form-label_dates" >Cantidad disponible</label>               
                         <input type="number" name="available" id="cant_avaible" class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                        <% if (locals.errors && errors.available) { %>
+                            <p class="feedback"><%=errors.available.msg %> </p>
+                        <% } %>
                         <div class="text-danger" id="cant_avaibleError"></div>
 
                     <label for="imagenProducto" class="form-label_dates">Imagen del Producto</label>
                     <input type="file" name="imagenProducto" id="imagenProducto" accept=".jpg, .png, .jpeg" class="form-input-dates" value="<%=productoBuscado.images_products[0].name%>">
+                    <!-- si local errors existe & hay algo en la propiedad  -->
+                    <% if (locals.errors && errors.imagenProducto) { %>
+                        <p class="feedback"><%=errors.imagenProducto.msg %> </p>
+                    <% } %>
                     <div class="text-danger" id="imagenError"></div>
 
                     <label for="descripcionProducto" class="form-label_dates">Descripcion del Producto  </label>
                     <textarea name="descripcionProducto" id="descripcion"><%=productoBuscado.description %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="feedback"><%=errors.description.msg %> </p>
+                    <% } %>
                     <div class="text-danger" id="descripcionError"></div>
 
                     <input class="form-input-button" id="buttonEditar" type="submit" value="Editar" href="#">

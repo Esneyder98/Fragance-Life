@@ -49,7 +49,7 @@ router.get('/productsSmellFamily',controller.getProductsSmellFamily);
 
 router.get('/editarProducto/:idProducto/editar', buyerMiddleware,authMiddleware, controller.editarProducto);
 
-router.put('/editarProducto/:idProducto', validateEditForm,controller.productoEditado);
+router.put('/editarProducto/:idProducto',uploadFile.single('imagenProducto'), validateEditForm,controller.productoEditado);
 
 router.get('/eliminar/:idProducto',authMiddleware, controller.deleteProduct);
 

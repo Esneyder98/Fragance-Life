@@ -104,8 +104,7 @@ const controller ={
 		return res.redirect('/');
 	},
 	edit: async (req, res) => {
-	
-		let userLogged = await prueba.findByPk(req.params.id)
+		let userLogged = await User.findByPk(req.params.id)
 		
 		return res.render(path.join(__dirname, "../views/users/editProfile.ejs"),{user: userLogged})
 	},

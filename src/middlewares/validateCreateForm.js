@@ -3,23 +3,15 @@ const path = require('path');
 const validateCreateForm =[
     body('nombreProducto')
         .notEmpty()
-        .withMessage('Debes completar el campo nombre')
+        .withMessage('Debes completar el campo nombre').bail()
         .isLength({min: 5}).withMessage('El nombre debe tener minomo 5 caracteres'),
     body('precioProducto')
         .notEmpty()
         .withMessage('Debes completar el campo de precio').bail()
 	    .isInt().withMessage('Debes ingresar un numero'),
     body('brand')
-    .custom((value, {req}) => {
-        let brands = req.body.brand
-        console.log(brands + " este es el valor")
-        if(brands) {
-            return brands;
-        } else {
-            let error = "Debes seleccionar una marca"
-            return error;
-        }
-    }),
+        .notEmpty() 
+        .withMessage('¡Debes ingresar una categoria!'),
 	body('smellFamily')
         .notEmpty()
         .withMessage('Debes seleccionar una Familia Aroma'),
@@ -46,8 +38,6 @@ const validateCreateForm =[
                 throw new Error(`Las extenciones de archivo permitidas son ${acceptedExtensions.join(',')}`)
             }
         }
-    
-
         return true;
     }),
 body('description')
