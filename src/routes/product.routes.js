@@ -3,22 +3,12 @@ const guestMideleware = require('../middlewares/guestMiddlewares');
 const authMiddleware = require('../middlewares/authMiddleware');
 const buyerMiddleware = require('../middlewares/buyerMiddleware');
 const router = express.Router();
-const path = require('path');
-const multer= require('multer')
-const {body} = require('express-validator')
 const controller = require('../controllers/product.controller');
+const uploadFile= require('../middlewares/multerMiddlewareProducts')
 const validateCreateForm = require('../middlewares/validateCreateForm')
 const validateEditForm = require('../middlewares/validateEditForm')
-const storage = multer.diskStorage({
-	destination : function(req, file, cb) {
-		cb(null, path.resolve(__dirname, '../../public/img/Perfumes'))
-	},
-	filename : function(req, file, cb){
-		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-	}
-}
-);
-const uploadFile = multer({ storage });
+
+
 
 
 //router.get('/detalleproducto', controller.detalle_producto);
@@ -49,7 +39,7 @@ router.get('/productsSmellFamily',controller.getProductsSmellFamily);
 
 router.get('/editarProducto/:idProducto/editar', buyerMiddleware,authMiddleware, controller.editarProducto);
 
-router.put('/editarProducto/:idProducto',uploadFile.single('imagenProducto'), validateEditForm,controller.productoEditado);
+router.put('/editarProducto/:idProducto',uploadFile.single('imagenProducto'),validateCreateForm,controller.productoEditado);
 
 router.get('/eliminar/:idProducto',authMiddleware, controller.deleteProduct);
 

@@ -25,26 +25,31 @@ const validateEditForm =[
     body('available')
         .notEmpty()
         .withMessage('Debes ingresar una cantidad valida'),
-	body('imagenProducto')
-    .custom((value,{req}) =>{
-        let file = req.file
+    body('imagenProducto').custom((value,{req}) =>{
+        let file = req.body.imagenProducto
+        
+        let validaciones=[null,undefined,'']
+        console.log("file "+file)
+        console.log("value "+value)
         let acceptedExtensions = ['.jpg', '.png', '.gif','.jpeg'];
         
-        if(!file){
+        if(!file && validaciones.includes(value) ){
             throw new Error('Tienes que subir una imagen')
         }else{
-            let fileExtension = path.extname(file.originalname)
-            if (!acceptedExtensions.includes(fileExtension)){
+            let extencion=file.slice(file.indexOf("."),file.lengh)
+            //let fileExtension = path.extname(file.originalname)
+            if (!acceptedExtensions.includes(extencion)){
                 throw new Error(`Las extenciones de archivo permitidas son ${acceptedExtensions.join(',')}`)
             }
         }
         return true;
     }),
-    body('description')
+    body('descripcion')
         .notEmpty()
-        .withMessage('Debes agregar una descripcion de al menos 20 caracteres')
-        .isLength({min:20}).bail()
-        .withMessage('Debes ingresar una descripcion valida'),
+        .withMessage('Debes ingresar una descripcion valida').bail()
+        .isLength({min:20}).withMessage('Debes agregar una descripcion de al menos 20 caracteres').bail()
+        .isLength({max:200}).withMessage('Se permiten 200 caracteres como max de descripción')
+        ,
 ]
 
 module.exports = validateEditForm;

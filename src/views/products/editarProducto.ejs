@@ -9,7 +9,7 @@
     <main class="main-form">
         <section class="register">
             <article>
-                <form action="/products/editarProducto/<%= productoBuscado.id%>?_method=PUT" name="editarProducto" id="editarProducto" method="POST">
+                <form action="/products/editarProducto/<%= productoBuscado.id%>?_method=PUT" name="editarProducto" id="editarProducto" method="POST" enctype="multipart/form-data">
                     <label for="" class="form-label_title">Editar Producto</label>
                     <label for="nombreProducto" class="form-label_dates"></label>
 
@@ -72,9 +72,10 @@
                         <label for="categoriaProducto" class="form-label_dates">Categoria del Producto</label>
                         <select name="gender" id="gender" class="form-select">
                            <option value="">Seleccionar...</option>
-                           <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %>>HOMBRE</option>
-                           <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %>>MUJER</option>
+                           <option value="HOMBRE" <%= locals.oldData && (oldData.gender == "HOMBRE" ? 'selected' : null) %> <%= productoBuscado.gender=="HOMBRE" ? 'selected' : null %> >HOMBRE</option>
+                           <option value="MUJER"  <%= locals.oldData && (oldData.gender == "MUJER" ? 'selected' : null) %> <%= productoBuscado.gender=="MUJER" ? 'selected' : null %>>MUJER</option>
                        </select>
+                       <p><%= productoBuscado.gender %> </p>
                        <% if (locals.errors && errors.gender) { %>
                         <p class="feedback"><%=errors.gender.msg %> </p>
                         <% } %>
@@ -90,7 +91,7 @@
                         <div class="text-danger" id="discountError"></div>
 
                         <label for="available" class="form-label_dates" >Cantidad disponible</label>               
-                        <input type="number" name="available" id="cant_avaible" class="form-input-dates" value="<%= locals.oldData ? oldData.discount : null %>">
+                        <input type="number" name="available" id="cant_avaible" class="form-input-dates" value="<%= locals.oldData ? oldData.available : productoBuscado.available %>">
                         <% if (locals.errors && errors.available) { %>
                             <p class="feedback"><%=errors.available.msg %> </p>
                         <% } %>
@@ -105,23 +106,23 @@
                     <div class="text-danger" id="imagenError"></div>
 
                     <label for="descripcionProducto" class="form-label_dates">Descripcion del Producto  </label>
-                    <textarea name="descripcionProducto" id="descripcion"><%=productoBuscado.description %></textarea>
+                    <textarea name="description" id="descripcion"><%=productoBuscado.description %></textarea>
                     <% if (locals.errors && errors.description) { %>
                         <p class="feedback"><%=errors.description.msg %> </p>
                     <% } %>
                     <div class="text-danger" id="descripcionError"></div>
 
-                    <input class="form-input-button" id="buttonEditar" type="submit" value="Editar" href="#">
+                    <input class="form-input-button" id="buttonEditar" type="submit" value="Editar" >
                     
                 </form>
-                <form id="eliminar" action="/products/eliminar/<%= productoBuscado.id%>" name="eliminarProducto" method="get">
+                <form id="eliminar" action="/products/eliminar/<%=productoBuscado.id%>" name="eliminarProducto" method="get">
                     <input type="submit" value="Eliminar" >
                 </form>
             </article>
         </section>
     </main>
     <%- include('../partials/footer') %>
-    <!-- <script type="text/javascript" src="/js/editProduct.js"></script> -->
+    <script type="text/javascript" src="/js/editProduct.js"></script>
 </body>
 
 </html>

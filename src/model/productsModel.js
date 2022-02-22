@@ -51,17 +51,6 @@ const productsModel = {
                 })
                              
     },
-
-    deleteProduct: function (id) {  
-        return db.products.destroy({ 
-            where:{
-            id:id
-            }
-        })
-        .then((producto) => producto)
-        .catch((err) => { throw new Error('error de conexion') })
-    },
-    
     editarProducto: function (id) {
         let brands = db.brands.findAll();
         let smellFamilys = db.smellfamilys.findAll();
@@ -76,17 +65,27 @@ const productsModel = {
             .catch((err) => { throw new Error('error de conexion') })
 
         },
-
-    updateProduct: function(id, editarProducto) {
-         const { nombreProducto, precioProducto, marca, familiaAroma,
-            categoria, discount, descripcionProducto,imagenProducto } = editarProducto;
-
-            console.log(editarProducto,id)
-
+    updateImgProduct:function(id,imagenProducto){
+        db.images_products.update({
+            name:imagenProducto
+        },{
+            where: {
+                product_id: id
+        }
+        }).then((producto) => producto)
+        .catch((err) => { 
+            console.log(err);
+            throw new Error('error de conexion')})
+    },
+    updateProduct: async function(id, editarProducto,file) {
+         const { nombreProducto, precioProducto, brand, smellFamily,
+            gender, discount,available, description,imagenProducto } = editarProducto;
+            const {filename} = file
+            await this.updateImgProduct(id,filename)
         return db.products.update({
-            name: nombreProducto, price: precioProducto, brand_id: marca,
-            smellFamily_id: familiaAroma, gender: categoria,  discount_id: discount,
-            description: descripcionProducto, images_products:imagenProducto
+            name: nombreProducto, price: precioProducto, brand_id: brand,
+            smellFamily_id: smellFamily, gender: gender,available: available,  discount_id: discount,
+            description: description, images_products:imagenProducto
         },{
             where: {
                 id: id
@@ -108,8 +107,6 @@ const productsModel = {
             .then((products) => products)
             .catch((err) => { throw new Error('error de conexion') })
     },
-
-   
     searchProductname:(buscar)=>{
     
         return db.products.findAll({
@@ -121,9 +118,37 @@ const productsModel = {
             .then((products) => products)
             .catch((err) => { throw new Error('error de conexion') })
     },
-
-   
-
+    deleteImg: function(id){
+        db.images_products.destroy({
+            where:{
+                product_id:id
+            }
+        })
+        .then(() =>  true)
+        .catch((err) => {
+            console.log(err)
+             throw new Error('error de conexion')
+        })
+    },
+    deleteProduct: function (id) { 
+        db.products.destroy({ 
+            where:{
+                    id:id
+                }
+            })
+            .then(() =>  true)
+            .catch((err) => {
+            console.log(err)
+            throw new Error('error de conexion')
+            })    
+    },
+    deletee: function(id){
+        let img= this.deleteImg(id)
+        let product= this.deleteProduct(id)
+        Promise.all([img, product])
+        .then(([img, product]) => [img,product])
+        .catch((err) => { throw new Error('Ocurrio un error') })
+    }
 }
 
 module.exports = {productsModel};

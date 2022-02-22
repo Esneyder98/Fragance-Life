@@ -721,10 +721,9 @@ main #carrito .finalizarCompra form #finalizar{
     background-color: #152440;
     color: #FFFFFF;
     position:absolute;
-    top: 680px;
-    left:-90px
+    left: -86px;
+    bottom: 16px;
 }
-
 
 /*home footer*/
 

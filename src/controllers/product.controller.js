@@ -62,17 +62,25 @@ const controller = {
     },
 
     deleteProduct: (req, res) => {
-        const { idProducto } = req.params;
-        productsModel.deleteProduct(idProducto)
-            .then((producto) => {
-                res.redirect('/products/listaProductos')
-            })
+            try {
+                const { idProducto } = req.params;
+                productsModel.deletee(idProducto)
+                res.redirect('/')
+    
+            } catch (err) {
+                console.log(err)
+            }
+        
+            
+            
+
     },
 
     editarProducto: (req, res, next) => {
         let { idProducto } = req.params;
         productsModel.editarProducto(idProducto)
             .then(function ([brand, smellFamilys, productoBuscado]) {
+                console.log("producto Buscado"+productoBuscado)
                 res.render(path.join(__dirname, "../views/products/editarProducto.ejs"), { brand, smellFamilys, productoBuscado })
             })
             .catch((err) => next(err));
@@ -81,7 +89,6 @@ const controller = {
     productoEditado: (req, res, next) => {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-            console.log(resultValidation.errors)
             let { idProducto } = req.params;
             productsModel.editarProducto(idProducto)
             .then(function ([brand, smellFamilys, productoBuscado]) {
@@ -91,14 +98,14 @@ const controller = {
             .catch((err) => next(err));
         }else{
         let id = req.params.idProducto;
-        productsModel.updateProduct(id, req.body)
+        productsModel.updateProduct(id, req.body,req.file)
             .then((producto) => {
-                res.redirect('/products/listaProductos')
+                res.redirect(`/products/detalle/${id}`)
             })
             .catch((err) => next(err));
         }
         
-
+        
     },
 
     getProductsMen: (req, res, next) => {
