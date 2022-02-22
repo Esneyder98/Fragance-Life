@@ -1,47 +1,31 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('users', {
+  return sequelize.define('shopping_car', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    document: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    name: {
-      type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    surname: {
-      type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    email: {
-      type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    password: {
-      type: DataTypes.STRING(100),
-      allowNull: false
-    },
-    category_id: {
+    users_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'categorys',
+        model: 'users',
         key: 'id'
       }
     },
-    avatar: {
-      type: DataTypes.STRING(200),
-      allowNull: true
+    products_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'products',
+        key: 'id'
+      }
     }
   }, {
     sequelize,
-    tableName: 'users',
+    tableName: 'shopping_car',
     timestamps: false,
     indexes: [
       {
@@ -53,10 +37,17 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "category_id",
+        name: "fk_users_id",
         using: "BTREE",
         fields: [
-          { name: "category_id" },
+          { name: "users_id" },
+        ]
+      },
+      {
+        name: "fk_products_id",
+        using: "BTREE",
+        fields: [
+          { name: "products_id" },
         ]
       },
     ]

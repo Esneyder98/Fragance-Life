@@ -3,7 +3,7 @@ const productsModel = {
 
     getproducts: function () {
         return db.products.findAll({
-            include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" },{association: "images_products"}]
+            include: [{ association: "brand" }, { association: "smellFamily" },{association: "images_products"}]
         })
             .then((products) => products)
             .catch((err) => { throw new Error('error de conexion') })
@@ -11,7 +11,7 @@ const productsModel = {
 
     detail: function (id){
         return db.products.findByPk(id,{
-            include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" },{association: "images_products"}]
+            include: [{ association: "brand" }, { association: "smellFamily" },{association: "images_products"}]
         })
         .then((products) => products)
         .catch((err) => { throw new Error('error de conexion') })
@@ -35,7 +35,7 @@ const productsModel = {
                                   
                 return db.products.create({
                 name: nombreProducto, available: available, price: precioProducto, brand_id: brand,
-                smellFamily_id: smellFamily, gender: gender, promotion: promo, discount_id: discount,
+                smellFamily_id: smellFamily, gender: gender, promotion: promo, discount: discount,
                 description: description
                  })
                 .then(function (nuevoProducto) {
@@ -55,7 +55,7 @@ const productsModel = {
         let brands = db.brands.findAll();
         let smellFamilys = db.smellfamilys.findAll();
         let productoBuscado = db.products.findByPk(id,{
-            include: [{association:"discount"},{association: "images_products"}]
+            include: [{association: "images_products"}]
         })
 
         return Promise.all([brands,smellFamilys,productoBuscado])
@@ -84,7 +84,7 @@ const productsModel = {
             await this.updateImgProduct(id,filename)
         return db.products.update({
             name: nombreProducto, price: precioProducto, brand_id: brand,
-            smellFamily_id: smellFamily, gender: gender,available: available,  discount_id: discount,
+            smellFamily_id: smellFamily, gender: gender,available: available,  discount: discount,
             description: description, images_products:imagenProducto
         },{
             where: {
@@ -99,7 +99,7 @@ const productsModel = {
 
     getProductsGender: function (gender){
         return db.products.findAll({
-            include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" }, {association:"images_products"}],
+            include: [{ association: "brand" }, { association: "smellFamily" }, {association:"images_products"}],
             where:{
                 gender: gender
             }
@@ -110,7 +110,7 @@ const productsModel = {
     searchProductname:(buscar)=>{
     
         return db.products.findAll({
-            include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" },{association: "images_products"}],
+            include: [{ association: "brand" }, { association: "smellFamily" },{association: "images_products"}],
             where:{
                 name:{[db.Sequelize.Op.like]:`%${buscar}%`}
             }

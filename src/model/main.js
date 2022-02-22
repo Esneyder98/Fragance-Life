@@ -7,7 +7,7 @@ const { DatabaseError } = require('sequelize');
 const products = {
     getPromotionProducts: function (number){
         return db.products.findAll({
-            include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" }, {association:"images_products"}],
+            include: [{ association: "brand" }, { association: "smellFamily" }, {association:"images_products"}],
             where:{
                 promotion: number
             }, order: Sequelize.literal('rand()'),
@@ -21,7 +21,7 @@ const products = {
 },
     getBestPromotion: function (number){
         return db.products.findAll({
-            include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" }, {association:"images_products"}],
+            include: [{ association: "brand" }, { association: "smellFamily" }, {association:"images_products"}],
             where:{
                 promotion: number
             },
@@ -32,10 +32,10 @@ const products = {
             .catch(function(error){
                 console.log(error);
             })
-},
+    },   
     getAleatoryProducts : function(){
         return db.products.findAll({
-             include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" }, {association:"images_products"}],
+             include: [{ association: "brand" }, { association: "smellFamily" }, {association:"images_products"}],
             order: Sequelize.literal('rand()'), limit: 5
         })
         .then((products) => products)
@@ -45,7 +45,7 @@ const products = {
     },
     getLastProducts : function(){
         return db.products.findAll({
-             include: [{ association: "brand" }, { association: "smellFamily" }, { association: "discount" }, {association:"images_products"}],
+             include: [{ association: "brand" }, { association: "smellFamily" }, {association:"images_products"}],
             order: [["id" , "DESC"]], limit : 4
         })
         .then((products) => products)

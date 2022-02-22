@@ -18,7 +18,7 @@
                     <div class=main-data>
                         <h3 id="name"><%= prod.name %></h3>
                         <p id="availability"><%= prod.available ? "Disponible" : "Agotado"%></p>
-                        <% if(prod.promotion==true){ %> 
+                        <% if(prod.discount>0){ %> 
                          <li id="precio-before">$ <%= pricefull %> </li>
                         <% } %> 
                         <p id="price">$ <%= pricediscount %> COP</p>
