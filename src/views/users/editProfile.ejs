@@ -14,33 +14,68 @@
                     <label for="" class="form-label_subtittle">Edita tu Perfil, es Fácil!!!
                     </label>
 
-                    <% if(locals && locals.errors) { %>
-                        <% for(let error in errors) { %>
-                            <p><%= errors[error].msg %></p>
-                        <% } %>
+                    <label for="document" class="form-label_dates">Documento*:</label>
+                    <input type="number" name="document" autocomplete ="" minlength="2" class="form-input-dates"  value="<%= parseInt(userLogged.document)%>">
+
+                    <% if (locals.errors && errors.document) { %>
+                        <p class="feedback"><%=errors.document.msg %> </p>
                     <% } %>
 
-                    <label for="document" class="form-label_dates">Documento*:</label>
-                    <input type="number" name="document" autocomplete ="" minlength="2" class="form-input-dates"  >
-
                     <label for="names" class="form-label_dates">Nombre*:</label>
-                    <input type="text" name="names" autocomplete ="given-name" minlength="2" class="form-input-dates" >
+                    <input type="text" name="names" autocomplete ="given-name" minlength="2" class="form-input-dates" value="<%= userLogged.name%>">
+                    
+                    <% if (locals.errors && errors.names) { %>
+                        <p class="feedback"><%=errors.names.msg %> </p>
+                    <% } %>
 
                     <label for="surnames" class="form-label_dates">Apellidos*:</label>
-                    <input type="text" name="surnames" autocomplete ="family-name" minlength="2" class="form-input-dates" >
-
+                    <input type="text" name="surnames" autocomplete ="family-name" minlength="2" class="form-input-dates" value="<%= userLogged.surname%>">
+                    
+                    <% if (locals.errors && errors.surnames) { %>
+                        <p class="feedback"><%=errors.surnames.msg %> </p>
+                    <% } %>
+                    
                     <label for="email" class="form-label_dates">Correo electronico*:</label>
-                    <input type="text" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates">
+                    <input type="text" name="email" id="email" autocomplete="email" placeholder="nombre@example.com" class="form-input-dates" value="<%= userLogged.email%>">
+
+                    <% if (locals.errors && errors.email) { %>
+                        <p class="feedback"><%=errors.email.msg %> </p>
+                    <% } %>
 
                     <label for="password" class="form-label_dates">Contraseña*:</label>
                     <input type="password" name="password" id="password" autocomplete="new-password" placeholder="*********" class="form-input-dates" >
 
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="feedback"><%=errors.password.msg %> </p>
+                    <% } %>
+
                     <label for="password" class="form-label_dates">Confirmar Contraseña*:</label>
                     <input type="password" name="confirmpassword" id="confirmpassword" autocomplete="new-password" placeholder="*********" class="form-input-dates" >
 
-                    <label for="avatar" class="form-label_dates">Avatar*:</label>
-                    <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .jpeg, .gif"  >
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="feedback"><%=errors.password.msg %> </p>
+                    <% } %>
 
+                    <label for="names" class="form-label_dates">Categoria*:</label>
+                    <select name="category" id="category">
+                        <option value="">Seleccionar...</option>
+                        <option value= 1 <%= user.category_id == 1 ? 'selected' : locals.old && (old.category == 1 ? 'selected' : null) %>>Administrador</option>
+                        <option value= 2 <%= user.category_id == 2 ? 'selected' :locals.old && (old.category == 2 ? 'selected' : null) %>>Comprador</option>
+                    </select>
+                    <% if (locals.errors && errors.category) { %>
+                        <div class="text-danger feedback">
+                            <%= errors.category.msg %>
+                        </div>
+                    <% } %>
+                    <div class="text-danger" id="categoryError"></div>
+
+                    <label for="avatar" class="form-label_dates">Avatar*:</label>
+                    <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .jpeg, .gif"  value="<%= userLogged.avatar%>">
+
+                    <% if (locals.errors && errors.avatar) { %>
+                        <p class="feedback"><%=errors.avatar.msg %> </p>
+                    <% } %>
+                    
                     <input class="form-input-button" type="submit" value="Editar">
                     
                 </form>

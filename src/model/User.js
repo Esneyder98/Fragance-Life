@@ -18,7 +18,7 @@ const User = {
 	},
 //buscar usuario por id
 	findByPk: function(userId){
-		db.users.findByPk(userId)
+		return db.users.findByPk(userId)
 		.then(function(resultado){	
 			return resultado;
 		}).catch(function(error){
