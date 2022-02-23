@@ -6,7 +6,6 @@ const router = express.Router();
 const controller = require('../controllers/product.controller');
 const uploadFile= require('../middlewares/multerMiddlewareProducts')
 const validateCreateForm = require('../middlewares/validateCreateForm')
-const validateEditForm = require('../middlewares/validateEditForm')
 
 
 

@@ -20,7 +20,7 @@ const controller = {
         productsModel.detail(id)
             .then(prod => {
                 let pricefull = prod.price;
-                let pricediscount = prod.percentage > 0 ? prod.price - (prod.price * prod.percentage / 100) : prod.price;
+                let pricediscount = prod.discount > 0 ? prod.price - (prod.price * prod.discount / 100) : prod.price;
                 res.render(path.join(__dirname, "../views/products/detalle_producto.ejs"), { prod, pricefull, pricediscount })
             })
             .catch((err) => next(err));

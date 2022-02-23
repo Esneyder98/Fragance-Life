@@ -83,7 +83,7 @@
                         
 
                         <label for="discount" class="form-label_dates">Descuento</label>               
-                        <input type="text" name="discount" id ="discount" class="form-input-dates" value="<%=productoBuscado.discount_id %>">
+                        <input type="text" name="discount" id ="discount" class="form-input-dates" value="<%=productoBuscado.discount %>">
                         <!-- si local errors existe & hay algo en la propiedad  -->
                         <% if (locals.errors && errors.discount) { %>
                             <p class="feedback"><%=errors.discount.msg %> </p>
