@@ -69,7 +69,7 @@
 
                     <label for="names" class="form-label_dates">Categoria*:</label>
                     <select name="category" id="category">
-                        <option value= 0>Seleccionar...</option>
+                        <option value= "">Seleccionar...</option>
                         <option value= 1 <%= locals.old && (old.category == 1 ? 'selected' : null) %>>Administrador</option>
                         <option value= 2 <%= locals.old && (old.category == 2 ? 'selected' : null) %>>Comprador</option>
                     </select>
@@ -96,6 +96,6 @@
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
-    <script type="text/javascript" src="/js/register.js"></script>
+    <!-- <script type="text/javascript" src="/js/register.js"></script> -->
 </body>
 </html>

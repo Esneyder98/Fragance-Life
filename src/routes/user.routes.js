@@ -14,6 +14,7 @@ const buyerMiddleware = require('../middlewares/buyerMiddleware');
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const validationLogin = require('../middlewares/validationLogin');
 const validationRegister = require('../middlewares/validationRegister')
+const validationEdit = require('../middlewares/validationEdit')
 
 const userController = require('../controllers/user.controller');
 
@@ -32,6 +33,6 @@ router.get('/logout/', userController.logout);
 
 //Edicion de Usuarios
 router.get('/profile/edit/:id',  userController.edit)
-router.post('/profile/edit/:id',uploadFile.single('avatar'), userController.processEdit)
+router.post('/profile/edit/:id',uploadFile.single('avatar'), validationEdit, userController.processEdit)
 
 module.exports = router;

@@ -108,7 +108,16 @@ const controller ={
 		
 		return res.render(path.join(__dirname, "../views/users/editProfile.ejs"),{user: userLogged})
 	},
-	processEdit : (req, res) => {
+	processEdit : async (req, res) => {
+		let userLogged = await User.findByPk(req.params.id)
+		const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			return res.render(path.join(__dirname, "../views/users/editProfile.ejs"), {
+				errors: resultValidation.mapped(),
+				oldData: req.body,
+				user: userLogged
+			});
+		}
 		let userToEdit = {
 			document : req.body.document,
 			name : req.body.names,

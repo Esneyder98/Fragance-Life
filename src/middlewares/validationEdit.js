@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 const path = require('path');
 
-const validationRegister = [
+const validationEdit = [
     body('document')
         .notEmpty()
         .withMessage('¡Debes ingresar un numero de documento!').bail()
@@ -44,4 +44,4 @@ const validationRegister = [
         })
 ];
 
-module.exports = validationRegister;
+module.exports = validationEdit;
