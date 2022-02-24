@@ -154,7 +154,7 @@ const controller = {
     promotion: (req, res) => {
         productsModel.getproducts()
             .then(products => {
-                res.render('../views/products/productpromotion.ejs', { promotion: products });
+                res.render('../views/products/productPromotion.ejs', { promotion: products });
             })
             .catch((err) => next(err));
     },
