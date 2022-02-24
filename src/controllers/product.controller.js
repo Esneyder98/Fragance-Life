@@ -27,7 +27,7 @@ const controller = {
     },
 
     CarritoDeCompras: (req, res) => {
-        res.render(path.join(__dirname, "../views/products/CarritoDeCompras.ejs"));
+        res.render(path.join(__dirname, "../views/products/carritoDeCompras.ejs"));
     },
 
     crearNuevoProducto: (req, res, next) => {
@@ -137,7 +137,7 @@ const controller = {
     getProductsSmellFamily: (req, res) => {
         productsModel.getproducts()
             .then(products => {
-                res.render('../views/products/productsSmellFamily.ejs', { productsSmellFamily: products });
+                res.render('../views/products/ProductsSmellFamily.ejs', { productsSmellFamily: products });
             })
             .catch((err) => next(err));
 
