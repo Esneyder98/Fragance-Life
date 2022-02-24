@@ -32,11 +32,15 @@ app.use(methodOverride('_method'));
 const mainRoutes = require("./routes/main.routes");
 const productsRoutes = require("./routes/product.routes");
 const usersRoutes = require("./routes/user.routes");
+//Aquí llamo a la ruta de las api de USER
+const apiUsersRouter = require('./routes/api/user')
+const apiProductsRouter = require('./routes/api/product')
 //Para usar las rutas
 app.use('/',mainRoutes);
 app.use('/products', productsRoutes)
 app.use('/user',usersRoutes)
-
+app.use('/api/users',apiUsersRouter);
+app.use('/api/products',apiProductsRouter);
 // definir que archivos son publicos
 const publicPath =path.resolve(__dirname,'public');
  app.use(express.static(publicPath));
