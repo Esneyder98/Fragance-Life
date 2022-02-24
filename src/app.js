@@ -34,7 +34,7 @@ const productsRoutes = require("./routes/product.routes");
 const usersRoutes = require("./routes/user.routes");
 //Aquí llamo a la ruta de las api de USER
 const apiUsersRouter = require('./routes/api/user')
-const apiProductsRouter = require('./routes/api/product')
+const apiProductsRouter = require('./routes/api/Product')
 //Para usar las rutas
 app.use('/',mainRoutes);
 app.use('/products', productsRoutes)

@@ -15,7 +15,7 @@
             <% for (let i = 0; i < best.length; i++) {%>
                 
                     <a href="/products/detalle/<%=best[i].id %>">
-                        <img class="product-img" src="../../img/perfumes/<%= best[i].images_products[0].name%>" alt="imagen">
+                        <img class="product-img" src="/img/Perfumes/<%= best[i].images_products[0].name%>" alt="imagen">
                     </a>
                     <div class="main-product-description">
                         <p id="name-product"><%= best[i].name %></p>
@@ -30,13 +30,13 @@
                          class="fas fa-shopping-cart"></i></span></i>COMPRAR</a>
                             
                     </div>      
-                     <% }; %>
+                     <% } %>
                  
             </article>
             <% for (let i = 0; i < promotion.length; i++) {%>
                 <div class="destacado--producto">
                     <a href="/products/detalle/<%=promotion[i].id %>">
-                        <img class="product-img" src="../../img/perfumes/<%= promotion[i].images_products[0].name%>" alt="imagen">
+                        <img class="product-img" src="/img/Perfumes/<%= promotion[i].images_products[0].name%>" alt="imagen">
                     </a>
                     <div class="main-product-description">
                         <p id="name-product"><%= promotion[i].name %></p>
@@ -60,7 +60,7 @@
             <% for (let i = 0; i < products.length; i++) {%>
                 <div class="destacado-producto">
                     <a href="/products/detalle/<%=products[i].id %>">
-                        <img class="product-img" src="../../img/perfumes/<%= products[i].images_products[0].name%>" alt="imagen">
+                        <img class="product-img" src="/img/Perfumes/<%= products[i].images_products[0].name%>" alt="imagen">
                     </a>
                     <div class="main-product-description">
                         <p id="name-product"><%= products[i].name %></p>
@@ -77,7 +77,7 @@
             <% for (let i = 0; i < last.length; i++) {%>
                 <div class="destacado-producto">
                     <a href="/products/detalle/<%=last[i].id %>">
-                        <img class="product-img" src="../../img/perfumes/<%= last[i].images_products[0].name%>" alt="imagen">
+                        <img class="product-img" src="/img/Perfumes/<%= last[i].images_products[0].name%>" alt="imagen">
                     </a>
                     <div class="main-product-description">
                         <p id="name-product"><%= last[i].name %></p>
