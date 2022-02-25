@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const cors = require('cors')
 
 const path = require('path');
 const methodOverride = require('method-override');
@@ -14,7 +15,7 @@ app.use(session({
 	saveUninitialized: true,
 }));
 app.use(cookies());
-
+app.use(cors());
 app.use(userLoggedMiddleware);
 
 const port = process.env.PORT || 3000;
