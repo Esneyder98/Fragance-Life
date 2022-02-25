@@ -8,7 +8,7 @@ const { Op } = require("sequelize");
 const productAPIController = {
     'list': (req, res) => {
         db.products.findAll({
-            include: ['brand']
+            include: ['brand','smellFamily','images_products']
         })
         .then(products => {
             function brand(prods){
@@ -23,6 +23,22 @@ const productAPIController = {
                 }
                     return ids
             }
+            let fullProducts=products.map(product => {
+                return {
+                'id':product.id,
+                'name':product.name,
+                'avaible':product.available,
+                'price':product.price,
+                'gender':product.gender,
+                'promotion':product.promotion,
+                'description':product.description,
+                'discount':product.discount,
+                'brand':product.brand,
+                'smellFamily':product.smellFamily,
+                'images_products': product.images_products,
+                'detail' :'/api/products/'+product.id
+                }
+            })
             let respuesta = {
                 meta: {
                     status : 200,
@@ -30,7 +46,7 @@ const productAPIController = {
                     countBrands : brand(products),
                     url: 'api/products'
                 },
-                data: products
+                data: fullProducts
             }
                 res.json(respuesta);
             })

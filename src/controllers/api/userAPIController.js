@@ -14,13 +14,16 @@ const userAPIController = {
             attributes: ['id','name','surname','email','avatar']
         })
         .then(users => {
+            let protocol= req.protocol
+            let hosname= req.hostname
+            let host= req.headers.host
             let fullUsers=users.map(user => {
                 return {
                 'id':user.id,
                 'name':user.name,
                 'surname':user.surname,
                 'email':user.email,
-                'avatar':'/img/users/'+user.avatar,
+                'avatar':protocol+'://'+host+'/img/users/'+user.avatar,
                 'detail' :'/api/users/'+user.id
                 }
             })
@@ -39,7 +42,10 @@ const userAPIController = {
         db.users.findByPk(req.params.id,
             {attributes: ['id','name','surname','email','avatar']})
             .then(user => {
-                user.avatar='/img/users/'+user.avatar
+                let protocol= req.protocol
+                let hosname= req.hostname
+                let host= req.headers.host
+                user.avatar=protocol+'://'+host+'/img/users/'+user.avatar
                 let respuesta = {
                     meta: {
                         status: 200,
