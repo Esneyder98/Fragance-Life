@@ -23,6 +23,8 @@ const productAPIController = {
                 }
                     return ids
             }
+            let protocol= req.protocol
+            let host= req.headers.host
             let fullProducts=products.map(product => {
                 return {
                 'id':product.id,
@@ -35,7 +37,8 @@ const productAPIController = {
                 'discount':product.discount,
                 'brand':product.brand,
                 'smellFamily':product.smellFamily,
-                'images_products': product.images_products,
+                'images_products': product.images_products.map(product =>{
+                    return product.name=protocol+'://'+host+'/img/Perfumes/'+product.name}),
                 'detail' :'/api/products/'+product.id
                 }
             })
@@ -44,7 +47,7 @@ const productAPIController = {
                     status : 200,
                     count : products.length,
                     countBrands : brand(products),
-                    url: 'api/products'
+                    url: 'api/products',
                 },
                 data: fullProducts
             }
@@ -56,15 +59,31 @@ const productAPIController = {
             {include: ['brand','smellFamily','images_products']})
             .then(product => {
                 let protocol= req.protocol
-                let hosname= req.hostname
                 let host= req.headers.host
-                 let img=protocol+'://'+host+'/img/Perfumes/'+product.images_products[0].name
+                let img=protocol+'://'+host+'/img/Perfumes/'+product.images_products[0].name
+                let fullProducts=
+                     {
+                    'id':product.id,
+                    'name':product.name,
+                    'avaible':product.available,
+                    'price':product.price,
+                    'gender':product.gender,
+                    'promotion':product.promotion,
+                    'description':product.description,
+                    'discount':product.discount,
+                    'brand':product.brand,
+                    'smellFamily':product.smellFamily,
+                    'images_products': product.images_products.map(product =>{
+                        return product.name=protocol+'://'+host+'/img/Perfumes/'+product.name}),
+                    'detail' :'/api/products/'+product.id
+                    }
+                
                 let respuesta = {
                     meta: {
                         status: 200,
                         url: '/api/products/:id'
                     },
-                    data: product,img
+                    data: fullProducts
                 }
                 res.json(respuesta);
             });
