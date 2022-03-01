@@ -60,11 +60,14 @@ RETRO SPRINT 5
 -https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/adc697b02
 RETRO SPRINT 6
 -https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/a11c139eb
-
+RETRO SPRINT 7
+-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/aa2355efb
 
 ## Tablero  de trabajo
 -- https://drive.google.com/drive/folders/1aCduxdN2E37UQO9EW_0a8nNZ4ybNeZHa?usp=sharing
 
 ## Heroku
 -Fragance Life:
- https://fragance-life.herokuapp.com/
+ https://fragance--life.herokuapp.com/
+-Dashboard:
+ https://fragance-dashboard.herokuapp.com/

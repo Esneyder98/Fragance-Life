@@ -1,22 +1,26 @@
-# Retro del sprint 5
+# Retro del sprint 7
 
 ## Keep doing:
 - Seguir en Comunicación constante.
 - Cumplimiento de objetivos en tiempos estipulados.
 - Trabajo en equipo a traves de Distribución de tareas.
-- Comunicación asertiva.
+- Apoyo entre compañeros.
 
 ## Less of
-- Dejar actividades para el fin del Sprint.
+- Limitar la comunicación a mensajes de texto.
+- Posponer reuniones
 
 ## More of
 - Reuniones Semanales por video.
-- Planificar Mejor las Actividades
+- Retroalimentaciones con respecto al trabajo realizado y el pendiente.
 
 ## Stop doing
--	Posponer reuniones
+- Posponer reuniones.
+- Acumular trabajo para el final del Sprint.
 
 ## Start doing
-- Las tareas del Sprint desde el principio
+- Planificar mejor las actividades.
+- Implementar daily.
 
-https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/a11c139eb
+
+https://app.moqups.com/chBtbIzycAAwEYjxA2sQfWOPUrQHSliH/view/page/aa2355efb
